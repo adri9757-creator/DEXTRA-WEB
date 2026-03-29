@@ -11,7 +11,7 @@ const Blog = () => {
   
   const POSTS_PER_PAGE = 6;
   
-  // Filtrar posts según búsqueda y categoría
+  // Filtrar posts según búsqueda y categoría (mostrar todos, pero diferenciar)
   let filteredPosts = posts;
   
   if (searchQuery) {
@@ -108,7 +108,7 @@ const Blog = () => {
       <div className="container pb-20 md:pb-28">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {paginatedPosts.map((post, i) => (
-            <article key={i} className="group border border-border rounded-lg overflow-hidden hover:shadow-xl transition-all duration-300 hover:-translate-y-1 h-full flex flex-col">
+            <article key={i} className={`group border border-border rounded-lg overflow-hidden hover:shadow-xl transition-all duration-300 hover:-translate-y-1 h-full flex flex-col ${post.slug === "#" ? "opacity-60 grayscale" : ""}`}>
               <div className="h-48 bg-muted flex items-center justify-center flex-shrink-0 relative">
                 <img 
                   src={
@@ -141,6 +141,11 @@ const Blog = () => {
               </div>
               <div className="p-6 flex flex-col flex-grow">
                 <div className="flex items-center gap-3 mb-3">
+                  {post.slug === "#" && (
+                    <span className="inline-block bg-orange-100 text-orange-800 font-sans text-xs font-bold px-2 py-1 rounded-full">
+                      PRÓXIMAMENTE
+                    </span>
+                  )}
                   <span className="inline-block bg-primary/10 text-primary font-sans text-xs font-semibold px-3 py-1 rounded-full">{post.category}</span>
                   <span className="flex items-center gap-1 text-muted-foreground font-sans text-xs">
                     <Clock className="w-3 h-3" /> {post.date}
@@ -160,12 +165,18 @@ const Blog = () => {
                 
                 {/* Read More */}
                 <div className="mt-auto pt-4">
-                  <Link
-                    to={post.slug}
-                    className="inline-flex items-center gap-1 text-primary font-sans font-semibold text-sm group-hover:gap-2 transition-all"
-                  >
-                    Leer más <ArrowRight className="w-4 h-4" />
-                  </Link>
+                  {post.slug !== "#" ? (
+                    <Link
+                      to={post.slug}
+                      className="inline-flex items-center gap-1 text-primary font-sans font-semibold text-sm group-hover:gap-2 transition-all"
+                    >
+                      Leer más <ArrowRight className="w-4 h-4" />
+                    </Link>
+                  ) : (
+                    <span className="inline-flex items-center gap-1 text-muted-foreground font-sans text-sm">
+                      Próximamente <Clock className="w-4 h-4 ml-1" />
+                    </span>
+                  )}
                 </div>
               </div>
             </article>
