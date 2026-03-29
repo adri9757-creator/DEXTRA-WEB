@@ -83,10 +83,21 @@ const ServicePage = ({
 
     <Section>
       <h2 className="text-3xl font-bold mb-8">Caso real</h2>
-      <div className="max-w-2xl border-l-4 border-primary pl-6">
-        <h3 className="font-bold font-sans text-lg mb-2">{caseStudy.title}</h3>
-        <p className="text-muted-foreground font-sans leading-relaxed text-justify">{caseStudy.text}</p>
-        <p className="text-xs text-muted-foreground font-sans mt-4 italic">*Los datos han sido modificados para proteger la identidad del cliente.</p>
+      <div className="flex flex-col lg:flex-row gap-8 items-start">
+        <div className="flex-1 border-l-4 border-primary pl-6">
+          <h3 className="font-bold font-sans text-lg mb-2">{caseStudy.title}</h3>
+          <p className="text-muted-foreground font-sans leading-relaxed text-justify">{caseStudy.text}</p>
+          <p className="text-xs text-muted-foreground font-sans mt-4 italic">*Los datos han sido modificados para proteger la identidad del cliente.</p>
+        </div>
+        <div className="lg:w-80 lg:flex-shrink-0">
+          <div className="aspect-video bg-gradient-to-br from-primary/10 to-primary/5 rounded-2xl border border-primary/20 flex items-center justify-center overflow-hidden">
+            <img 
+              src="/images/ChatGPT Image 30 mar 2026, 01_02_16.png" 
+              alt="Caso real - Absolución en delito de lesiones" 
+              className="w-full h-full object-cover"
+            />
+          </div>
+        </div>
       </div>
     </Section>
 
