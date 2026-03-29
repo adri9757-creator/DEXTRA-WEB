@@ -68,6 +68,27 @@ export async function GET() {
           text: "Totalmente recomendados. Resolvieron una reclamación civil que llevaba meses con otros abogados. Rápidos, eficaces y transparentes en las tarifas.", 
           relative_time_description: "Hace 3 semanas",
           service: "Derecho Civil"
+        },
+        {
+          author_name: "MP",
+          rating: 5,
+          text: "Excelente equipo de abogados laborales. Consiguieron una indemnización justa por mi despido improcedente. Muy contento con el resultado.",
+          relative_time_description: "Hace 1 mes",
+          service: "Derecho Laboral"
+        },
+        {
+          author_name: "AF",
+          rating: 5,
+          text: "Me ayudaron en un divorcio complicado. Supieron manejar la situación con sensibilidad y profesionalidad. Siempre dispuestos a aclarar dudas.",
+          relative_time_description: "Hace 2 meses",
+          service: "Derecho de Familia"
+        },
+        {
+          author_name: "JD",
+          rating: 5,
+          text: "Servicio jurídico de primer nivel. Trataron mi caso de extranjería con eficiencia y consiguieron renovar mi permiso sin problemas.",
+          relative_time_description: "Hace 1 mes",
+          service: "Extranjería"
         }
       ]
     });
@@ -122,13 +143,13 @@ function extractReviewsFromExactURL(html) {
             const authorMatch = match.match(/por\s+([^"]{2,30})"/i) || 
                              match.match(/by\s+([^"]{2,30})"/i) ||
                              match.match(/author[^>]*>([^<]{2,30})</i) ||
-                             match.match/<span[^>]*class[^>]*author[^>]*>([^<]{2,30})<\/span>/i) ||
+                             match.match(/<span[^>]*class[^>]*author[^>]*>([^<]{2,30})<\/span>/i) ||
                              match.match(/CM|LS|RG|[A-Z]{2,3}/);
             
             // Extract date
             const dateMatch = match.match(/hace\s+([^"]{3,30})"/i) ||
                             match.match(/(\d+\s*(día|semana|mes|año))/i) ||
-                            match.match/(\d+\s*(días?|semanas?|meses?|años?))/i);
+                            match.match(/(\d+\s*(días?|semanas?|meses?|años?))/i);
             
             console.log(`Review ${index}:`, { ratingMatch, textMatch, authorMatch, dateMatch });
             
@@ -203,10 +224,10 @@ function extractReviewsFromExactURL(html) {
 // Helper function to determine service type from text
 function getServiceFromText(text) {
   const lowerText = text.toLowerCase();
-  if (lowerText.includes('extranjer') || lowerText.includes('residenci')) return 'Extranjería';
+  if (lowerText.includes('extranjer') || lowerText.includes('residenci') || lowerText.includes('permiso')) return 'Extranjería';
   if (lowerText.includes('penal') || lowerText.includes('caso penal')) return 'Derecho Penal';
-  if (lowerText.includes('civil') || lowerText.includes('reclamación')) return 'Derecho Civil';
-  if (lowerText.includes('laboral') || lowerText.includes('trabajo')) return 'Derecho Laboral';
+  if (lowerText.includes('civil') || lowerText.includes('reclamación') || lowerText.includes('indemnización')) return 'Derecho Civil';
+  if (lowerText.includes('laboral') || lowerText.includes('trabajo') || lowerText.includes('despido')) return 'Derecho Laboral';
   if (lowerText.includes('familiar') || lowerText.includes('divorcio')) return 'Derecho de Familia';
   return 'General';
 }
@@ -239,8 +260,8 @@ function extractReviewsFromHTML(html) {
             const ratingMatch = match.match(/(\d+)\s*estrellas?/i) || 
                              match.match(/rating[:\s]*(\d+)/i) ||
                              match.match(/"(\d+)"/) ||
-                             match.match/★(\d+)/) ||
-                             match.match/★(\d+)/);
+                             match.match(/\u2605(\d+)/) ||
+                             match.match(/\u2605(\d+)/);
             
             // Extract text
             const textMatch = match.match(/"([^"]+)"/) || 
@@ -250,7 +271,7 @@ function extractReviewsFromHTML(html) {
             // Extract author
             const authorMatch = match.match(/por\s+([^"]+)"/i) || 
                              match.match(/by\s+([^"]+)"/i) ||
-                             match.match/author[^>]*>([^<]+)</i);
+                             match.match(/author[^>]*>([^<]+)</i);
             
             // Extract date
             const dateMatch = match.match(/hace\s+([^"]+)"/i) ||

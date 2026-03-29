@@ -206,43 +206,24 @@ const Home = () => {
           <div className="w-16 h-1 bg-primary mx-auto mt-4" />
         </div>
         
-        {/* Elfsight Google Reviews Widget */}
+        {/* Google Reviews Section */}
         <div className="flex justify-center">
           <div className="w-full max-w-6xl">
-            <div 
-              className="elfsight-app-845996fd-20cc-4c9c-9038-000ad4857ab6" 
-              data-elfsight-app-lazy
-            ></div>
+            {/* Elfsight Google Reviews Widget - Iframe Implementation */}
+            <div className="relative w-full" style={{ paddingBottom: '400px' }}>
+              <iframe 
+                src="https://845996fd20cc4c9c9038000ad4857ab6.elf.site"
+                title="Google Reviews de Dextra Law Firm"
+                className="absolute inset-0 w-full h-full border-0 rounded-lg"
+                loading="lazy"
+                style={{ backgroundColor: '#f8f9fa' }}
+              />
+            </div>
           </div>
         </div>
       </Section>
       
-      {/* Elfsight Script - Load at the end of body */}
-      <script 
-        dangerouslySetInnerHTML={{
-          __html: `
-            (function() {
-              // Load Elfsight platform script
-              var script = document.createElement('script');
-              script.src = 'https://elfsightcdn.com/platform.js';
-              script.async = true;
-              script.defer = true;
-              script.onload = function() {
-                console.log('Elfsight platform loaded');
-                // Initialize all Elfsight widgets
-                if (window.elfsight && window.elfsight.init) {
-                  window.elfsight.init();
-                }
-              };
-              script.onerror = function() {
-                console.error('Failed to load Elfsight platform');
-              };
-              document.body.appendChild(script);
-            })();
-          `
-        }}
-      />
-
+      
       {/* CÓMO TRABAJAMOS */}
       <Section>
         <div className="text-center mb-16">

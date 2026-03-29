@@ -116,13 +116,17 @@ const Blog = () => {
                     post.title === "Diferencias entre delito leve y delito grave" ? "/images/penal-illustration.png" :
                     post.title === "Cómo reclamar una deuda: guía paso a paso" ? "/images/DEUDA.png" :
                     post.title === "¿Puedo reclamar sin ir a juicio?" ? "/images/civil-illustration-new.png" :
-                    post.title === "Guía completa de residencia en España 2026" ? "/images/ESPAÑA.jpg" :
+                    post.title === "Guía completa de residencia en España 2026" ? "/images/ESPANA.png" :
                     post.title === "Arraigo social 2026: requisitos actualizados" ? "/images/temp-backup.png" :
                     post.category === "Penal" ? "/images/DETENCION.png" :
                     post.category === "Civil" ? "/images/civil-illustration-new.png" :
                     post.category === "Extranjería" ? "/images/extranjeria-illustration.png" :
                     "/images/service-illustration.png"
                   } 
+                  onError={(e) => {
+                    e.currentTarget.src = "/images/service-illustration.png";
+                    e.currentTarget.onerror = null;
+                  }}
                   alt={
                     post.title === "¿Qué hacer si te detienen en Valencia?" ? "Detención policial en Valencia" :
                     post.title === "Diferencias entre delito leve y delito grave" ? "Clasificación de delitos penales" :
