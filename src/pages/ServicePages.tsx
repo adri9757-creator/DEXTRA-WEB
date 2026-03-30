@@ -81,16 +81,23 @@ const ServicePage = ({
       </div>
     </Section>
 
-    <Section>
-      <h2 className="text-3xl font-bold mb-8">Caso real</h2>
-      <div className="flex flex-col lg:flex-row gap-8 items-start">
+    <Section className="pt-4">
+      <h2 className="text-3xl font-bold mb-4">Caso real</h2>
+      <div className="flex flex-col lg:flex-row gap-6 items-center">
         <div className="flex-1 border-l-4 border-primary pl-6">
           <h3 className="font-bold font-sans text-lg mb-2">{caseStudy.title}</h3>
-          <p className="text-muted-foreground font-sans leading-relaxed text-justify">{caseStudy.text}</p>
+          <p className="text-muted-foreground font-sans leading-relaxed text-justify max-w-md" 
+             dangerouslySetInnerHTML={{ 
+               __html: caseStudy.text.replace(
+                 "Logramos la absolución de un cliente acusado de un delito de lesiones tras demostrar la falta de intencionalidad y la legítima defensa. El tribunal reconoció nuestra argumentación y dictó la libre absolución.",
+                 "Logramos la absolución de un cliente acusado de un delito de lesiones tras demostrar la falta de intencionalidad y la legítima defensa."
+               )
+             }}>
+          </p>
           <p className="text-xs text-muted-foreground font-sans mt-4 italic">*Los datos han sido modificados para proteger la identidad del cliente.</p>
         </div>
-        <div className="lg:w-80 lg:flex-shrink-0">
-          <div className="aspect-video bg-gradient-to-br from-primary/10 to-primary/5 rounded-2xl border border-primary/20 flex items-center justify-center overflow-hidden">
+        <div className="lg:w-[600px] lg:flex-shrink-0 lg:mr-16 lg:mt-0 lg:mb-2">
+          <div className="aspect-video bg-gradient-to-br from-primary/10 to-primary/5 rounded-2xl border border-primary/20 flex items-center justify-center overflow-hidden w-full">
             <img 
               src="/images/ChatGPT Image 30 mar 2026, 01_02_16.png" 
               alt="Caso real - Absolución en delito de lesiones" 
