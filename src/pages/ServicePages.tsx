@@ -20,6 +20,7 @@ const ServicePage = ({
   caseStudy,
   showImage = false,
   imageName = "service-illustration",
+  introImage = "service-illustration",
   backgroundColor = "secondary",
 }: {
   icon: any;
@@ -31,6 +32,7 @@ const ServicePage = ({
   caseStudy: { title: string; text: string };
   showImage?: boolean;
   imageName?: string;
+  introImage?: string;
   backgroundColor?: string;
 }) => (
   <>
@@ -48,17 +50,13 @@ const ServicePage = ({
             <p className="text-muted-foreground font-sans text-lg leading-relaxed">{intro}</p>
           </div>
           <div className="lg:w-80 lg:flex-shrink-0">
-            {showImage ? (
+            {showImage && (
               <div className="aspect-square bg-gradient-to-br from-primary/10 to-primary/5 rounded-2xl border border-primary/20 flex items-center justify-center overflow-hidden">
                 <img 
-                  src={`/images/${imageName}.png`} 
-                  alt="Service illustration" 
+                  src={`/images/${introImage}.png`} 
+                  alt={`${title} illustration`} 
                   className="w-full h-full object-contain"
                 />
-              </div>
-            ) : (
-              <div className="aspect-square bg-gradient-to-br from-primary/10 to-primary/5 rounded-2xl border border-primary/20 flex items-center justify-center">
-                <Icon className="w-24 h-24 text-primary/30" />
               </div>
             )}
           </div>
@@ -99,7 +97,7 @@ const ServicePage = ({
         <div className="lg:w-[600px] lg:flex-shrink-0 lg:mr-16 lg:mt-0 lg:mb-2">
           <div className="aspect-video bg-gradient-to-br from-primary/10 to-primary/5 rounded-2xl border border-primary/20 flex items-center justify-center overflow-hidden w-full">
             <img 
-              src="/images/ChatGPT Image 30 mar 2026, 01_02_16.png" 
+              src={`/images/${imageName}.png`} 
               alt="Caso real - Absolución en delito de lesiones" 
               className="w-full h-full object-cover"
             />
@@ -170,7 +168,8 @@ export const Penal = () => {
         text: "Logramos la absolución de un cliente acusado de un delito de lesiones tras demostrar la falta de intencionalidad y la legítima defensa. El tribunal reconoció nuestra argumentación y dictó la libre absolución."
       }}
       showImage={true}
-      imageName="penal-illustration"
+      imageName="ChatGPT Image 30 mar 2026, 01_02_16"
+      introImage="ChatGPT Image 26 mar 2026, 23_33_40"
     />
   );
 };
@@ -203,10 +202,11 @@ export const Extranjeria = () => {
       faqItems={extranjeriaFaqs}
       caseStudy={{
         title: "Arraigo social aprobado tras denegación inicial",
-        text: "Tras una denegación por falta de documentación, preparamos un recurso sólido con toda la documentación necesaria. El arraigo fue aprobado en segunda instancia.",
+        text: "Tras una denegación por falta de documentación, preparamos un recurso sólido con toda la documentación necesaria. El arraigo fue aprobado en segunda instancia."
       }}
       showImage={true}
-      imageName="extranjeria-illustration"
+      imageName="caso-extranjeria"
+      introImage="civil-illustration"
     />
   );
 };
@@ -238,11 +238,12 @@ export const Civil = () => {
       ]}
       faqItems={civilFaqs}
       caseStudy={{
-        title: "Cláusula suelo abusiva declarada nula",
+        title: "Reclamación de cantidad por impago",
         text: "Un autónomo no había cobrado varias facturas. Iniciamos un monitorio y en menos de dos meses el deudor abonó la totalidad de la deuda más intereses."
       }}
       showImage={true}
-      imageName="civil-illustration-new"
+      imageName="caso-civil"
+      introImage="civil-illustration-new"
       backgroundColor="secondary"
     />
   );
