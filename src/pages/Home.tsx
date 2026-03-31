@@ -124,16 +124,9 @@ const Home = () => {
         {/* Google Reviews Section */}
         <div className="flex justify-center">
           <div className="w-full max-w-6xl">
-            {/* Elfsight Google Reviews Widget - Iframe Implementation */}
-            <div className="relative w-full" style={{ paddingBottom: '400px' }}>
-              <iframe 
-                src="https://845996fd20cc4c9c9038000ad4857ab6.elf.site"
-                title="Google Reviews de Dextra Law Firm"
-                className="absolute inset-0 w-full h-full border-0 rounded-lg"
-                loading="lazy"
-                style={{ backgroundColor: '#f8f9fa' }}
-              />
-            </div>
+            {/* Elfsight Google Reviews | Untitled Google Reviews */}
+            <script src="https://elfsightcdn.com/platform.js" async></script>
+            <div class="elfsight-app-e9a2697c-b453-43a5-86d4-6bcf43e3807e" data-elfsight-app-lazy></div>
           </div>
         </div>
       </Section>
