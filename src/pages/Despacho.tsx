@@ -1,7 +1,7 @@
 import Section from "@/components/Section";
 import { Link } from "react-router-dom";
 import { Eye, Heart, Target, Users, ArrowRight } from "lucide-react";
-import despachoBg from "@/assets/despacho-bg.png";
+import despachoBg from "@/assets/JUSTICIA.jpeg";
 
 const Despacho = () => (
   <>
@@ -13,7 +13,7 @@ const Despacho = () => (
     </section>
 
     <div className="relative py-20 md:py-28">
-      <div className="absolute inset-0 bg-cover bg-center bg-no-repeat" style={{ backgroundImage: `url(${despachoBg})` }}>
+      <div className="absolute inset-0 bg-cover bg-center bg-no-repeat" style={{ backgroundImage: `url(/images/despachogr-bg.png)` }}>
         <div className="absolute inset-0 bg-black/40"></div>
       </div>
       <div className="relative container">

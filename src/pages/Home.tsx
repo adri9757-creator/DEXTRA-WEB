@@ -2,6 +2,7 @@ import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
 import { Shield, Users, Zap, Scale, Globe, FileText, ArrowRight, Phone, MessageCircle, CheckCircle } from "lucide-react";
 import Section from "@/components/Section";
+import { ElfsightWidget } from "react-elfsight-widget";
 
 const Home = () => {
   return (
@@ -124,9 +125,7 @@ const Home = () => {
         {/* Google Reviews Section */}
         <div className="flex justify-center">
           <div className="w-full max-w-6xl">
-            {/* Elfsight Google Reviews | Untitled Google Reviews */}
-            <script src="https://elfsightcdn.com/platform.js" async></script>
-            <div class="elfsight-app-e9a2697c-b453-43a5-86d4-6bcf43e3807e" data-elfsight-app-lazy></div>
+            <ElfsightWidget widgetID={"e9a2697c-b453-43a5-86d4-6bcf43e3807e" as string} />
           </div>
         </div>
       </Section>

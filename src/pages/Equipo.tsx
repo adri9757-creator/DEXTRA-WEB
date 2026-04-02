@@ -1,7 +1,7 @@
 import Section from "@/components/Section";
 import { Link } from "react-router-dom";
 import { ArrowRight, Users, Zap, Shield, Heart, Target, BookOpen } from "lucide-react";
-import equipoImage from "@/assets/Captura de pantalla 2026-03-27 a las 12.59.03.png";
+import equipoImage from "@/assets/JUSTICIA.jpeg";
 import formaTrabajarImage from "@/assets/JUSTICIA.jpeg";
 
 const Equipo = () => (
@@ -28,28 +28,15 @@ const Equipo = () => (
         <div className="relative">
           <div className="aspect-square bg-muted rounded-md overflow-hidden relative max-w-sm mx-auto">
             <img 
-              src={equipoImage} 
-              alt="Equipo Dextra Law Firm" 
+              src="/images/Captura de pantalla 2026-03-27 a las 12.59.03.png" 
+              alt="Estrategia y claridad para defender tus derechos" 
               className="w-full h-full object-cover"
-              onError={(e) => {
+              onError={(e: any) => {
                 e.target.onerror = null;
                 e.target.style.display = 'none';
-                e.target.parentElement.innerHTML = `
-                  <div class="flex items-center justify-center h-full">
-                    <div class="text-center">
-                      <div class="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-4">
-                        <svg class="w-8 h-8 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"></path>
-                          <circle cx="9" cy="7" r="4"></circle>
-                          <path d="M22 21v-2a4 4 0 0 0-3-3.87"></path>
-                          <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
-                        </svg>
-                      </div>
-                      <p class="text-muted-foreground font-sans text-sm">Imagen del equipo</p>
-                      <p class="text-muted-foreground font-sans text-xs mt-2">Añade la imagen en: /src/assets/equipo-image.jpg</p>
-                    </div>
-                  </div>
-                `;
+                if (e.target.parentElement) {
+                  e.target.parentElement.innerHTML = `<div class="flex items-center justify-center h-full"><div class="text-center"><div class="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-4"><svg class="w-8 h-8 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M22 21v-2a4 4 0 0 0-3-3.87"></path><path d="M16 3.13a4 4 0 0 1 0 7.75"></path></svg></div><p class="text-muted-foreground font-sans text-sm">Estrategia y claridad para defender tus derechos</p><p class="text-muted-foreground font-sans text-xs mt-2">Añade la imagen en: /src/assets/equipo-image.jpg</p></div></div></div>`;
+                }
               }}
             />
           </div>
@@ -110,24 +97,12 @@ const Equipo = () => (
               src={formaTrabajarImage} 
               alt="Nuestra forma de trabajar" 
               className="w-full h-full object-cover"
-              onError={(e) => {
+              onError={(e: any) => {
                 e.target.onerror = null;
                 e.target.style.display = 'none';
-                e.target.parentElement.innerHTML = `
-                  <div class="flex items-center justify-center h-full">
-                    <div class="text-center">
-                      <div class="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-4">
-                        <svg class="w-8 h-8 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"></path>
-                          <circle cx="9" cy="7" r="4"></circle>
-                          <path d="M22 21v-2a4 4 0 0 0-3-3.87"></path>
-                          <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
-                        </svg>
-                      </div>
-                      <p class="text-muted-foreground font-sans text-sm">Imagen de forma de trabajar</p>
-                    </div>
-                  </div>
-                `;
+                if (e.target.parentElement) {
+                  e.target.parentElement.innerHTML = `<div class="flex items-center justify-center h-full"><div class="text-center"><div class="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-4"><svg class="w-8 h-8 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M22 21v-2a4 4 0 0 0-3-3.87"></path><path d="M16 3.13a4 4 0 0 1 0 7.75"></path></svg></div><p class="text-muted-foreground font-sans text-sm">Imagen de forma de trabajar</p></div></div></div>`;
+                }
               }}
             />
           </div>
