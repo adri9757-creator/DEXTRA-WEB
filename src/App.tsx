@@ -25,6 +25,7 @@ import Condiciones from "@/pages/Condiciones";
 import AvisoLegal from "@/pages/AvisoLegal";
 import Privacidad from "@/pages/Privacidad";
 import Cookies from "@/pages/Cookies";
+import PoliticaCookies from "@/pages/PoliticaCookies";
 import Contacto from "@/pages/Contacto";
 import NotFound from "@/pages/NotFound";
 
@@ -67,6 +68,7 @@ const App = () => (
             <Route path="/aviso-legal" element={<AvisoLegal />} />
             <Route path="/privacidad" element={<Privacidad />} />
             <Route path="/cookies" element={<Cookies />} />
+            <Route path="/politica-cookies" element={<PoliticaCookies />} />
             <Route path="/blog" element={<Blog />} />
             <Route path="/blog/que-hacer-si-te-detienen-valencia" element={<BlogDeuda />} />
             <Route path="/blog/como-reclamar-una-deuda" element={<BlogPost />} />
