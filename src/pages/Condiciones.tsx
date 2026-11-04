@@ -211,7 +211,7 @@ const Condiciones = () => {
                   <ul className="ml-4 mb-4 space-y-2">
                     <li className="flex items-start gap-2">
                       <span className="w-5 h-5 text-primary mt-0.5 flex-shrink-0" aria-hidden="true">•</span>
-                      <span><strong>Cómo desistir:</strong> comunicándolo de forma inequívoca a <a href="mailto:info@dextralawfirm.com" className="font-semibold underline underline-offset-2">info@dextralawfirm.com</a> o por correo postal a Gran Vía Marqués del Turia 49, -1, 46005 Valencia. Puede utilizarse el modelo de formulario que figura al final de este apartado, aunque no es obligatorio.</span>
+                      <span><strong>Cómo desistir:</strong> comunicándolo de forma inequívoca a <a href="mailto:info@dextralawfirm.com" className="font-semibold underline underline-offset-2">info@dextralawfirm.com</a> o por correo postal a Passeig de Russafa, 11, Planta 5ª, Puerta 10, 46002 València, Valencia, España. Puede utilizarse el modelo de formulario que figura al final de este apartado, aunque no es obligatorio.</span>
                     </li>
                     <li className="flex items-start gap-2">
                       <span className="w-5 h-5 text-primary mt-0.5 flex-shrink-0" aria-hidden="true">•</span>
@@ -230,7 +230,7 @@ const Condiciones = () => {
                     <p className="font-semibold">Modelo de formulario de desistimiento</p>
                     <p className="mt-2">(Solo debe cumplimentar y enviar este formulario si desea desistir del contrato.)</p>
                     <p className="mt-2">
-                      A la atención de Adrián García Lledó (Dextra Law Firm), Gran Vía Marqués del Turia 49, -1, 46005 Valencia, info@dextralawfirm.com:
+                      A la atención de Adrián García Lledó (Dextra Law Firm), Passeig de Russafa, 11, Planta 5ª, Puerta 10, 46002 València, Valencia, España, info@dextralawfirm.com:
                     </p>
                     <p className="mt-2">
                       Por la presente le comunico que desisto de mi contrato de prestación del siguiente servicio: ______. Contratado el: ______. Nombre del consumidor: ______. Domicilio del consumidor: ______. Firma (solo si se envía en papel): ______. Fecha: ______.
@@ -336,7 +336,7 @@ const Condiciones = () => {
                     <div className="space-y-2">
                       <p><strong><strong>Titular del sitio web:</strong></strong> Adrián García Lledó</p>
                       <p><strong>NIF:</strong> 35597868D</p>
-                      <p><strong>Domicilio profesional:</strong> Gran Vía Marqués del Turia 49, -1, 46005 Valencia</p>
+                      <p><strong>Domicilio profesional:</strong> Passeig de Russafa, 11, Planta 5ª, Puerta 10, 46002 València, Valencia, España</p>
                       <p><strong>Correo electrónico:</strong> info@dextralawfirm.com</p>
                       <p><strong>Teléfono de contacto:</strong> 624 164 536</p>
                       <p><strong>Colegio profesional:</strong> Ilustre Colegio de la Abogacía de Valencia (ICAV)</p>

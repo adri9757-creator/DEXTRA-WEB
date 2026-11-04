@@ -2,7 +2,7 @@ import { ExternalLink } from "lucide-react";
 import ConsentGate from "@/components/consent/ConsentGate";
 import { SITE } from "@/config/site";
 
-const query = encodeURIComponent(`${SITE.address.street}, ${SITE.address.postalCode} ${SITE.address.locality}`);
+const query = encodeURIComponent(SITE.address.mapQuery);
 
 /** Mapa de Google bloqueado hasta consentimiento; sin él, enlace externo. */
 const GoogleMap = () => (
@@ -31,7 +31,7 @@ const GoogleMap = () => (
         style={{ border: 0 }}
         loading="lazy"
         referrerPolicy="strict-origin-when-cross-origin"
-        title={`Mapa: ${SITE.name}, ${SITE.address.street}, ${SITE.address.locality}`}
+        title={`Mapa: ${SITE.name}, ${SITE.address.display}`}
         className="h-full w-full"
       />
     </div>

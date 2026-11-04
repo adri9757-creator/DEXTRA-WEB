@@ -237,7 +237,7 @@ const Contacto = () => {
               <address className="not-italic space-y-4 font-sans">
                 <p className="flex items-start gap-3">
                   <MapPin className="w-5 h-5 text-primary mt-0.5 flex-shrink-0" aria-hidden="true" />
-                  <span>{SITE.address.street}, {SITE.address.locality} {SITE.address.postalCode}</span>
+                  <span>{SITE.address.display}</span>
                 </p>
                 <p className="flex items-start gap-3">
                   <Phone className="w-5 h-5 text-primary mt-0.5 flex-shrink-0" aria-hidden="true" />

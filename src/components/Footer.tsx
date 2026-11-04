@@ -59,7 +59,7 @@ const Footer = () => (
             <ul className="space-y-3 font-sans text-sm">
               <li className="flex items-start gap-2 text-background/75">
                 <MapPin className="w-4 h-4 mt-0.5 flex-shrink-0" aria-hidden="true" />
-                <span>{SITE.address.street}, {SITE.address.locality} {SITE.address.postalCode}</span>
+                <span>{SITE.address.display}</span>
               </li>
               <li>
                 <a href={`tel:${SITE.phone.tel}`} className={`flex items-center gap-2 ${linkClass}`}>

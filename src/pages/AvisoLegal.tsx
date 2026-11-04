@@ -64,7 +64,7 @@ const AvisoLegal = () => {
                   <div className="space-y-2">
                     <p><strong>Titular del sitio web:</strong> Adrián García Lledó</p>
                     <p><strong>NIF:</strong> 35597868D</p>
-                    <p><strong>Domicilio profesional:</strong> Gran Vía Marqués del Turia 49, -1, 46005 Valencia</p>
+                    <p><strong>Domicilio profesional:</strong> Passeig de Russafa, 11, Planta 5ª, Puerta 10, 46002 València, Valencia, España</p>
                     <p><strong>Correo electrónico:</strong> info@dextralawfirm.com</p>
                     <p><strong>Teléfono de contacto:</strong> 624 164 536</p>
                     <p><strong>Colegio profesional:</strong> Ilustre Colegio de la Abogacía de Valencia (ICAV)</p>
@@ -362,7 +362,7 @@ const AvisoLegal = () => {
                       <div className="space-y-2">
                         <p><strong>Correo electrónico:</strong> info@dextralawfirm.com</p>
                         <p><strong>Teléfono de contacto:</strong> 624 164 536</p>
-                        <p><strong>Dirección:</strong> Gran Vía Marqués del Turia 49, -1, 46005 Valencia</p>
+                        <p><strong>Dirección:</strong> Passeig de Russafa, 11, Planta 5ª, Puerta 10, 46002 València, Valencia, España</p>
                       </div>
                     </div>
                   </div>

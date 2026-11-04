@@ -20,7 +20,7 @@ export const SITE = {
   owner: {
     name: "Adrián García Lledó",
     nif: "35597868D",
-    address: "Gran Vía Marqués del Turia 49, -1, 46005 Valencia",
+    address: "Passeig de Russafa, 11, Planta 5ª, Puerta 10, 46002 València, Valencia, España",
     bar: "Ilustre Colegio de la Abogacía de Valencia (ICAV)",
     barNumber: "19.921",
     degree: "Graduado en Derecho y Máster de Acceso a la Abogacía y Procura, título expedido en España.",
@@ -32,6 +32,10 @@ export const SITE = {
     locality: business.address.addressLocality,
     region: business.address.addressRegion,
     country: business.address.addressCountry,
+    /** Dirección en una línea para mostrar en la web. */
+    display: `${business.address.streetAddress}, ${business.address.postalCode} ${business.address.addressLocality}`,
+    /** Consulta para Google Maps: sin planta ni puerta, que dificultan la geolocalización. */
+    mapQuery: "Passeig de Russafa 11, 46002 València",
   },
 
   phone: { display: "+34 624 164 536", tel: business.telephone },
