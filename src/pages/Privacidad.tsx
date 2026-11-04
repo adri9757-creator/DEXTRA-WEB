@@ -121,9 +121,9 @@ const Privacidad = () => (
             <td>Resend (proveedor de envío de correo electrónico)</td>
             <td>Envío por correo electrónico de los mensajes del formulario</td>
             <td>
-              Envío previsto desde la región de la UE (eu-west-1, Irlanda). Resend es una empresa de EE. UU.: las
-              transferencias fuera del EEE deben ampararse en cláusulas contractuales tipo (SCC) de la Comisión Europea.{" "}
-              [POR_CONFIRMAR: revisión y aceptación del DPA de Resend.]
+              El envío de los mensajes del formulario se realiza desde la región de la UE (eu-west-1, Irlanda). Resend es
+              una empresa de EE. UU.: las transferencias fuera del EEE se amparan en las cláusulas contractuales tipo (SCC)
+              de la Comisión Europea incluidas en su acuerdo de tratamiento de datos.
             </td>
           </tr>
           <tr>
