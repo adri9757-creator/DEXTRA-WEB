@@ -49,7 +49,7 @@ const Privacidad = () => (
       </li>
     </ul>
 
-    <h3>2.2. Reserva de citas en Cal.eu</h3>
+    <h3>2.2. Reserva de citas (Cal.com)</h3>
     <ul>
       <li><strong>Datos:</strong> los que facilites en el formulario de reserva (nombre, correo, teléfono y motivo de la cita).</li>
       <li><strong>Finalidad:</strong> gestionar la cita y, en su caso, el pago previo de la consulta según las <Link to="/condiciones">Condiciones</Link>.</li>
@@ -141,9 +141,14 @@ const Privacidad = () => (
             </td>
           </tr>
           <tr>
-            <td>Cal.eu (proveedor de reservas)</td>
+            <td>Cal.com (proveedor de reservas; página de reserva en cal.eu)</td>
             <td>Gestión de reservas de citas</td>
-            <td>[POR_CONFIRMAR: ubicación de los datos y garantías de Cal.eu.]</td>
+            <td>
+              La gestión de reservas se realiza mediante Cal.com, que trata los datos como encargado conforme a su Acuerdo
+              de Tratamiento de Datos. Cuando se produzcan transferencias internacionales de datos, se aplican las
+              garantías previstas en dicho acuerdo, incluidas, cuando resulten aplicables, las cláusulas contractuales
+              tipo de la Comisión Europea, el anexo del Reino Unido y las modificaciones suizas.
+            </td>
           </tr>
         </tbody>
       </table>
@@ -155,7 +160,7 @@ const Privacidad = () => (
 
     <h2>4. Transferencias internacionales</h2>
     <p>
-      Algunos proveedores (Vercel, Resend y, según la configuración de la cuenta, Google) son empresas de Estados Unidos y pueden acceder a datos desde fuera del Espacio
+      Algunos proveedores (Vercel, Resend, Cal.com y, según la configuración de la cuenta, Google) son empresas de Estados Unidos y pueden acceder a datos desde fuera del Espacio
       Económico Europeo. En esos casos, las transferencias se basarán en las cláusulas contractuales tipo aprobadas por la
       Comisión Europea (art. 46.2.c RGPD) y, cuando proceda, en la decisión de adecuación del Marco de Privacidad de Datos
       UE-EE. UU. (art. 45 RGPD). Puedes solicitarnos más información sobre estas garantías.
