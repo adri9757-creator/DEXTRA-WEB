@@ -8,6 +8,12 @@
   "regions": ["cdg1"],
   "redirects": [
     {
+      "source": "/",
+      "has": [{ "type": "host", "value": "dextra-web-one.vercel.app" }],
+      "destination": "https://dextralawfirm.com/",
+      "permanent": true
+    },
+    {
       "source": "/:path*",
       "has": [{ "type": "host", "value": "dextra-web-one.vercel.app" }],
       "destination": "https://dextralawfirm.com/:path*",
