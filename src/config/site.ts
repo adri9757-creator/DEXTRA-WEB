@@ -42,10 +42,9 @@ export const SITE = {
   email: business.email,
 
   /**
-   * Número de WhatsApp en formato internacional sin "+" ni espacios.
-   * [POR_CONFIRMAR] Se usa el número que ya figuraba en la cabecera y en los
-   * casos (624 164 536). Sustituir si el WhatsApp del despacho es otro.
-   * Si se deja vacío, los botones de WhatsApp llevan a /contacto.
+   * Número de WhatsApp del despacho (624 164 536) en formato internacional,
+   * sin "+" ni espacios. Si se deja vacío, los botones de WhatsApp llevan a
+   * /contacto. Verificación final pendiente: ver docs/CHECKLIST.md.
    */
   whatsapp: "34624164536",
   whatsappMessage: "Hola, necesito información sobre sus servicios legales",

@@ -55,7 +55,7 @@ export const SERVICES: ServiceInfo[] = [
   {
     id: "elfsight",
     name: "Reseñas de Google (widget de Elfsight)",
-    provider: "Elfsight [POR_CONFIRMAR: razón social y domicilio del proveedor]",
+    provider: "Elfsight (proveedor del widget de reseñas)",
     purpose: "Mostrar en la página de inicio las reseñas públicas del despacho en Google.",
     category: "thirdParty",
   },

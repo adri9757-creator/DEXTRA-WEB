@@ -91,15 +91,6 @@ const CasoArraigo = () => {
                 </p>
                 
                 <p>
-                  Trabajamos en tres ejes principales:
-                </p>
-                
-                {/* El texto anterior de esta lista pertenecía al caso de reclamación de cantidad (préstamo bancario). */}
-                <p>
-                  <strong>[POR_CONFIRMAR: describir los tres ejes del recurso de arraigo social.]</strong>
-                </p>
-                
-                <p>
                   Con toda esta documentación, interpusimos recurso administrativo detallando, punto por punto, por qué la denegación vulneraba la finalidad de la figura del arraigo social y no se ajustaba a la realidad personal y familiar de los recurrentes.
                 </p>
                 

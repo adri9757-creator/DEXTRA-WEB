@@ -64,12 +64,12 @@ const Cookies = () => (
           </tr>
           <tr>
             <td>Reseñas de Google mediante Elfsight (página de inicio)</td>
-            <td>Elfsight [POR_CONFIRMAR: razón social]; las fotos de perfil se sirven desde servidores de Google</td>
+            <td>Elfsight (proveedor del widget de reseñas); las fotos de perfil se sirven desde servidores de Google</td>
             <td>
               Contenido de terceros. Carga el widget de reseñas desde servidores de Elfsight, que reciben tu dirección IP y
               datos técnicos del navegador y pueden usar almacenamiento propio.
             </td>
-            <td>[POR_CONFIRMAR: según la documentación de Elfsight]</td>
+            <td>Según la política de Elfsight</td>
             <td>Sí</td>
           </tr>
         </tbody>

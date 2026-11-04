@@ -66,17 +66,32 @@ Limitación: Lighthouse se ejecutó contra el servidor local, que no comprime. E
 
 Búscalos con `grep -rn "POR_CONFIRMAR" src`.
 
+### Verificación final antes de publicar
+
+- [ ] **WhatsApp 624 164 536**: confirmado como número válido del despacho. Antes de publicar, enviar un mensaje de prueba desde un botón de la web y comprobar que llega al teléfono del despacho.
+- [ ] **Precio en Cal.eu**: la web no muestra ningún importe. Comprobar que la página de reserva de Cal.eu tampoco muestra un precio antiguo (por ejemplo, 50 €) o que muestra el precio vigente con IVA incluido.
+
+### Datos aún sin confirmar
+
 | Dónde | Qué falta |
 |---|---|
-| `src/config/site.ts` | **Número de WhatsApp**. Se usa provisionalmente el 624 164 536, que ya aparecía en la cabecera y en los casos. El ficticio `960000000` está eliminado. |
 | `src/config/site.ts` | URL directa de la ficha de Google Business (hoy es una búsqueda) y URLs de LinkedIn e Instagram (ocultas mientras estén vacías). |
 | Aviso legal | Aseguradora y ámbito del seguro de RC; datos de la SLP si se constituye. |
-| Privacidad | DPD (sí/no); plazos de conservación (consultas, reservas, clientes y registros); proveedor del correo; razón social y DPA de Resend y Cal.eu; garantías de Vercel. |
-| Cookies / gestor | Razón social de Elfsight y duración de su almacenamiento. |
-| Condiciones | Precio de la consulta con IVA; medios de pago; casilla de renuncia al desistimiento en Cal.eu; proporcionalidad de la retención por inasistencia; hojas de reclamaciones y sistema de resolución alternativa de litigios. |
-| Penal (FAQ) | ¿La primera consulta es gratuita? Contradecía el prepago de las Condiciones. |
-| Caso Arraigo | Los «tres ejes del recurso» (el texto anterior era de otro caso). |
+| Privacidad | DPD (sí/no); conservación concreta de los datos de clientes; proveedor del correo y sus garantías; ubicación y garantías de Cal.eu; DPA de Vercel; firma o aceptación de cada contrato de encargo (art. 28 RGPD). |
+| Privacidad / Resend | Revisión y aceptación del DPA de Resend antes de activar el formulario. |
+| Condiciones | Casilla de renuncia al desistimiento en Cal.eu; proporcionalidad de la retención por inasistencia. |
+| Condiciones | Recargos por medio de pago: la frase se ha eliminado hasta confirmar si se cobran. |
+| Condiciones | Hojas de reclamaciones y sistemas de resolución de conflictos: la frase se ha eliminado hasta confirmar si existen. |
 | Todos los casos | Confirmar autorización del cliente o que no es identificable (p. ej., «familia latinoamericana con menores, 2024»). |
+
+### Resuelto con texto provisional (noviembre de 2026)
+
+- Precio de la consulta: sin importe; se informa antes de la reserva, IVA incluido. Consulta presencial: «precio a consultar». No hay consulta inicial gratuita.
+- Medios de pago: efectivo y transferencia bancaria, con nota sobre los límites legales al pago en efectivo.
+- Penal: «En la primera consulta te facilitamos un presupuesto personalizado según tu caso».
+- Caso Arraigo: eliminados el párrafo incorrecto y la frase «Trabajamos en tres ejes».
+- Conservación de consultas, reservas y registros del servidor: texto genérico aprobado.
+- Encargados: Resend, Cal.eu y Elfsight descritos por su función; duración de Elfsight «según su política».
 
 ## Afirmaciones que conviene revisar (no las he cambiado)
 

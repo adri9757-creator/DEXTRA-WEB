@@ -138,7 +138,7 @@ export const Penal = () => {
     { q: "¿Cuánto tarda un procedimiento penal?", a: "Depende del tipo: procedimientos de juicio rápido se resuelven en días; los ordinarios pueden durar meses. Te informamos de los plazos en cada fase de tu caso específico." },
     { q: "¿Me asisten si soy investigado pero no estoy detenido?", a: "Por supuesto. La defensa técnica es igual de importante en la fase de investigación; te representamos ante el Juzgado de Instrucción en todas las diligencias." },
     { q: "¿Qué estrategia siguen en mi primera consulta?", a: "Estudiamos tu caso concreto, identificamos puntos débiles de la acusación y te explicamos las opciones reales de defensa, con total transparencia sobre expectativas y costes." },
-    { q: "¿Cuánto cuesta la defensa penal?", a: "Depende de la complejidad y duración del procedimiento. En la primera consulta [POR_CONFIRMAR: ¿gratuita o de pago? Las Condiciones prevén consultas con prepago] te facilitamos un presupuesto cerrado y detallado antes de cualquier compromiso." }
+    { q: "¿Cuánto cuesta la defensa penal?", a: "Depende de la complejidad y duración del procedimiento. En la primera consulta te facilitamos un presupuesto personalizado según tu caso." }
   ];
 
   return (

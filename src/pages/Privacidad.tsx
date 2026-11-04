@@ -44,9 +44,8 @@ const Privacidad = () => (
         profesional.
       </li>
       <li>
-        <strong>Conservación:</strong> si la consulta no da lugar a un encargo, conservaremos los datos durante{" "}
-        [POR_CONFIRMAR: plazo, p. ej. 12 meses] para atender posibles aclaraciones, y después se suprimirán o se bloquearán
-        durante los plazos de prescripción de posibles responsabilidades. Si se formaliza un encargo, se aplicará el apartado 2.3.
+        <strong>Conservación:</strong> durante el tiempo necesario para responder a tu consulta y, después, bloqueados
+        durante los plazos legales de prescripción. Si se formaliza un encargo, se aplicará el apartado 2.3.
       </li>
     </ul>
 
@@ -55,7 +54,7 @@ const Privacidad = () => (
       <li><strong>Datos:</strong> los que facilites en el formulario de reserva (nombre, correo, teléfono y motivo de la cita).</li>
       <li><strong>Finalidad:</strong> gestionar la cita y, en su caso, el pago previo de la consulta según las <Link to="/condiciones">Condiciones</Link>.</li>
       <li><strong>Base jurídica:</strong> ejecución del contrato de consulta o medidas precontractuales (art. 6.1.b RGPD).</li>
-      <li><strong>Conservación:</strong> [POR_CONFIRMAR: plazo de conservación de reservas] y, si hay facturación, los plazos fiscales legales.</li>
+      <li><strong>Conservación:</strong> durante el tiempo necesario para gestionar la reserva y, después, bloqueados durante los plazos legales de prescripción; si hay facturación, durante los plazos fiscales legales.</li>
     </ul>
 
     <h3>2.3. Clientes</h3>
@@ -75,7 +74,7 @@ const Privacidad = () => (
       </li>
       <li><strong>Finalidad:</strong> servir la web, garantizar su seguridad y prevenir abusos (por ejemplo, envíos masivos del formulario).</li>
       <li><strong>Base jurídica:</strong> interés legítimo en la seguridad del sitio (art. 6.1.f RGPD).</li>
-      <li><strong>Conservación:</strong> [POR_CONFIRMAR: plazo de retención de registros según el plan de Vercel].</li>
+      <li><strong>Conservación:</strong> según la configuración del proveedor de alojamiento, durante el tiempo mínimo necesario para garantizar la seguridad del servicio.</li>
     </ul>
 
     <h3>2.5. Contenido de terceros (mapa y reseñas)</h3>
@@ -94,8 +93,8 @@ const Privacidad = () => (
     <p>
       No cedemos tus datos a terceros, salvo obligación legal o cuando sea necesario para el encargo profesional (por
       ejemplo, juzgados, tribunales o administraciones públicas ante los que actuemos en tu nombre). Para prestar el
-      servicio contamos con proveedores que tratan datos por cuenta nuestra (encargados del tratamiento), con contrato
-      conforme al art. 28 RGPD:
+      servicio contamos con proveedores que tratan datos por cuenta nuestra (encargados del tratamiento), con los que debe
+      formalizarse el contrato de encargo del art. 28 RGPD [POR_CONFIRMAR: firma o aceptación de cada contrato]:
     </p>
     <div className="overflow-x-auto">
       <table>
@@ -118,10 +117,10 @@ const Privacidad = () => (
             </td>
           </tr>
           <tr>
-            <td>Resend [POR_CONFIRMAR: razón social según el DPA]</td>
+            <td>Resend (proveedor de envío de correo electrónico)</td>
             <td>Envío por correo electrónico de los mensajes del formulario</td>
             <td>
-              Envío configurado desde la región de la UE (eu-west-1, Irlanda). Resend es una empresa de EE. UU.: las
+              Envío previsto desde la región de la UE (eu-west-1, Irlanda). Resend es una empresa de EE. UU.: las
               transferencias fuera del EEE se amparan en cláusulas contractuales tipo (SCC) de la Comisión Europea.{" "}
               [POR_CONFIRMAR: el titular debe revisar y aceptar el DPA de Resend antes de activar el formulario.]
             </td>
@@ -132,7 +131,7 @@ const Privacidad = () => (
             <td>[POR_CONFIRMAR: ubicación y garantías]</td>
           </tr>
           <tr>
-            <td>Cal.eu [POR_CONFIRMAR: razón social según el DPA]</td>
+            <td>Cal.eu (proveedor de reservas)</td>
             <td>Gestión de reservas de citas</td>
             <td>[POR_CONFIRMAR: ubicación de los datos y garantías]</td>
           </tr>

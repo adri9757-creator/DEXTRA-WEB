@@ -102,7 +102,7 @@ const Condiciones = () => {
                     </li>
                     <li className="flex items-start gap-2">
                       <span className="w-5 h-5 text-primary mt-0.5 flex-shrink-0">4.</span>
-                      <span>El Cliente realiza el pago de los honorarios pactados por la consulta (prepago), por el medio acordado (transferencia, TPV, pasarela online, Bizum, etc.).</span>
+                      <span>El Cliente realiza el pago de los honorarios pactados por la consulta (prepago), en efectivo o por transferencia bancaria.</span>
                     </li>
                     <li className="flex items-start gap-2">
                       <span className="w-5 h-5 text-primary mt-0.5 flex-shrink-0">5.</span>
@@ -157,16 +157,22 @@ const Condiciones = () => {
                     4. Precio y forma de pago
                   </h2>
                   <p>
-                    <strong>Precio de la consulta:</strong> [POR_CONFIRMAR: importe por modalidad y duración] €, <strong>IVA (21 %) incluido</strong>. Todos los precios que se comunican al Cliente consumidor incluyen los impuestos aplicables.
+                    El precio de la consulta depende del tipo de asunto y de la complejidad del caso. Antes de confirmar la reserva te informaremos del precio, <strong>IVA incluido</strong>.
                   </p>
                   <p>
-                    El precio final, con impuestos, se muestra al Cliente en la página de reserva (cal.eu) o se le comunica por escrito <strong>antes</strong> de que realice el pago. No se cobran gastos adicionales por el medio de pago [POR_CONFIRMAR].
+                    <strong>Consulta presencial:</strong> precio a consultar.
+                  </p>
+                  <p>
+                    El precio se comunica al Cliente por escrito <strong>antes</strong> de la contratación o reserva y de que realice cualquier pago. No existe consulta inicial gratuita.
                   </p>
                   <p>
                     Los honorarios de actuaciones posteriores (demandas, recursos, asistencia en procedimientos) no están incluidos en la consulta y se presupuestan por escrito en la correspondiente hoja de encargo.
                   </p>
                   <p>
-                    El pago se realizará con carácter previo a la consulta (prepago), mediante los medios aceptados por el despacho: [POR_CONFIRMAR: transferencia bancaria, tarjeta a través de la pasarela de cal.eu, Bizum…]. Tras el pago se emitirá la correspondiente factura.
+                    El pago se realizará con carácter previo a la consulta (prepago). <strong>Medios de pago:</strong> efectivo y transferencia bancaria. Tras el pago se emitirá la correspondiente factura.
+                  </p>
+                  <p>
+                    Los pagos en efectivo están sujetos a los límites legales vigentes en España. Para importes superiores a dichos límites, se utilizará transferencia bancaria u otro medio de pago trazable.
                   </p>
                   <p>
                     La consulta se entenderá correctamente contratada y confirmada una vez Dextra Law Firm haya verificado la recepción del pago y lo haya confirmado al Cliente.
@@ -326,7 +332,7 @@ const Condiciones = () => {
                     El Cliente puede dirigir sus quejas o reclamaciones a <a href="mailto:info@dextralawfirm.com" className="font-semibold underline underline-offset-2">info@dextralawfirm.com</a> o a la dirección postal del despacho. Se responderá en el menor plazo posible y, en todo caso, en el plazo máximo de un mes.
                   </p>
                   <p>
-                    También puede acudir al servicio de atención a consumidores y usuarios del Ilustre Colegio de la Abogacía de Valencia (<a href="https://www.icav.es" target="_blank" rel="noopener noreferrer" className="font-semibold underline underline-offset-2">www.icav.es</a>) y a los organismos de consumo competentes. [POR_CONFIRMAR: indicar si el despacho dispone de hojas de reclamaciones oficiales de la Comunitat Valenciana y si está adherido a algún sistema de resolución alternativa de litigios.]
+                    También puede acudir al servicio de atención a consumidores y usuarios del Ilustre Colegio de la Abogacía de Valencia (<a href="https://www.icav.es" target="_blank" rel="noopener noreferrer" className="font-semibold underline underline-offset-2">www.icav.es</a>) y a los organismos de consumo competentes.
                   </p>
                 </section>
 
