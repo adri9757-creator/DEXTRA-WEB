@@ -202,7 +202,10 @@ const Condiciones = () => {
                     En las consultas por videoconferencia, si existen problemas técnicos imputables al despacho que impidan realizar la sesión, se ofrecerá una nueva cita sin coste adicional para el Cliente.
                   </p>
                   <p>
-                    Lo dispuesto en este apartado se entiende sin perjuicio del derecho de desistimiento del Cliente consumidor regulado en el apartado 6. [POR_CONFIRMAR: revisar que la retención por inasistencia sea proporcionada al coste real de la reserva.]
+                    <strong>Inasistencia:</strong> si el Cliente no asiste a la cita y no justifica la inasistencia, no se devolverá el importe abonado. La inasistencia podrá justificarse comunicándolo a info@dextralawfirm.com en un plazo de 48 horas desde la fecha y hora fijadas para la cita. Las cancelaciones o cambios comunicados con aviso previo no se consideran inasistencia y se rigen por la política de cancelaciones de este apartado.
+                  </p>
+                  <p>
+                    Lo dispuesto en este apartado se entiende sin perjuicio del derecho de desistimiento del Cliente consumidor regulado en el apartado 6.
                   </p>
                 </section>
 
@@ -230,7 +233,7 @@ const Condiciones = () => {
                     <p className="font-semibold">Modelo de formulario de desistimiento</p>
                     <p className="mt-2">(Solo debe cumplimentarse y enviarse si se desea desistir del contrato.)</p>
                     <p className="mt-2">
-                      A la atención de Adrián García Lledó (Dextra Law Firm), Passeig de Russafa, 11, Planta 5ª, Puerta 10, 46002 València, Valencia, España, info@dextralawfirm.com:
+                      A la atención de Dextra Law Firm, Passeig de Russafa, 11, Planta 5ª, Puerta 10, 46002 València, Valencia, España, info@dextralawfirm.com:
                     </p>
                     <p className="mt-2">Por la presente le comunico que desisto de mi contrato de prestación del siguiente servicio: ______.</p>
                     <p>Contratado el: ______.</p>
