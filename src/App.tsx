@@ -1,86 +1,103 @@
-import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
+import { lazy, Suspense, useEffect, useRef } from "react";
 import { BrowserRouter, Route, Routes, useLocation } from "react-router-dom";
-import { Toaster as Sonner } from "@/components/ui/sonner";
-import { TooltipProvider } from "@/components/ui/tooltip";
-import { useEffect } from "react";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import MobileFixedCTA from "@/components/MobileFixedCTA";
+import CookieConsent from "@/components/consent/CookieConsent";
 import Home from "@/pages/Home";
-import Despacho from "@/pages/Despacho";
-import Equipo from "@/pages/Equipo";
-import Areas from "@/pages/Areas";
-import { Penal, Extranjeria, Civil } from "@/pages/ServicePages";
-import Casos from "@/pages/Casos";
-import Blog from "@/pages/Blog";
-import BlogPost from "@/pages/BlogPost";
-import BlogDeuda from "@/pages/BlogDeuda";
-import CasoEstafa from "@/pages/casos/CasoEstafa";
-import CasoArraigo from "@/pages/casos/CasoArraigo";
-import CasoReclamacion from "@/pages/casos/CasoReclamacion";
-import CasoLesiones from "@/pages/casos/CasoLesiones";
-import CasoTeletrabajador from "@/pages/casos/CasoTeletrabajador";
-import CasoReclamacionImpago from "@/pages/casos/CasoReclamacionImpago";
-import Condiciones from "@/pages/Condiciones";
-import AvisoLegal from "@/pages/AvisoLegal";
-import Privacidad from "@/pages/Privacidad";
-import Cookies from "@/pages/Cookies";
-import PoliticaCookies from "@/pages/PoliticaCookies";
-import Contacto from "@/pages/Contacto";
-import NotFound from "@/pages/NotFound";
+import { usePageMeta } from "@/lib/seo";
 
-const queryClient = new QueryClient();
+// La portada se carga de inmediato; el resto de páginas, bajo demanda
+// (cada una en su propio fichero JS, para reducir el JavaScript inicial).
+const Despacho = lazy(() => import("@/pages/Despacho"));
+const Equipo = lazy(() => import("@/pages/Equipo"));
+const Areas = lazy(() => import("@/pages/Areas"));
+const Penal = lazy(() => import("@/pages/ServicePages").then((m) => ({ default: m.Penal })));
+const Extranjeria = lazy(() => import("@/pages/ServicePages").then((m) => ({ default: m.Extranjeria })));
+const Civil = lazy(() => import("@/pages/ServicePages").then((m) => ({ default: m.Civil })));
+const Casos = lazy(() => import("@/pages/Casos"));
+const CasoEstafa = lazy(() => import("@/pages/casos/CasoEstafa"));
+const CasoArraigo = lazy(() => import("@/pages/casos/CasoArraigo"));
+const CasoReclamacion = lazy(() => import("@/pages/casos/CasoReclamacion"));
+const CasoLesiones = lazy(() => import("@/pages/casos/CasoLesiones"));
+const CasoTeletrabajador = lazy(() => import("@/pages/casos/CasoTeletrabajador"));
+const CasoReclamacionImpago = lazy(() => import("@/pages/casos/CasoReclamacionImpago"));
+const Blog = lazy(() => import("@/pages/Blog"));
+const BlogPost = lazy(() => import("@/pages/BlogPost"));
+const BlogDeuda = lazy(() => import("@/pages/BlogDeuda"));
+const Contacto = lazy(() => import("@/pages/Contacto"));
+const Condiciones = lazy(() => import("@/pages/Condiciones"));
+const AvisoLegal = lazy(() => import("@/pages/AvisoLegal"));
+const Privacidad = lazy(() => import("@/pages/Privacidad"));
+const Cookies = lazy(() => import("@/pages/Cookies"));
+const Seguridad = lazy(() => import("@/pages/Seguridad"));
+const NotFound = lazy(() => import("@/pages/NotFound"));
 
-const ScrollToTop = () => {
+/**
+ * Al cambiar de página: vuelve arriba y lleva el foco al contenido principal,
+ * para que lectores de pantalla y teclado no se queden en el menú.
+ */
+const RouteChangeHandler = () => {
   const { pathname } = useLocation();
+  const first = useRef(true);
+  usePageMeta();
 
   useEffect(() => {
     window.scrollTo(0, 0);
+    if (first.current) {
+      first.current = false;
+      return;
+    }
+    document.getElementById("contenido")?.focus({ preventScroll: true });
   }, [pathname]);
 
   return null;
 };
 
 const App = () => (
-  <QueryClientProvider client={queryClient}>
-    <TooltipProvider>
-      <Sonner />
-      <BrowserRouter>
-        <ScrollToTop />
-        <Header />
-        <main className="pb-16 lg:pb-0">
-          <Routes>
-            <Route path="/" element={<Home />} />
-            <Route path="/despacho" element={<Despacho />} />
-            <Route path="/equipo" element={<Equipo />} />
-            <Route path="/areas" element={<Areas />} />
-            <Route path="/penal/abogados-penalistas-valencia" element={<Penal />} />
-            <Route path="/extranjeria/abogado-extranjeria-valencia" element={<Extranjeria />} />
-            <Route path="/civil/abogado-reclamacion-cantidades-valencia" element={<Civil />} />
-            <Route path="/casos" element={<Casos />} />
-            <Route path="/casos/absolucion-delito-leve-estafa" element={<CasoEstafa />} />
-            <Route path="/casos/arraigo-social-aprobado" element={<CasoArraigo />} />
-            <Route path="/casos/reclamacion-cantidad-desestimada" element={<CasoReclamacion />} />
-            <Route path="/casos/absolucion-delito-lesiones" element={<CasoLesiones />} />
-            <Route path="/casos/residencia-teletrabajador-internacional" element={<CasoTeletrabajador />} />
-            <Route path="/casos/reclamacion-cantidad-impago" element={<CasoReclamacionImpago />} />
-            <Route path="/condiciones" element={<Condiciones />} />
-            <Route path="/aviso-legal" element={<AvisoLegal />} />
-            <Route path="/privacidad" element={<Privacidad />} />
-            <Route path="/cookies" element={<Cookies />} />
-            <Route path="/politica-cookies" element={<PoliticaCookies />} />
-            <Route path="/blog" element={<Blog />} />
-            <Route path="/blog/que-hacer-si-te-detienen-valencia" element={<BlogDeuda />} />
-            <Route path="/blog/como-reclamar-una-deuda" element={<BlogPost />} />
-            <Route path="/contacto" element={<Contacto />} />
-            <Route path="*" element={<NotFound />} />
-          </Routes>
-        </main>
-        <Footer />
-        <MobileFixedCTA />
-      </BrowserRouter>
-    </TooltipProvider>
-  </QueryClientProvider>
+  <BrowserRouter>
+    <a
+      href="#contenido"
+      className="sr-only focus:not-sr-only focus:fixed focus:left-4 focus:top-4 focus:z-[70] focus:rounded-md focus:bg-foreground focus:px-4 focus:py-3 focus:font-sans focus:text-sm focus:font-semibold focus:text-background"
+    >
+      Saltar al contenido
+    </a>
+    <RouteChangeHandler />
+    <Header />
+    <main id="contenido" tabIndex={-1} className="pb-16 lg:pb-0 outline-none">
+      <Suspense fallback={<div className="min-h-screen" aria-busy="true" />}>
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/despacho" element={<Despacho />} />
+          <Route path="/equipo" element={<Equipo />} />
+          <Route path="/areas" element={<Areas />} />
+          <Route path="/penal/abogados-penalistas-valencia" element={<Penal />} />
+          <Route path="/extranjeria/abogado-extranjeria-valencia" element={<Extranjeria />} />
+          <Route path="/civil/abogado-reclamacion-cantidades-valencia" element={<Civil />} />
+          <Route path="/casos" element={<Casos />} />
+          <Route path="/casos/absolucion-delito-leve-estafa" element={<CasoEstafa />} />
+          <Route path="/casos/arraigo-social-aprobado" element={<CasoArraigo />} />
+          <Route path="/casos/reclamacion-cantidad-desestimada" element={<CasoReclamacion />} />
+          <Route path="/casos/absolucion-delito-lesiones" element={<CasoLesiones />} />
+          <Route path="/casos/residencia-teletrabajador-internacional" element={<CasoTeletrabajador />} />
+          <Route path="/casos/reclamacion-cantidad-impago" element={<CasoReclamacionImpago />} />
+          <Route path="/condiciones" element={<Condiciones />} />
+          <Route path="/aviso-legal" element={<AvisoLegal />} />
+          <Route path="/privacidad" element={<Privacidad />} />
+          <Route path="/cookies" element={<Cookies />} />
+          <Route path="/seguridad" element={<Seguridad />} />
+          <Route path="/blog" element={<Blog />} />
+          <Route path="/blog/que-hacer-si-te-detienen-valencia" element={<BlogDeuda />} />
+          <Route path="/blog/como-reclamar-una-deuda" element={<BlogPost />} />
+          <Route path="/contacto" element={<Contacto />} />
+          <Route path="*" element={<NotFound />} />
+        </Routes>
+      </Suspense>
+    </main>
+    <Footer />
+    <MobileFixedCTA />
+    <CookieConsent />
+  </BrowserRouter>
 );
 
 export default App;

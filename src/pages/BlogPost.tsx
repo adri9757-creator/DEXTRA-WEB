@@ -1,4 +1,5 @@
 import Section from "@/components/Section";
+import { BookingLink } from "@/components/CtaLinks";
 import { Link } from "react-router-dom";
 import { ArrowLeft, Clock, Calendar, User, Tag } from "lucide-react";
 
@@ -179,7 +180,7 @@ En Dextra Law Firm, te ofrecemos un abogado civil especializado en reclamaciones
         <div className="container">
           <Link 
             to="/blog" 
-            className="inline-flex items-center gap-2 text-primary font-sans font-semibold text-sm mb-6 hover:gap-3 transition-all"
+            className="inline-flex items-center gap-2 text-primary-strong font-sans font-semibold text-sm mb-6 hover:gap-3 transition-all"
           >
             <ArrowLeft className="w-4 h-4" />
             Volver a Publicaciones
@@ -187,7 +188,7 @@ En Dextra Law Firm, te ofrecemos un abogado civil especializado en reclamaciones
           
           <div className="max-w-4xl">
             <div className="flex items-center gap-3 mb-4">
-              <span className="inline-block bg-primary/10 text-primary font-sans text-xs font-semibold px-3 py-1 rounded-full">{post.category}</span>
+              <span className="inline-block bg-primary/10 text-primary-strong font-sans text-xs font-semibold px-3 py-1 rounded-full">{post.category}</span>
               <span className="flex items-center gap-1 text-muted-foreground font-sans text-sm">
                 <Clock className="w-4 h-4" /> {post.readTime}
               </span>
@@ -258,14 +259,9 @@ En Dextra Law Firm, te ofrecemos un abogado civil especializado en reclamaciones
               <p className="text-muted-foreground font-sans mb-6">
                 Si tienes una deuda impagada y necesitas ayuda profesional, contacta con nuestros abogados especialistas en derecho civil.
               </p>
-              <a
-                href="https://www.cal.eu/adrian-garcia-lledo-babrwp"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 bg-primary text-primary-foreground px-6 py-3 rounded-lg font-sans font-semibold hover:bg-primary/90 transition-colors"
-              >
+              <BookingLink className="inline-flex items-center gap-2 bg-primary text-primary-foreground px-6 py-3 rounded-lg font-sans font-semibold hover:bg-primary/90 transition-colors">
                 Consultar Abogado
-              </a>
+              </BookingLink>
             </div>
           </div>
         </div>

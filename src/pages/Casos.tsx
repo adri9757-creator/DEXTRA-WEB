@@ -1,12 +1,7 @@
-import Section from "@/components/Section";
+import CaseDisclaimer from "@/components/CaseDisclaimer";
+import { WhatsAppLink } from "@/components/CtaLinks";
 import { Link } from "react-router-dom";
 import { ArrowRight } from "lucide-react";
-import CasoEstafa from "./casos/CasoEstafa";
-import CasoArraigo from "./casos/CasoArraigo";
-import CasoReclamacion from "./casos/CasoReclamacion";
-import CasoLesiones from "./casos/CasoLesiones";
-import CasoTeletrabajador from "./casos/CasoTeletrabajador";
-import CasoReclamacionImpago from "./casos/CasoReclamacionImpago";
 
 const cases = [
   { area: "Penal", title: "Absolución por delito leve de estafa", text: "Cliente acusado de estafa en una compraventa online fue absuelto tras demostrar la ausencia de engaño y la legitimidad de la operación.", link: "/casos/absolucion-delito-leve-estafa" },
@@ -21,10 +16,10 @@ const Casos = () => (
   <>
     <section className="pt-32 pb-16">
       <div className="container">
-        <h1 className="text-4xl md:text-5xl font-bold">Casos de éxito</h1>
+        <h1 className="text-4xl md:text-5xl font-bold">Casos</h1>
         <div className="w-16 h-1 bg-primary mt-6" />
         <p className="mt-6 text-muted-foreground font-sans text-lg max-w-2xl text-justify">
-          Resultados reales que demuestran nuestra forma de trabajar.
+          Ejemplos anonimizados de asuntos en los que hemos intervenido, para que conozcas nuestra forma de trabajar.
         </p>
       </div>
     </section>
@@ -38,13 +33,13 @@ const Casos = () => (
             className="group bg-background border border-border rounded-xl p-6 hover:shadow-lg transition-all duration-300 hover:border-primary/50 block"
           >
             <div className="flex items-center gap-2 mb-3">
-              <span className="inline-block bg-primary/10 text-primary font-sans text-xs font-semibold px-3 py-1 rounded-full">
+              <span className="inline-block bg-primary/10 text-primary-strong font-sans text-xs font-semibold px-3 py-1 rounded-full">
                 {caseItem.area}
               </span>
             </div>
-            <h3 className="text-xl font-bold mb-3 group-hover:text-primary transition-colors">
+            <h2 className="text-xl font-bold mb-3 group-hover:text-primary transition-colors">
               {caseItem.title}
-            </h3>
+            </h2>
             <p className="text-muted-foreground font-sans text-sm leading-relaxed mb-4">
               {caseItem.text}
             </p>
@@ -55,22 +50,15 @@ const Casos = () => (
           </Link>
         ))}
       </div>
-      <p className="text-xs text-muted-foreground font-sans mt-12 italic text-center">
-        *Todos los datos han sido modificados para proteger la identidad y privacidad de nuestros clientes. Los resultados pasados no garantizan resultados futuros.
-      </p>
+      <CaseDisclaimer className="mt-12" />
     </div>
 
     <section className="bg-foreground text-background py-20">
       <div className="container text-center">
-        <h2 className="text-3xl font-bold mb-6">¿Quieres que tu caso sea el próximo éxito?</h2>
-        <a
-          href="https://wa.me/34624164536"
-          target="_blank"
-          rel="noopener noreferrer"
-          className="inline-flex items-center gap-2 bg-primary text-primary-foreground px-8 py-4 rounded-md font-semibold font-sans hover:opacity-90 transition-all hover:scale-105"
-        >
+        <h2 className="text-3xl font-bold mb-6">¿Quieres que estudiemos tu caso?</h2>
+        <WhatsAppLink className="inline-flex items-center gap-2 bg-primary text-primary-foreground px-8 py-4 rounded-md font-semibold font-sans hover:bg-primary/90 transition-all">
           Contactar <ArrowRight className="w-4 h-4" />
-        </a>
+        </WhatsAppLink>
       </div>
     </section>
   </>

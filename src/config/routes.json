@@ -1,0 +1,30 @@
+{
+  "$comment": "Fuente única de metadatos SEO por ruta. La usan la app (título y meta en navegación) y scripts/build-seo.mjs (HTML estático por ruta, sitemap.xml). Al añadir una página: añadir aquí su entrada y su <Route> en src/App.tsx.",
+  "defaultImage": "/og-image.jpg",
+  "routes": [
+    { "path": "/", "title": "Dextra Law Firm – Abogados en Valencia | Penal, Extranjería y Civil", "description": "Despacho de abogados en Valencia: derecho penal, extranjería y civil. Te explicamos tus opciones con claridad y diseñamos la estrategia de tu caso.", "priority": 1.0 },
+    { "path": "/despacho", "title": "Quiénes somos | Dextra Law Firm", "description": "Conoce Dextra Law Firm, despacho de abogados en Valencia: claridad, acompañamiento y transparencia en cada caso.", "priority": 0.7 },
+    { "path": "/areas", "title": "Áreas de práctica | Dextra Law Firm", "description": "Derecho penal, derecho de extranjería y derecho civil en Valencia. Descubre en qué podemos ayudarte.", "priority": 0.8 },
+    { "path": "/equipo", "title": "Equipo | Dextra Law Firm", "description": "El equipo de Dextra Law Firm y nuestra forma de trabajar: atención directa, rigor y transparencia.", "priority": 0.6 },
+    { "path": "/penal/abogados-penalistas-valencia", "title": "Abogado penalista en Valencia | Dextra Law Firm", "description": "Asistencia en comisaría, defensa en juicio y recursos penales en Valencia. Te explicamos tu situación y tus opciones.", "priority": 0.9 },
+    { "path": "/extranjeria/abogado-extranjeria-valencia", "title": "Abogado de extranjería en Valencia | Dextra Law Firm", "description": "Residencia, arraigo, nacionalidad, renovaciones y recursos de extranjería en Valencia.", "priority": 0.9 },
+    { "path": "/civil/abogado-reclamacion-cantidades-valencia", "title": "Abogado civil y reclamación de cantidades en Valencia | Dextra Law Firm", "description": "Reclamaciones de cantidad, contratos, desahucios e indemnizaciones en Valencia.", "priority": 0.9 },
+    { "path": "/casos", "title": "Casos | Dextra Law Firm", "description": "Ejemplos anonimizados de asuntos tramitados por el despacho. Cada caso es distinto y los resultados anteriores no garantizan resultados futuros.", "priority": 0.6 },
+    { "path": "/casos/absolucion-delito-leve-estafa", "title": "Caso: absolución por delito leve de estafa | Dextra Law Firm", "description": "Caso anonimizado de derecho penal: absolución en un procedimiento por delito leve de estafa en una compraventa online.", "priority": 0.4 },
+    { "path": "/casos/arraigo-social-aprobado", "title": "Caso: arraigo social tras denegación inicial | Dextra Law Firm", "description": "Caso anonimizado de extranjería: recurso frente a una denegación de arraigo social.", "priority": 0.4 },
+    { "path": "/casos/reclamacion-cantidad-desestimada", "title": "Caso: reclamación de cantidad desestimada | Dextra Law Firm", "description": "Caso anonimizado de derecho civil: defensa frente a una reclamación de cantidad.", "priority": 0.4 },
+    { "path": "/casos/absolucion-delito-lesiones", "title": "Caso: absolución por delito de lesiones | Dextra Law Firm", "description": "Caso anonimizado de derecho penal: absolución en un procedimiento por delito de lesiones.", "priority": 0.4 },
+    { "path": "/casos/residencia-teletrabajador-internacional", "title": "Caso: residencia de teletrabajador internacional | Dextra Law Firm", "description": "Caso anonimizado de extranjería: recurso frente a la denegación de una autorización de teletrabajo internacional.", "priority": 0.4 },
+    { "path": "/casos/reclamacion-cantidad-impago", "title": "Caso: reclamación de cantidad por impago | Dextra Law Firm", "description": "Caso anonimizado de derecho civil: reclamación de facturas impagadas.", "priority": 0.4 },
+    { "path": "/blog", "title": "Publicaciones | Dextra Law Firm", "description": "Información práctica sobre derecho penal, extranjería y derecho civil.", "priority": 0.6 },
+    { "path": "/blog/que-hacer-si-te-detienen-valencia", "title": "¿Qué hacer si te detienen en Valencia? | Dextra Law Firm", "description": "Tus derechos y los plazos legales si eres detenido en Valencia.", "priority": 0.6, "type": "article" },
+    { "path": "/blog/como-reclamar-una-deuda", "title": "Cómo reclamar una deuda: guía paso a paso | Dextra Law Firm", "description": "Pasos, plazos y procedimientos para reclamar una deuda.", "priority": 0.6, "type": "article" },
+    { "path": "/contacto", "title": "Contacto | Dextra Law Firm", "description": "Contacta con Dextra Law Firm en Valencia: formulario, teléfono, correo electrónico y dirección del despacho.", "priority": 0.8 },
+    { "path": "/aviso-legal", "title": "Aviso legal | Dextra Law Firm", "description": "Aviso legal e información del titular del sitio web conforme a la LSSI-CE.", "priority": 0.2 },
+    { "path": "/privacidad", "title": "Política de privacidad | Dextra Law Firm", "description": "Cómo tratamos tus datos personales conforme al RGPD y la LOPDGDD.", "priority": 0.2 },
+    { "path": "/cookies", "title": "Política de cookies | Dextra Law Firm", "description": "Qué cookies y tecnologías similares usa este sitio y cómo gestionar tus preferencias.", "priority": 0.2 },
+    { "path": "/condiciones", "title": "Condiciones generales de contratación | Dextra Law Firm", "description": "Condiciones de contratación de consultas jurídicas presenciales y por videoconferencia.", "priority": 0.2 },
+    { "path": "/seguridad", "title": "Política de seguridad | Dextra Law Firm", "description": "Medidas de seguridad del sitio web y cómo comunicar una vulnerabilidad.", "priority": 0.1 }
+  ],
+  "notFound": { "title": "Página no encontrada | Dextra Law Firm", "description": "La página que buscas no existe o ha cambiado de dirección." }
+}

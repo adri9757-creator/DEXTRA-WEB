@@ -1,4 +1,6 @@
 import Section from "@/components/Section";
+import { BookingLink } from "@/components/CtaLinks";
+import CaseDisclaimer from "@/components/CaseDisclaimer";
 import { Link } from "react-router-dom";
 import { ArrowLeft, Calendar, User, Scale, CheckCircle } from "lucide-react";
 
@@ -10,7 +12,7 @@ const CasoArraigo = () => {
         <div className="container">
           <Link 
             to="/casos" 
-            className="inline-flex items-center gap-2 text-primary font-sans font-semibold text-sm mb-6 hover:gap-3 transition-all"
+            className="inline-flex items-center gap-2 text-primary-strong font-sans font-semibold text-sm mb-6 hover:gap-3 transition-all"
           >
             <ArrowLeft className="w-4 h-4" />
             Volver a Casos de Éxito
@@ -18,7 +20,7 @@ const CasoArraigo = () => {
           
           <div className="max-w-4xl">
             <div className="flex items-center gap-3 mb-4">
-              <span className="inline-block bg-primary/10 text-primary font-sans text-xs font-semibold px-3 py-1 rounded-full">Extranjería</span>
+              <span className="inline-block bg-primary/10 text-primary-strong font-sans text-xs font-semibold px-3 py-1 rounded-full">Extranjería</span>
               <span className="inline-flex items-center gap-1 text-muted-foreground font-sans text-sm">
                 <Calendar className="w-4 h-4" /> 2024
               </span>
@@ -66,16 +68,16 @@ const CasoArraigo = () => {
                 
                 <ul className="ml-4 mb-4 space-y-2">
                   <li className="flex items-start gap-2">
-                    <CheckCircle className="w-5 h-5 text-orange-600 mt-0.5 flex-shrink-0" />
-                    <span><strong>Dudas sobre la continuidad de la residencia en España durante los últimos tres años, por constar períodos sin empadronamiento actualizado.</strong> Siguen apareciendo verdes, y tienen que ser naranjas como en el resto.</span>
+                    <CheckCircle className="w-5 h-5 text-primary-strong mt-0.5 flex-shrink-0" />
+                    <span><strong>Dudas sobre la continuidad de la residencia en España durante los últimos tres años, por constar períodos sin empadronamiento actualizado.</strong></span>
                   </li>
                   <li className="flex items-start gap-2">
-                    <CheckCircle className="w-5 h-5 text-orange-600 mt-0.5 flex-shrink-0" />
-                    <span><strong>Consideración de que el informe de arraigo social emitido por el Ayuntamiento era insuficiente para acreditar la plena integración en la comunidad.</strong> Siguen apareciendo verdes, y tienen que ser naranjas como en el resto.</span>
+                    <CheckCircle className="w-5 h-5 text-primary-strong mt-0.5 flex-shrink-0" />
+                    <span><strong>Consideración de que el informe de arraigo social emitido por el Ayuntamiento era insuficiente para acreditar la plena integración en la comunidad.</strong></span>
                   </li>
                   <li className="flex items-start gap-2">
-                    <CheckCircle className="w-5 h-5 text-orange-600 mt-0.5 flex-shrink-0" />
-                    <span><strong>Falta de valoración adecuada de la oferta de empleo presentada, al cuestionarse su estabilidad y adecuación a la normativa laboral.</strong> Siguen apareciendo verdes, y tienen que ser naranjas como en el resto.</span>
+                    <CheckCircle className="w-5 h-5 text-primary-strong mt-0.5 flex-shrink-0" />
+                    <span><strong>Falta de valoración adecuada de la oferta de empleo presentada, al cuestionarse su estabilidad y adecuación a la normativa laboral.</strong></span>
                   </li>
                 </ul>
                 
@@ -92,20 +94,10 @@ const CasoArraigo = () => {
                   Trabajamos en tres ejes principales:
                 </p>
                 
-                <ul className="ml-4 mb-4 space-y-2">
-                  <li className="flex items-start gap-2">
-                    <CheckCircle className="w-5 h-5 text-orange-600 mt-0.5 flex-shrink-0" />
-                    <span><strong>La existencia de un contrato de préstamo personal suscrito con nuestra clienta.</strong></span>
-                  </li>
-                  <li className="flex items-start gap-2">
-                    <CheckCircle className="w-5 h-5 text-orange-600 mt-0.5 flex-shrink-0" />
-                    <span><strong>El impago de diversas cuotas, que habría generado el vencimiento anticipado y el saldo que se reclamaba.</strong></span>
-                  </li>
-                  <li className="flex items-start gap-2">
-                    <CheckCircle className="w-5 h-5 text-orange-600 mt-0.5 flex-shrink-0" />
-                    <span><strong>Que la cantidad reflejada en un extracto resumido y en un certificado interno de deuda era líquida, vencida y exigible.</strong> Siguen siendo verdes y tendrían que ser naranjas como en el resto.</span>
-                  </li>
-                </ul>
+                {/* El texto anterior de esta lista pertenecía al caso de reclamación de cantidad (préstamo bancario). */}
+                <p>
+                  <strong>[POR_CONFIRMAR: describir los tres ejes del recurso de arraigo social.]</strong>
+                </p>
                 
                 <p>
                   Con toda esta documentación, interpusimos recurso administrativo detallando, punto por punto, por qué la denegación vulneraba la finalidad de la figura del arraigo social y no se ajustaba a la realidad personal y familiar de los recurrentes.
@@ -117,24 +109,24 @@ const CasoArraigo = () => {
                 </p>
                 
                 <div className="mt-8 p-6 bg-gradient-to-br from-orange-50 to-orange-100 border border-orange-300 rounded-lg">
-                  <h4 className="text-lg font-bold mb-2 text-orange-600 text-center">Resultado del Caso</h4>
+                  <h4 className="text-lg font-bold mb-2 text-primary-strong text-center">Resultado del Caso</h4>
                   <p className="text-black text-justify">
                     Como consecuencia, se concedió la autorización de residencia temporal por circunstancias excepcionales de arraigo social a ambos progenitores, con la consiguiente regularización de su situación y la protección derivada para sus hijos menores.
                   </p>
                   <p className="text-black mt-2 text-justify">
-                    Como consecuencia, se concedió:
+                    En el recurso quedaron acreditados:
                   </p>
                   <ul className="ml-4 space-y-2 text-black">
                     <li className="flex items-start gap-2">
-                      <CheckCircle className="w-5 h-5 text-orange-600 mt-0.5 flex-shrink-0" />
+                      <CheckCircle className="w-5 h-5 text-primary-strong mt-0.5 flex-shrink-0" />
                       <span><strong>Una residencia efectiva y continuada en España superior a tres años.</strong></span>
                     </li>
                     <li className="flex items-start gap-2">
-                      <CheckCircle className="w-5 h-5 text-orange-600 mt-0.5 flex-shrink-0" />
+                      <CheckCircle className="w-5 h-5 text-primary-strong mt-0.5 flex-shrink-0" />
                       <span><strong>Un claro arraigo social y familiar, con menores plenamente integrados en el sistema educativo español.</strong></span>
                     </li>
                     <li className="flex items-start gap-2">
-                      <CheckCircle className="w-5 h-5 text-orange-600 mt-0.5 flex-shrink-0" />
+                      <CheckCircle className="w-5 h-5 text-primary-strong mt-0.5 flex-shrink-0" />
                       <span><strong>Una oferta de empleo ajustada a derecho, suficiente para garantizar unos medios de vida estables.</strong></span>
                     </li>
                   </ul>
@@ -142,21 +134,17 @@ const CasoArraigo = () => {
               </div>
             </div>
             
+            <CaseDisclaimer className="mt-8" />
+
             {/* CTA */}
             <div className="mt-12 p-8 bg-gradient-to-br from-primary/10 to-primary/5 rounded-2xl border border-primary/20 text-center">
               <h3 className="text-2xl font-bold mb-4">¿Necesitas ayuda con tu solicitud de arraigo?</h3>
               <p className="text-black font-sans mb-6 text-justify">
                 Si tienes problemas con tu solicitud de residencia por arraigo social o has recibido una denegación, contacta con nuestros abogados especialistas en derecho de extranjería.
               </p>
-              <a
-                href="https://wa.me/34624164536"
-                target="_blank"
-                rel="noopener noreferrer"
-                onClick={() => window.open('https://www.cal.eu/adrian-garcia-lledo-babrwp', '_blank')}
-                className="inline-flex items-center gap-2 bg-primary text-primary-foreground px-6 py-3 rounded-lg font-sans font-semibold hover:bg-primary/90 transition-colors"
-              >
+              <BookingLink className="inline-flex items-center gap-2 bg-primary text-primary-foreground px-6 py-3 rounded-lg font-sans font-semibold hover:bg-primary/90 transition-colors">
                 Consultar con un Abogado
-              </a>
+              </BookingLink>
             </div>
           </div>
         </div>

@@ -1,4 +1,6 @@
 import Section from "@/components/Section";
+import { BookingLink } from "@/components/CtaLinks";
+import CaseDisclaimer from "@/components/CaseDisclaimer";
 import { Link } from "react-router-dom";
 import { ArrowLeft, Calendar, User, Scale, CheckCircle } from "lucide-react";
 
@@ -10,7 +12,7 @@ const CasoTeletrabajador = () => {
         <div className="container">
           <Link 
             to="/casos" 
-            className="inline-flex items-center gap-2 text-primary font-sans font-semibold text-sm mb-6 hover:gap-3 transition-all"
+            className="inline-flex items-center gap-2 text-primary-strong font-sans font-semibold text-sm mb-6 hover:gap-3 transition-all"
           >
             <ArrowLeft className="w-4 h-4" />
             Volver a Casos de Éxito
@@ -18,7 +20,7 @@ const CasoTeletrabajador = () => {
           
           <div className="max-w-4xl">
             <div className="flex items-center gap-3 mb-4">
-              <span className="inline-block bg-primary/10 text-primary font-sans text-xs font-semibold px-3 py-1 rounded-full">Extranjería</span>
+              <span className="inline-block bg-primary/10 text-primary-strong font-sans text-xs font-semibold px-3 py-1 rounded-full">Extranjería</span>
               <span className="inline-flex items-center gap-1 text-muted-foreground font-sans text-sm">
                 <Calendar className="w-4 h-4" /> 2024
               </span>
@@ -70,15 +72,15 @@ const CasoTeletrabajador = () => {
                 
                 <ul className="ml-4 mb-4 space-y-2">
                   <li className="flex items-start gap-2">
-                    <CheckCircle className="w-5 h-5 text-orange-600 mt-0.5 flex-shrink-0" />
+                    <CheckCircle className="w-5 h-5 text-primary-strong mt-0.5 flex-shrink-0" />
                     <span><strong>Dudas sobre la posibilidad de realizar la actividad 100% en remoto, al no describirse con suficiente detalle las funciones ni los medios tecnológicos empleados.</strong></span>
                   </li>
                   <li className="flex items-start gap-2">
-                    <CheckCircle className="w-5 h-5 text-orange-600 mt-0.5 flex-shrink-0" />
+                    <CheckCircle className="w-5 h-5 text-primary-strong mt-0.5 flex-shrink-0" />
                     <span><strong>Falta de claridad en la documentación relativa a la empresa extranjera y a la relación profesional continuada con el cliente, cuestionando la estabilidad del proyecto.</strong></span>
                   </li>
                   <li className="flex items-start gap-2">
-                    <CheckCircle className="w-5 h-5 text-orange-600 mt-0.5 flex-shrink-0" />
+                    <CheckCircle className="w-5 h-5 text-primary-strong mt-0.5 flex-shrink-0" />
                     <span><strong>Defectos formales en la acreditación de cobertura de Seguridad Social y en la traducción y legalización de ciertos documentos aportados.</strong></span>
                   </li>
                 </ul>
@@ -98,15 +100,15 @@ const CasoTeletrabajador = () => {
                 
                 <ul className="ml-4 mb-4 space-y-2">
                   <li className="flex items-start gap-2">
-                    <CheckCircle className="w-5 h-5 text-orange-600 mt-0.5 flex-shrink-0" />
+                    <CheckCircle className="w-5 h-5 text-primary-strong mt-0.5 flex-shrink-0" />
                     <span><strong>Acreditar el teletrabajo internacional real y continuado:</strong> Presentamos una memoria ampliada de funciones, justificando que todas las tareas (desarrollo, soporte, reuniones, entregas) se realizaban de forma telemática, acompañada de contratos actualizados, documentos de incorporación de la empresa extranjera y evidencias de la relación profesional continuada superior a tres meses.</span>
                   </li>
                   <li className="flex items-start gap-2">
-                    <CheckCircle className="w-5 h-5 text-orange-600 mt-0.5 flex-shrink-0" />
+                    <CheckCircle className="w-5 h-5 text-primary-strong mt-0.5 flex-shrink-0" />
                     <span><strong>Subsanar y reforzar la documentación formal:</strong> Aportamos certificados de empresa y de Seguridad Social del país de origen debidamente apostillados/legalizados, aclarando la cobertura y, en su caso, la aplicación de convenios internacionales, así como traducciones juradas de toda la documentación relevante.</span>
                   </li>
                   <li className="flex items-start gap-2">
-                    <CheckCircle className="w-5 h-5 text-orange-600 mt-0.5 flex-shrink-0" />
+                    <CheckCircle className="w-5 h-5 text-primary-strong mt-0.5 flex-shrink-0" />
                     <span><strong>Fundamentación jurídica detallada:</strong> En el recurso, rebatimos la interpretación restrictiva de la resolución inicial, citando la normativa aplicable a teletrabajadores de carácter internacional y la propia finalidad de la figura, orientada a atraer talento extranjero que trabaja para empresas ubicadas fuera de España.</span>
                   </li>
                 </ul>
@@ -126,15 +128,15 @@ const CasoTeletrabajador = () => {
                 
                 <ul className="ml-4 mb-4 space-y-2">
                   <li className="flex items-start gap-2">
-                    <CheckCircle className="w-5 h-5 text-orange-600 mt-0.5 flex-shrink-0" />
+                    <CheckCircle className="w-5 h-5 text-primary-strong mt-0.5 flex-shrink-0" />
                     <span><strong>La actividad podía desarrollarse íntegramente en remoto, de acuerdo con la descripción de funciones y los medios técnicos aportados.</strong></span>
                   </li>
                   <li className="flex items-start gap-2">
-                    <CheckCircle className="w-5 h-5 text-orange-600 mt-0.5 flex-shrink-0" />
+                    <CheckCircle className="w-5 h-5 text-primary-strong mt-0.5 flex-shrink-0" />
                     <span><strong>La empresa extranjera estaba debidamente constituida y en funcionamiento, y la relación profesional con nuestro cliente era real, estable y anterior en más de tres meses a la solicitud.</strong></span>
                   </li>
                   <li className="flex items-start gap-2">
-                    <CheckCircle className="w-5 h-5 text-orange-600 mt-0.5 flex-shrink-0" />
+                    <CheckCircle className="w-5 h-5 text-primary-strong mt-0.5 flex-shrink-0" />
                     <span><strong>La documentación relativa a Seguridad Social y demás requisitos formales se había completado y adecuaba a lo exigido por la normativa.</strong></span>
                   </li>
                 </ul>
@@ -144,7 +146,7 @@ const CasoTeletrabajador = () => {
                 </p>
                 
                 <div className="mt-8 p-6 bg-gradient-to-br from-orange-50 to-orange-100 border border-orange-300 rounded-lg">
-                  <h4 className="text-lg font-bold mb-2 text-orange-600 text-center">Resultado del Caso</h4>
+                  <h4 className="text-lg font-bold mb-2 text-primary-strong text-center">Resultado del Caso</h4>
                   <p className="text-black text-justify">
                     En consecuencia, se concedió a nuestro cliente la autorización de residencia como teletrabajador de carácter internacional por el periodo previsto, con efectos desde la fecha de la solicitud inicial.
                   </p>
@@ -155,21 +157,17 @@ const CasoTeletrabajador = () => {
               </div>
             </div>
             
+            <CaseDisclaimer className="mt-8" />
+
             {/* CTA */}
             <div className="mt-12 p-8 bg-gradient-to-br from-primary/10 to-primary/5 rounded-2xl border border-primary/20 text-center">
               <h3 className="text-2xl font-bold mb-4 text-black">¿Necesitas ayuda con tu solicitud de teletrabajo?</h3>
               <p className="text-black font-sans mb-6 text-justify">
                 Si tienes problemas con tu solicitud de residencia como teletrabajador o te han denegado el permiso, contacta con nuestros abogados especialistas en derecho de extranjería.
               </p>
-              <a
-                href="https://wa.me/34624164536"
-                target="_blank"
-                rel="noopener noreferrer"
-                onClick={() => window.open('https://www.cal.eu/adrian-garcia-lledo-babrwp', '_blank')}
-                className="inline-flex items-center gap-2 bg-primary text-primary-foreground px-6 py-3 rounded-lg font-sans font-semibold hover:bg-primary/90 transition-colors"
-              >
+              <BookingLink className="inline-flex items-center gap-2 bg-primary text-primary-foreground px-6 py-3 rounded-lg font-sans font-semibold hover:bg-primary/90 transition-colors">
                 Consultar con un Abogado
-              </a>
+              </BookingLink>
             </div>
           </div>
         </div>

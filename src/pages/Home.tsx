@@ -1,8 +1,8 @@
 import { Link } from "react-router-dom";
-import { motion } from "framer-motion";
-import { Shield, Users, Zap, Scale, Globe, FileText, ArrowRight, Phone, MessageCircle, CheckCircle } from "lucide-react";
+import { Shield, Users, Zap, Scale, Globe, FileText, ArrowRight, MessageCircle } from "lucide-react";
 import Section from "@/components/Section";
-import { ElfsightWidget } from "react-elfsight-widget";
+import GoogleReviews from "@/components/embeds/GoogleReviews";
+import { BookingLink, WhatsAppLink } from "@/components/CtaLinks";
 
 const Home = () => {
   return (
@@ -10,56 +10,30 @@ const Home = () => {
       {/* HERO */}
       <section className="relative min-h-screen flex items-center">
         {/* Decorative semicircle */}
-        <div className="absolute bottom-0 right-0 w-64 h-32 md:w-96 md:h-48 bg-primary rounded-t-full opacity-20" />
-        <div className="absolute top-20 left-0 w-32 h-16 md:w-48 md:h-24 bg-primary rounded-b-full opacity-10" />
+        <div aria-hidden="true" className="absolute bottom-0 right-0 w-64 h-32 md:w-96 md:h-48 bg-primary rounded-t-full opacity-20" />
+        <div aria-hidden="true" className="absolute top-20 left-0 w-32 h-16 md:w-48 md:h-24 bg-primary rounded-b-full opacity-10" />
         
         <div className="container relative z-10 pt-32 pb-20">
           <div className="max-w-3xl">
-            <motion.h1
-              initial={{ opacity: 0, y: 40 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.7 }}
-              className="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight text-justify"
-            >
-              <span className="text-orange-600 block">Defendemos tus derechos</span>
+            <h1 className="hero-in text-4xl md:text-5xl lg:text-6xl font-bold leading-tight text-balance">
+              <span className="text-primary-strong block">Defendemos tus derechos</span>
               <span className="text-gray-900">con estrategia y claridad</span>
-            </motion.h1>
+            </h1>
 
-            <motion.p
-              initial={{ opacity: 0, y: 30 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.7, delay: 0.15 }}
-              className="mt-6 text-lg md:text-xl text-muted-foreground font-sans leading-relaxed text-justify"
-            >
-              <span className="block">Te explicamos tus opciones con claridad, diseñamos la mejor</span>
-              <span className="block">estrategia y te acompañamos en cada decisión.</span>
-            </motion.p>
+            <p className="hero-in [animation-delay:150ms] mt-6 max-w-2xl text-lg md:text-xl text-muted-foreground font-sans leading-relaxed">
+              Te explicamos tus opciones con claridad, diseñamos la mejor estrategia y te acompañamos en cada decisión.
+            </p>
 
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 0.3 }}
-              className="mt-10 flex flex-col sm:flex-row gap-4"
-            >
-              <a
-                href="https://www.cal.eu/adrian-garcia-lledo-babrwp"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center justify-center gap-2 bg-primary text-primary-foreground px-8 py-4 rounded-md text-base font-semibold font-sans transition-all hover:opacity-90 hover:scale-105"
-              >
+            <div className="hero-in [animation-delay:300ms] mt-10 flex flex-col sm:flex-row gap-4">
+              <BookingLink className="inline-flex items-center justify-center gap-2 bg-primary text-primary-foreground px-8 py-4 rounded-md text-base font-semibold font-sans transition-all hover:bg-primary/90">
                 Solicitar una consulta
-                <ArrowRight className="w-4 h-4" />
-              </a>
-              <a
-                href="https://wa.me/34960000000"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center justify-center gap-2 border-2 border-foreground text-foreground px-8 py-4 rounded-md text-base font-semibold font-sans transition-all hover:bg-foreground hover:text-background"
-              >
-                <MessageCircle className="w-4 h-4" />
+                <ArrowRight className="w-4 h-4" aria-hidden="true" />
+              </BookingLink>
+              <WhatsAppLink className="inline-flex items-center justify-center gap-2 border-2 border-foreground text-foreground px-8 py-4 rounded-md text-base font-semibold font-sans transition-all hover:bg-foreground hover:text-background">
+                <MessageCircle className="w-4 h-4" aria-hidden="true" />
                 Contáctanos
-              </a>
-            </motion.div>
+              </WhatsAppLink>
+            </div>
           </div>
         </div>
       </section>
@@ -68,7 +42,7 @@ const Home = () => {
       <Section className="bg-secondary">
         <div className="text-center mb-16">
           <h2 className="text-3xl md:text-4xl font-bold">¿Por qué Dextra?</h2>
-          <div className="w-16 h-1 bg-primary mx-auto mt-4" />
+          <div className="w-16 h-1 bg-primary mx-auto mt-4" aria-hidden="true" />
         </div>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-10">
           {[
@@ -78,7 +52,7 @@ const Home = () => {
           ].map((item) => (
             <div key={item.title} className="text-center group">
               <div className="w-16 h-16 mx-auto mb-6 rounded-full border-2 border-primary/30 flex items-center justify-center group-hover:bg-primary group-hover:border-primary transition-all duration-300">
-                <item.icon className="w-7 h-7 text-primary group-hover:text-primary-foreground transition-colors" />
+                <item.icon aria-hidden="true" className="w-7 h-7 text-primary group-hover:text-primary-foreground transition-colors" />
               </div>
               <h3 className="text-xl font-bold mb-3">{item.title}</h3>
               <p className="text-muted-foreground font-sans leading-relaxed">{item.desc}</p>
@@ -91,7 +65,7 @@ const Home = () => {
       <Section>
         <div className="text-center mb-16">
           <h2 className="text-3xl md:text-4xl font-bold">Áreas de práctica</h2>
-          <div className="w-16 h-1 bg-primary mx-auto mt-4" />
+          <div className="w-16 h-1 bg-primary mx-auto mt-4" aria-hidden="true" />
         </div>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           {[
@@ -104,11 +78,11 @@ const Home = () => {
               to={item.link}
               className="group border border-border rounded-lg p-8 transition-all duration-300 hover:shadow-xl hover:border-primary/30 hover:-translate-y-1"
             >
-              <item.icon className="w-10 h-10 text-primary mb-6" />
+              <item.icon aria-hidden="true" className="w-10 h-10 text-primary mb-6" />
               <h3 className="text-xl font-bold mb-3">{item.title}</h3>
-              <p className="text-muted-foreground font-sans mb-4 leading-relaxed text-justify">{item.desc}</p>
+              <p className="text-muted-foreground font-sans mb-4 leading-relaxed">{item.desc}</p>
               <span className="inline-flex items-center gap-1 text-primary font-sans font-semibold text-sm group-hover:gap-2 transition-all">
-                Ver área <ArrowRight className="w-4 h-4" />
+                Ver área <ArrowRight className="w-4 h-4" aria-hidden="true" />
               </span>
             </Link>
           ))}
@@ -119,14 +93,12 @@ const Home = () => {
       <Section className="bg-secondary">
         <div className="text-center mb-16">
           <h2 className="text-3xl md:text-4xl font-bold">Lo que dicen nuestros clientes</h2>
-          <div className="w-16 h-1 bg-primary mx-auto mt-4" />
+          <div className="w-16 h-1 bg-primary mx-auto mt-4" aria-hidden="true" />
         </div>
         
-        {/* Google Reviews Section */}
-        <div className="flex justify-center">
-          <div className="w-full max-w-6xl">
-            <ElfsightWidget widgetID={"e9a2697c-b453-43a5-86d4-6bcf43e3807e" as string} />
-          </div>
+        {/* Reseñas reales de Google: solo se cargan con consentimiento */}
+        <div className="mx-auto w-full max-w-6xl">
+          <GoogleReviews />
         </div>
       </Section>
       
@@ -135,7 +107,7 @@ const Home = () => {
       <Section>
         <div className="text-center mb-16">
           <h2 className="text-3xl md:text-4xl font-bold">Cómo trabajamos</h2>
-          <div className="w-16 h-1 bg-primary mx-auto mt-4" />
+          <div className="w-16 h-1 bg-primary mx-auto mt-4" aria-hidden="true" />
         </div>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-10">
           {[
@@ -144,7 +116,7 @@ const Home = () => {
             { step: "03", title: "Defensa y acompañamiento", desc: "Ejecutamos el plan, te mantenemos informado y luchamos por el mejor resultado." },
           ].map((item) => (
             <div key={item.step} className="text-center">
-              <span className="text-5xl font-bold text-primary/20 font-serif">{item.step}</span>
+              <span aria-hidden="true" className="text-5xl font-bold text-primary/30 font-serif">{item.step}</span>
               <h3 className="text-xl font-bold mt-2 mb-3">{item.title}</h3>
               <p className="text-muted-foreground font-sans leading-relaxed">{item.desc}</p>
             </div>
@@ -155,32 +127,18 @@ const Home = () => {
       {/* CTA FINAL */}
       <section className="bg-foreground text-background py-20 md:py-28">
         <div className="container text-center">
-          <motion.h2
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
+          <h2
             className="text-3xl md:text-4xl lg:text-5xl font-bold max-w-2xl mx-auto leading-tight"
           >
             ¿Tienes un problema legal en Valencia?{" "}
             <span className="text-primary">Cuéntanos tu caso.</span>
-          </motion.h2>
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ delay: 0.15 }}
-            className="mt-10"
-          >
-            <a
-              href="https://wa.me/34960000000"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 bg-primary text-primary-foreground px-10 py-4 rounded-md text-lg font-semibold font-sans transition-all hover:opacity-90 hover:scale-105"
-            >
-              <MessageCircle className="w-5 h-5" />
+          </h2>
+          <div className="mt-10">
+            <WhatsAppLink className="inline-flex items-center gap-2 bg-primary text-primary-foreground px-10 py-4 rounded-md text-lg font-semibold font-sans transition-all hover:bg-primary/90">
+              <MessageCircle className="w-5 h-5" aria-hidden="true" />
               Escríbenos ahora
-            </a>
-          </motion.div>
+            </WhatsAppLink>
+          </div>
         </div>
       </section>
     </>

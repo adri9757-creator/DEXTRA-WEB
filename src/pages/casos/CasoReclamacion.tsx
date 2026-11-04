@@ -1,4 +1,6 @@
 import Section from "@/components/Section";
+import { BookingLink } from "@/components/CtaLinks";
+import CaseDisclaimer from "@/components/CaseDisclaimer";
 import { Link } from "react-router-dom";
 import { ArrowLeft, Calendar, User, Scale, CheckCircle } from "lucide-react";
 
@@ -10,7 +12,7 @@ const CasoReclamacion = () => {
         <div className="container">
           <Link 
             to="/casos" 
-            className="inline-flex items-center gap-2 text-primary font-sans font-semibold text-sm mb-6 hover:gap-3 transition-all"
+            className="inline-flex items-center gap-2 text-primary-strong font-sans font-semibold text-sm mb-6 hover:gap-3 transition-all"
           >
             <ArrowLeft className="w-4 h-4" />
             Volver a Casos de Éxito
@@ -18,7 +20,7 @@ const CasoReclamacion = () => {
           
           <div className="max-w-4xl">
             <div className="flex items-center gap-3 mb-4">
-              <span className="inline-block bg-primary/10 text-primary font-sans text-xs font-semibold px-3 py-1 rounded-full">Civil</span>
+              <span className="inline-block bg-primary/10 text-primary-strong font-sans text-xs font-semibold px-3 py-1 rounded-full">Civil</span>
               <span className="inline-flex items-center gap-1 text-muted-foreground font-sans text-sm">
                 <Calendar className="w-4 h-4" /> 2024
               </span>
@@ -70,16 +72,16 @@ const CasoReclamacion = () => {
                 
                 <ul className="ml-4 mb-4 space-y-2">
                   <li className="flex items-start gap-2">
-                    <CheckCircle className="w-5 h-5 text-orange-600 mt-0.5 flex-shrink-0" />
+                    <CheckCircle className="w-5 h-5 text-primary-strong mt-0.5 flex-shrink-0" />
                     <span><strong>La existencia de un contrato de préstamo personal suscrito con nuestra clienta.</strong></span>
                   </li>
                   <li className="flex items-start gap-2">
-                    <CheckCircle className="w-5 h-5 text-orange-600 mt-0.5 flex-shrink-0" />
+                    <CheckCircle className="w-5 h-5 text-primary-strong mt-0.5 flex-shrink-0" />
                     <span><strong>El impago de diversas cuotas, que habría generado el vencimiento anticipado y el saldo que se reclamaba.</strong></span>
                   </li>
                   <li className="flex items-start gap-2">
-                    <CheckCircle className="w-5 h-5 text-orange-600 mt-0.5 flex-shrink-0" />
-                    <span><strong>Que la cantidad reflejada en un extracto resumido y en un certificado interno de deuda era líquida, vencida y exigible.</strong> Los iconos, emotis, ticks o como se llamen deben ser naranjas, como los demás en las otras páginas.</span>
+                    <CheckCircle className="w-5 h-5 text-primary-strong mt-0.5 flex-shrink-0" />
+                    <span><strong>Que la cantidad reflejada en un extracto resumido y en un certificado interno de deuda era líquida, vencida y exigible.</strong></span>
                   </li>
                 </ul>
                 
@@ -98,15 +100,15 @@ const CasoReclamacion = () => {
                 
                 <ul className="ml-4 mb-4 space-y-2">
                   <li className="flex items-start gap-2">
-                    <CheckCircle className="w-5 h-5 text-orange-600 mt-0.5 flex-shrink-0" />
+                    <CheckCircle className="w-5 h-5 text-primary-strong mt-0.5 flex-shrink-0" />
                     <span><strong>Carga de la prueba del banco:</strong> Recordamos al Juzgado que, tratándose de un préstamo, corresponde a la entidad acreditar la existencia del contrato, la entrega del capital, las condiciones pactadas (intereses, comisiones, vencimiento anticipado) y el cálculo detallado del saldo pendiente; un certificado unilateral no basta.</span>
                   </li>
                   <li className="flex items-start gap-2">
-                    <CheckCircle className="w-5 h-5 text-orange-600 mt-0.5 flex-shrink-0" />
+                    <CheckCircle className="w-5 h-5 text-primary-strong mt-0.5 flex-shrink-0" />
                     <span><strong>Documentación insuficiente:</strong> Destacamos que, sin el contrato de préstamo ni un cuadro de amortización completo, no era posible verificar si la deuda se correspondía realmente con el capital dispuesto, ni controlar la posible existencia de cláusulas abusivas.</span>
                   </li>
                   <li className="flex items-start gap-2">
-                    <CheckCircle className="w-5 h-5 text-orange-600 mt-0.5 flex-shrink-0" />
+                    <CheckCircle className="w-5 h-5 text-primary-strong mt-0.5 flex-shrink-0" />
                     <span><strong>Prescripción de la acción:</strong> Aportamos una cronología de pagos y comunicaciones que mostraba que, desde la fecha en que la entidad situaba el impago como definitivo, había dejado transcurrir en exceso el plazo legal sin presentar demanda ni realizar requerimientos fehacientes de interrupción.</span>
                   </li>
                 </ul>
@@ -129,7 +131,7 @@ const CasoReclamacion = () => {
                 </p>
                 
                 <div className="mt-8 p-6 bg-gradient-to-br from-orange-50 to-orange-100 border border-orange-300 rounded-lg">
-                  <h4 className="text-lg font-bold mb-2 text-orange-600 text-center">Resultado del Caso</h4>
+                  <h4 className="text-lg font-bold mb-2 text-primary-strong text-center">Resultado del Caso</h4>
                   <p className="text-black text-justify">
                     En consecuencia, dictó sentencia desestimando íntegramente la demanda de reclamación de cantidad promovida por la entidad bancaria.
                   </p>
@@ -140,20 +142,17 @@ const CasoReclamacion = () => {
               </div>
             </div>
             
+            <CaseDisclaimer className="mt-8" />
+
             {/* CTA */}
             <div className="mt-12 p-8 bg-gradient-to-br from-primary/10 to-primary/5 rounded-2xl border border-primary/20 text-center">
               <h3 className="text-2xl font-bold mb-4">¿Necesitas defensa en una reclamación de cantidad?</h3>
               <p className="text-black font-sans mb-6 text-justify">
                 Si te han demandado por una reclamación de cantidad o necesitas defensa en un juicio civil, contacta con nuestros abogados especialistas en derecho civil.
               </p>
-              <a
-                href="https://wa.me/34624164536"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 bg-primary text-primary-foreground px-6 py-3 rounded-lg font-sans font-semibold hover:bg-primary/90 transition-colors"
-              >
+              <BookingLink className="inline-flex items-center gap-2 bg-primary text-primary-foreground px-6 py-3 rounded-lg font-sans font-semibold hover:bg-primary/90 transition-colors">
                 Consultar con un Abogado
-              </a>
+              </BookingLink>
             </div>
           </div>
         </div>

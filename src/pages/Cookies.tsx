@@ -1,274 +1,150 @@
-import Section from "@/components/Section";
 import { Link } from "react-router-dom";
-import { ArrowLeft, FileText, Shield, Cookie, Settings, Eye, Users } from "lucide-react";
+import LegalLayout from "@/components/LegalLayout";
+import { SITE } from "@/config/site";
+import { openCookieSettings, STORAGE_KEY } from "@/lib/consent";
 
-const Cookies = () => {
-  return (
-    <>
-      {/* Hero Section */}
-      <section className="pt-32 pb-16 bg-gradient-to-br from-primary/5 to-primary/10">
-        <div className="container">
-          <Link 
-            to="/" 
-            className="inline-flex items-center gap-2 text-primary font-sans font-semibold text-sm mb-6 hover:gap-3 transition-all"
-          >
-            <ArrowLeft className="w-4 h-4" />
-            Volver al Inicio
-          </Link>
-          
-          <div className="max-w-4xl">
-            <div className="flex items-center gap-3 mb-4">
-              <span className="inline-block bg-primary/10 text-primary font-sans text-xs font-semibold px-3 py-1 rounded-full">Legal</span>
-            </div>
-            
-            <h1 className="text-4xl md:text-5xl font-bold mb-6">Política de Cookies</h1>
-            <p className="text-xl text-muted-foreground font-sans leading-relaxed mb-8">
-              Información sobre el uso de cookies y tecnologías similares en nuestro sitio web.
-            </p>
-            
-            <div className="flex flex-wrap items-center gap-6 text-sm text-muted-foreground font-sans">
-              <div className="flex items-center gap-2">
-                <FileText className="w-4 h-4" />
-                <span>Última actualización: 2026</span>
-              </div>
-              <div className="flex items-center gap-2">
-                <Shield className="w-4 h-4" />
-                <span>GDPR compliant</span>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
+/**
+ * Política de cookies con el inventario REAL del sitio.
+ * Si se añade o retira un servicio, actualizar esta tabla y src/lib/consent.ts.
+ */
+const Cookies = () => (
+  <LegalLayout
+    title="Política de cookies"
+    intro="Qué cookies y tecnologías similares utiliza este sitio web, para qué sirven y cómo puedes aceptarlas, rechazarlas o cambiar tu decisión."
+    updated="noviembre de 2026"
+  >
+    <h2>1. ¿Qué son las cookies?</h2>
+    <p>
+      Las cookies son pequeños archivos que un sitio web guarda en tu navegador. Esta política se aplica también a
+      tecnologías similares, como el almacenamiento local del navegador (<em>localStorage</em>) o la carga de contenido de
+      otros servidores que puede leer o instalar cookies (artículo 22.2 de la Ley 34/2002, LSSI-CE).
+    </p>
 
-      {/* Content */}
-      <Section>
-        <div className="max-w-4xl mx-auto">
-          <div className="prose prose-lg max-w-none">
-            <div className="bg-background rounded-lg border border-border p-8 md:p-12">
-              <div className="space-y-8 text-foreground font-sans leading-relaxed text-justify">
-                
-                <section>
-                  <h2 className="text-2xl font-bold mb-4 flex items-center gap-2">
-                    <Cookie className="w-6 h-6 text-primary" />
-                    1. ¿Qué son las cookies?
-                  </h2>
-                  <p>
-                    Una cookie es un pequeño fichero de texto que se almacena en tu navegador cuando visitas determinadas páginas. Permite que el sitio web recuerde información sobre tu visita, como tu idioma preferido o las páginas que has visitado, para mejorar tu experiencia de navegación.
-                  </p>
-                  <p>
-                    Las cookies no identifican directamente a la persona usuaria, aunque pueden asociarse a un identificador único del dispositivo o de la sesión de navegación.
-                  </p>
-                </section>
+    <h2>2. Resumen</h2>
+    <ul>
+      <li><strong>No usamos cookies analíticas ni publicitarias</strong>, ni perfilamos tu navegación.</li>
+      <li>Solo guardamos, de forma técnica, tu decisión sobre cookies.</li>
+      <li>
+        El mapa de Google Maps y las reseñas de Google (widget de Elfsight) son contenido de terceros y{" "}
+        <strong>no se cargan hasta que los permites</strong>.
+      </li>
+      <li>Puedes aceptar, rechazar o configurar con la misma facilidad, y cambiar de opinión en cualquier momento.</li>
+    </ul>
 
-                <section>
-                  <h2 className="text-2xl font-bold mb-4 flex items-center gap-2">
-                    <Shield className="w-6 h-6 text-primary" />
-                    2. ¿Qué tipos de cookies usamos en esta web?
-                  </h2>
-                  <p>
-                    En el sitio web de Dextra Law Firm utilizamos cookies propias y de terceros con las siguientes finalidades:
-                  </p>
-                  <ul className="ml-4 mb-4 space-y-2">
-                    <li className="flex items-start gap-2">
-                      <span className="w-5 h-5 text-primary mt-0.5 flex-shrink-0">•</span>
-                      <span><strong>Cookies técnicas o necesarias</strong> - Son aquellas que permiten que la página web funcione correctamente y que puedas navegar por ella, utilizar áreas seguras, recordar tus preferencias básicas o mantener la seguridad del sitio. Estas cookies son imprescindibles para el funcionamiento de la web y no requieren tu consentimiento.</span>
-                    </li>
-                    <li className="flex items-start gap-2">
-                      <span className="w-5 h-5 text-primary mt-0.5 flex-shrink-0">•</span>
-                      <span><strong>Cookies de análisis (Google Analytics)</strong> - Son aquellas que nos permiten medir y analizar la forma en que las personas usuarias utilizan la web (páginas más visitadas, tiempo de visita, clics en determinados enlaces, etc.), con el fin de mejorar nuestros contenidos y servicios. Estas cookies las proporciona Google Analytics y se instalan únicamente si las aceptas expresamente a través del banner de cookies.</span>
-                    </li>
-                    <li className="flex items-start gap-2">
-                      <span className="w-5 h-5 text-primary mt-0.5 flex-shrink-0">•</span>
-                      <span><strong>Cookies de rendimiento</strong> - Recopilan información sobre cómo los usuarios utilizan el sitio web para ayudarnos a mejorar su funcionamiento.</span>
-                    </li>
-                    <li className="flex items-start gap-2">
-                      <span className="w-5 h-5 text-primary mt-0.5 flex-shrink-0">•</span>
-                      <span><strong>Cookies funcionales</strong> - Permiten que el sitio web recuerde las elecciones del usuario y proporciona características mejoradas y más personales.</span>
-                    </li>
-                    <li className="flex items-start gap-2">
-                      <span className="w-5 h-5 text-primary mt-0.5 flex-shrink-0">•</span>
-                      <span><strong>Cookies de publicidad</strong> - Se utilizan para presentar anuncios relevantes para el usuario y sus intereses.</span>
-                    </li>
-                  </ul>
-                  <p>
-                    En este momento, Dextra Law Firm no utiliza cookies publicitarias ni de perfiles de comportamiento.
-                  </p>
-                </section>
+    <h2>3. Cookies y tecnologías que utilizamos</h2>
+    <div className="overflow-x-auto">
+      <table>
+        <caption className="sr-only">Inventario de cookies y tecnologías similares</caption>
+        <thead>
+          <tr>
+            <th scope="col">Nombre / servicio</th>
+            <th scope="col">Titular</th>
+            <th scope="col">Tipo y finalidad</th>
+            <th scope="col">Duración</th>
+            <th scope="col">¿Necesita consentimiento?</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><code>{STORAGE_KEY}</code> (almacenamiento local)</td>
+            <td>Propia ({SITE.name})</td>
+            <td>Técnica. Guarda tu decisión sobre cookies para no volver a preguntarte.</td>
+            <td>12 meses</td>
+            <td>No (exenta: necesaria para recordar tu elección)</td>
+          </tr>
+          <tr>
+            <td>Google Maps (mapa en <Link to="/contacto">Contacto</Link>)</td>
+            <td>Google Ireland Limited</td>
+            <td>
+              Contenido de terceros. Al cargar el mapa, Google recibe tu dirección IP y datos del navegador y puede instalar
+              sus propias cookies (por ejemplo, <code>NID</code>) con fines que determina Google.
+            </td>
+            <td>Según Google (la cookie <code>NID</code> suele durar unos 6 meses)</td>
+            <td>Sí</td>
+          </tr>
+          <tr>
+            <td>Reseñas de Google mediante Elfsight (página de inicio)</td>
+            <td>Elfsight [POR_CONFIRMAR: razón social]; las fotos de perfil se sirven desde servidores de Google</td>
+            <td>
+              Contenido de terceros. Carga el widget de reseñas desde servidores de Elfsight, que reciben tu dirección IP y
+              datos técnicos del navegador y pueden usar almacenamiento propio.
+            </td>
+            <td>[POR_CONFIRMAR: según la documentación de Elfsight]</td>
+            <td>Sí</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
 
-                <section>
-                  <h2 className="text-2xl font-bold mb-4 flex items-center gap-2">
-                    <Eye className="w-6 h-6 text-primary" />
-                    3. Cookies específicas utilizadas
-                  </h2>
-                  <p>
-                    A continuación detallamos las cookies específicas que utilizamos en nuestro sitio web:
-                  </p>
-                  <div className="space-y-4">
-                    <div className="p-4 bg-muted/50 rounded-lg">
-                      <h4 className="font-bold mb-2">Cookies Esenciales</h4>
-                      <ul className="text-sm space-y-1">
-                        <li>• <strong>session_id:</strong> Mantiene la sesión del usuario activa</li>
-                        <li>• <strong>csrf_token:</strong> Protege contra ataques CSRF</li>
-                        <li>• <strong>auth_token:</strong> Autentica al usuario si ha iniciado sesión</li>
-                      </ul>
-                    </div>
-                    <div className="p-4 bg-muted/50 rounded-lg">
-                      <h4 className="font-bold mb-2">Cookies de Rendimiento</h4>
-                      <ul className="text-sm space-y-1">
-                        <li>• <strong>_ga, _gid:</strong> Google Analytics para análisis de tráfico</li>
-                        <li>• <strong>_gat:</strong> Limita la tasa de solicitudes</li>
-                      </ul>
-                    </div>
-                    <div className="p-4 bg-muted/50 rounded-lg">
-                      <h4 className="font-bold mb-2">Cookies Funcionales</h4>
-                      <ul className="text-sm space-y-1">
-                        <li>• <strong>preferences:</strong> Almacena preferencias del usuario</li>
-                        <li>• <strong>language:</strong> Recuerda el idioma seleccionado</li>
-                        <li>• <strong>theme:</strong> Almacena preferencias de tema visual</li>
-                      </ul>
-                    </div>
-                  </div>
-                </section>
+    <h3>Enlaces a servicios externos (no instalan cookies en este sitio)</h3>
+    <ul>
+      <li>
+        <strong>Cal.eu</strong> (reserva de citas): el botón «Agenda tu cita» abre la web de Cal.eu. No se incrusta nada en
+        este sitio; al visitarla se aplican las políticas de Cal.eu.
+      </li>
+      <li>
+        <strong>WhatsApp</strong> (WhatsApp Ireland Limited): los botones de WhatsApp abren la aplicación o su web.
+      </li>
+      <li><strong>Google</strong>: los enlaces «Ver en Google» o «Abrir en Google Maps» abren la web de Google.</li>
+    </ul>
 
-                <section>
-                  <h2 className="text-2xl font-bold mb-4 flex items-center gap-2">
-                    <Users className="w-6 h-6 text-primary" />
-                    4. ¿Quién utiliza las cookies?
-                  </h2>
-                  <p>
-                    Las cookies que se instalan en esta web pueden ser:
-                  </p>
-                  <ul className="ml-4 mb-4 space-y-2">
-                    <li className="flex items-start gap-2">
-                      <span className="w-5 h-5 text-primary mt-0.5 flex-shrink-0">•</span>
-                      <span><strong>Cookies propias:</strong> son gestionadas por Dextra Law Firm como responsable del sitio web.</span>
-                    </li>
-                    <li className="flex items-start gap-2">
-                      <span className="w-5 h-5 text-primary mt-0.5 flex-shrink-0">•</span>
-                      <span><strong>Cookies de terceros:</strong> en particular, utilizamos cookies de análisis de:</span>
-                    </li>
-                    <li className="flex items-start gap-2 ml-8">
-                      <span className="w-5 h-5 text-primary mt-0.5 flex-shrink-0">•</span>
-                      <span><strong>Google Analytics</strong>, un servicio de análisis web prestado por Google LLC, con domicilio en 1600 Amphitheatre Parkway, Mountain View, California 94043, Estados Unidos. Google Analytics utiliza cookies para recopilar información anónima y agregada sobre el uso del sitio (por ejemplo, número de visitantes, páginas visitadas, tiempo de permanencia), que es transmitida y tratada por Google en sus servidores, de acuerdo con su propia política de privacidad.</span>
-                    </li>
-                  </ul>
-                </section>
+    <h3>Alojamiento</h3>
+    <p>
+      El sitio se aloja en Vercel. Vercel no instala cookies en tu navegador por servir esta web; trata datos técnicos de
+      conexión (como la dirección IP) para entregar las páginas y proteger el servicio, tal y como se explica en la{" "}
+      <Link to="/privacidad">Política de privacidad</Link>.
+    </p>
 
-                <section>
-                  <h2 className="text-2xl font-bold mb-4 flex items-center gap-2">
-                    <FileText className="w-6 h-6 text-primary" />
-                    5. Base legitimadora y plazo de conservación
-                  </h2>
-                  <ul className="ml-4 mb-4 space-y-2">
-                    <li className="flex items-start gap-2">
-                      <span className="w-5 h-5 text-primary mt-0.5 flex-shrink-0">•</span>
-                      <span>El uso de cookies técnicas se basa en el interés legítimo de Dextra Law Firm en garantizar el correcto funcionamiento del sitio web.</span>
-                    </li>
-                    <li className="flex items-start gap-2">
-                      <span className="w-5 h-5 text-primary mt-0.5 flex-shrink-0">•</span>
-                      <span>El uso de cookies de análisis (Google Analytics) se basa en tu consentimiento, que puedes otorgar o revocar en cualquier momento.</span>
-                    </li>
-                    <li className="flex items-start gap-2">
-                      <span className="w-5 h-5 text-primary mt-0.5 flex-shrink-0">•</span>
-                      <span>Las cookies se conservarán en tu dispositivo durante el tiempo estrictamente necesario para las finalidades indicadas y, en todo caso, durante los plazos establecidos por sus proveedores (por ejemplo, determinadas cookies de Google Analytics pueden permanecer activas hasta aproximadamente 12–13 meses).</span>
-                    </li>
-                  </ul>
-                </section>
+    <h3>Gestor de consentimiento anterior</h3>
+    <p>
+      Hasta noviembre de 2026 este sitio usaba CookieScript para gestionar el consentimiento. Ya no se utiliza: si tu
+      navegador conserva su cookie <code>CookieScriptConsent</code>, este sitio la elimina automáticamente.
+    </p>
 
-                <section>
-                  <h2 className="text-2xl font-bold mb-4 flex items-center gap-2">
-                    <Shield className="w-6 h-6 text-primary" />
-                    6. ¿Cómo obtenemos tu consentimiento?
-                  </h2>
-                  <p>
-                    Al acceder por primera vez al sitio web de Dextra Law Firm, se muestra un banner de cookies que te informa de forma resumida sobre su uso. En dicho banner puedes:
-                  </p>
-                  <ul className="ml-4 mb-4 space-y-2">
-                    <li className="flex items-start gap-2">
-                      <span className="w-5 h-5 text-primary mt-0.5 flex-shrink-0">•</span>
-                      <span>Aceptar todas las cookies.</span>
-                    </li>
-                    <li className="flex items-start gap-2">
-                      <span className="w-5 h-5 text-primary mt-0.5 flex-shrink-0">•</span>
-                      <span>Rechazar todas las cookies no necesarias.</span>
-                    </li>
-                    <li className="flex items-start gap-2">
-                      <span className="w-5 h-5 text-primary mt-0.5 flex-shrink-0">•</span>
-                      <span>Configurar tus preferencias y elegir qué tipos de cookies de análisis deseas permitir.</span>
-                    </li>
-                  </ul>
-                  <p>
-                    Puedes modificar tu elección en cualquier momento mediante el enlace o botón "Configurar cookies" disponible en el sitio web, o ajustando la configuración de tu navegador.
-                  </p>
-                </section>
+    <h2>4. Cómo aceptar, rechazar o cambiar tu decisión</h2>
+    <p>
+      La primera vez que visitas la web te mostramos un aviso con tres opciones del mismo peso: <strong>Rechazar</strong>,{" "}
+      <strong>Configurar</strong> y <strong>Aceptar</strong>. Puedes navegar por la web sin decidir y sin aceptar nada. Tu
+      decisión se guarda 12 meses; pasado ese tiempo, o si cambian los servicios, te volveremos a preguntar.
+    </p>
+    <p>
+      Puedes cambiar o retirar tu consentimiento en cualquier momento, con la misma facilidad con que lo diste, desde el
+      enlace «Configurar cookies» del pie de página o con este botón:
+    </p>
+    <p>
+      <button
+        type="button"
+        onClick={openCookieSettings}
+        className="inline-flex min-h-11 items-center justify-center rounded-md border-2 border-foreground px-5 py-2 font-semibold transition-colors hover:bg-foreground hover:text-background"
+      >
+        Configurar cookies
+      </button>
+    </p>
+    <p>
+      También puedes borrar o bloquear las cookies desde tu navegador:{" "}
+      <a href="https://support.google.com/chrome/answer/95647" target="_blank" rel="noopener noreferrer">Chrome</a>,{" "}
+      <a href="https://support.mozilla.org/es/kb/Borrar%20cookies" target="_blank" rel="noopener noreferrer">Firefox</a>,{" "}
+      <a href="https://support.apple.com/es-es/guide/safari/sfri11471/mac" target="_blank" rel="noopener noreferrer">Safari</a>{" "}
+      y{" "}
+      <a href="https://support.microsoft.com/es-es/microsoft-edge/eliminar-las-cookies-en-microsoft-edge-63947406-40ac-c3b8-57b9-2a946a29ae09" target="_blank" rel="noopener noreferrer">Edge</a>.
+      Las cookies de Google y Elfsight se gestionan en sus propios dominios.
+    </p>
 
-                <section>
-                  <h2 className="text-2xl font-bold mb-4 flex items-center gap-2">
-                    <Settings className="w-6 h-6 text-primary" />
-                    7. ¿Cómo puedes gestionar o desactivar las cookies?
-                  </h2>
-                  <p>
-                    Puedes permitir, bloquear o eliminar las cookies instaladas en tu dispositivo mediante la configuración de las opciones del navegador que utilizas.
-                  </p>
-                  <p>
-                    En los siguientes enlaces encontrarás información sobre cómo hacerlo en los navegadores más habituales:
-                  </p>
-                  <ul className="ml-4 mb-4 space-y-2">
-                    <li className="flex items-start gap-2">
-                      <span className="w-5 h-5 text-primary mt-0.5 flex-shrink-0">•</span>
-                      <span><strong>Google Chrome:</strong> https://support.google.com/chrome/answer/95647</span>
-                    </li>
-                    <li className="flex items-start gap-2">
-                      <span className="w-5 h-5 text-primary mt-0.5 flex-shrink-0">•</span>
-                      <span><strong>Mozilla Firefox:</strong> https://support.mozilla.org/es/kb/habilitar-y-deshabilitar-cookies-sitios-web</span>
-                    </li>
-                    <li className="flex items-start gap-2">
-                      <span className="w-5 h-5 text-primary mt-0.5 flex-shrink-0">•</span>
-                      <span><strong>Microsoft Edge:</strong> https://support.microsoft.com/es-es/windows/administrar-cookies-en-microsoft-edge-</span>
-                    </li>
-                    <li className="flex items-start gap-2">
-                      <span className="w-5 h-5 text-primary mt-0.5 flex-shrink-0">•</span>
-                      <span><strong>Safari:</strong> https://support.apple.com/es-es/105082</span>
-                    </li>
-                  </ul>
-                  <p>
-                    Ten en cuenta que, si bloqueas o eliminas determinadas cookies técnicas, la web puede dejar de funcionar correctamente o algunas funcionalidades pueden verse afectadas.
-                  </p>
-                </section>
+    <h2>5. Transferencias internacionales</h2>
+    <p>
+      Los proveedores de contenido de terceros pueden tratar datos fuera del Espacio Económico Europeo. Consulta la{" "}
+      <Link to="/privacidad">Política de privacidad</Link> para más información sobre las garantías aplicables.
+    </p>
 
-                <section>
-                  <h2 className="text-2xl font-bold mb-4 flex items-center gap-2">
-                    <FileText className="w-6 h-6 text-primary" />
-                    8. Más información
-                  </h2>
-                  <p>
-                    Para más información sobre el tratamiento de tus datos personales, quién es el responsable, cuáles son tus derechos y cómo puedes ejercitarlos (acceso, rectificación, supresión, oposición, limitación del tratamiento y portabilidad), puedes consultar nuestra Política de Privacidad.
-                  </p>
-                  <p>
-                    Si tienes cualquier duda sobre esta Política de Cookies, puedes contactar con nosotros en: info@dextralawfirm.com.
-                  </p>
-                </section>
-
-                <div className="mt-12 p-6 bg-gradient-to-br from-primary/5 to-primary/10 rounded-lg border border-primary/20">
-                  <div className="space-y-4">
-                    <p className="text-sm text-foreground font-bold text-center">Para cualquier consulta sobre la Política de Privacidad puede contactar con nosotros</p>
-                    <div className="mt-4 pt-4 border-t border-primary/20">
-                      <div className="space-y-2">
-                        <p><strong>Correo electrónico:</strong> info@dextralawfirm.com</p>
-                        <p><strong>Teléfono de contacto:</strong> 624 164 536</p>
-                        <p><strong>Dirección:</strong> Gran Vía Marqués del Turia 49, -1, 46005 Valencia</p>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-
-              </div>
-            </div>
-          </div>
-        </div>
-      </Section>
-    </>
-  );
-};
+    <h2>6. Más información</h2>
+    <p>
+      Para cualquier duda sobre esta política, escríbenos a <a href={`mailto:${SITE.email}`}>{SITE.email}</a>. Puedes
+      consultar las políticas de los terceros en{" "}
+      <a href="https://policies.google.com/technologies/cookies?hl=es" target="_blank" rel="noopener noreferrer">Google</a>{" "}
+      y{" "}
+      <a href="https://elfsight.com/privacy-policy/" target="_blank" rel="noopener noreferrer">Elfsight</a>.
+    </p>
+  </LegalLayout>
+);
 
 export default Cookies;

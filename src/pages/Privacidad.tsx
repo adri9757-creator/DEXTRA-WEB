@@ -1,299 +1,201 @@
-import Section from "@/components/Section";
 import { Link } from "react-router-dom";
-import { ArrowLeft, FileText, Shield, Users, Eye, Database } from "lucide-react";
+import LegalLayout from "@/components/LegalLayout";
+import { SITE } from "@/config/site";
 
-const Privacidad = () => {
-  return (
-    <>
-      {/* Hero Section */}
-      <section className="pt-32 pb-16 bg-gradient-to-br from-primary/5 to-primary/10">
-        <div className="container">
-          <Link 
-            to="/" 
-            className="inline-flex items-center gap-2 text-primary font-sans font-semibold text-sm mb-6 hover:gap-3 transition-all"
-          >
-            <ArrowLeft className="w-4 h-4" />
-            Volver al Inicio
-          </Link>
-          
-          <div className="max-w-4xl">
-            <div className="flex items-center gap-3 mb-4">
-              <span className="inline-block bg-primary/10 text-primary font-sans text-xs font-semibold px-3 py-1 rounded-full">Legal</span>
-            </div>
-            
-            <h1 className="text-4xl md:text-5xl font-bold mb-6">Política de Privacidad</h1>
-            <p className="text-xl text-muted-foreground font-sans leading-relaxed mb-8">
-              Protección y tratamiento de datos personales conforme al RGPD y normativa española.
-            </p>
-            
-            <div className="flex flex-wrap items-center gap-6 text-sm text-muted-foreground font-sans">
-              <div className="flex items-center gap-2">
-                <FileText className="w-4 h-4" />
-                <span>Última actualización: 2026</span>
-              </div>
-              <div className="flex items-center gap-2">
-                <Shield className="w-4 h-4" />
-                <span>RGPD compliant</span>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
+/**
+ * Política de privacidad (RGPD arts. 13 y 14; LOPDGDD art. 11).
+ * Los datos pendientes se marcan con [POR_CONFIRMAR]. Revisar cada vez que se
+ * añada un proveedor, formulario o finalidad nueva.
+ */
+const Privacidad = () => (
+  <LegalLayout
+    title="Política de privacidad"
+    intro="Cómo tratamos tus datos personales cuando visitas esta web, nos escribes o reservas una cita, y qué derechos tienes."
+    updated="noviembre de 2026"
+  >
+    <h2>1. Responsable del tratamiento</h2>
+    <ul>
+      <li><strong>Responsable:</strong> {SITE.owner.name} ({SITE.name}), abogado colegiado n.º {SITE.owner.barNumber} del {SITE.owner.bar}.</li>
+      <li><strong>NIF:</strong> {SITE.owner.nif}</li>
+      <li><strong>Domicilio:</strong> {SITE.owner.address}</li>
+      <li><strong>Correo electrónico:</strong> <a href={`mailto:${SITE.email}`}>{SITE.email}</a></li>
+      <li><strong>Teléfono:</strong> {SITE.phone.display}</li>
+      <li>
+        <strong>Delegado de protección de datos:</strong> [POR_CONFIRMAR: indicar si se ha designado DPD y su contacto; si
+        no es obligatorio, puede indicarse «No se ha designado»].
+      </li>
+    </ul>
 
-      {/* Content */}
-      <Section>
-        <div className="max-w-4xl mx-auto">
-          <div className="prose prose-lg max-w-none">
-            <div className="bg-background rounded-lg border border-border p-8 md:p-12">
-              <div className="space-y-8 text-foreground font-sans leading-relaxed text-justify">
-                
-                <section>
-                  <h2 className="text-2xl font-bold mb-4 flex items-center gap-2">
-                    <Shield className="w-6 h-6 text-primary" />
-                    I. POLÍTICA DE PRIVACIDAD Y PROTECCIÓN DE DATOS
-                  </h2>
-                  <p>
-                    Respetando lo establecido en la legislación vigente, Dextra Law Firm (en adelante, también Sitio Web) se compromete a adoptar las medidas técnicas y organizativas necesarias, según el nivel de seguridad adecuado al riesgo de los datos recogidos.
-                  </p>
-                  <h3 className="text-xl font-bold mb-3 mt-6">Leyes que incorpora esta política de privacidad</h3>
-                  <p>
-                    Esta política de privacidad está adaptada a la normativa española y europea vigente en materia de protección de datos personales en internet. En concreto, la misma respeta las siguientes normas:
-                  </p>
-                  <ul className="ml-4 mb-4 space-y-2">
-                    <li className="flex items-start gap-2">
-                      <span className="w-5 h-5 text-primary mt-0.5 flex-shrink-0">•</span>
-                      <span>El Reglamento (UE) 2016/679 del Parlamento Europeo y del Consejo, de 27 de abril de 2016, relativo a la protección de las personas físicas en lo que respecta al tratamiento de datos personales y a la libre circulación de estos datos (RGPD).</span>
-                    </li>
-                    <li className="flex items-start gap-2">
-                      <span className="w-5 h-5 text-primary mt-0.5 flex-shrink-0">•</span>
-                      <span>La Ley Orgánica 3/2018, de 5 de diciembre, de Protección de Datos Personales y garantía de los derechos digitales (LOPD-GDD).</span>
-                    </li>
-                    <li className="flex items-start gap-2">
-                      <span className="w-5 h-5 text-primary mt-0.5 flex-shrink-0">•</span>
-                      <span>El Real Decreto 1720/2007, de 21 de diciembre, por el que se aprueba el Reglamento de desarrollo de la Ley Orgánica 15/1999, de 13 de diciembre, de Protección de Datos de Carácter Personal (RDLOPD).</span>
-                    </li>
-                    <li className="flex items-start gap-2">
-                      <span className="w-5 h-5 text-primary mt-0.5 flex-shrink-0">•</span>
-                      <span>La Ley 34/2002, de 11 de julio, de Servicios de la Sociedad de la Información y de Comercio Electrónico (LSSI-CE).</span>
-                    </li>
-                  </ul>
-                  <h3 className="text-xl font-bold mb-3 mt-6">Identidad del responsable del tratamiento de los datos personales</h3>
-                  <p>
-                    El responsable del tratamiento de los datos personales recogidos en Dextra Law Firm es: Adrian Garcia Lledo, con NIF: 35597868D (en adelante, Responsable del tratamiento). Sus datos de contacto son los siguientes:
-                  </p>
-                  <div className="space-y-2">
-                    <p><strong>Dirección:</strong> Gran Vía Marques del Turia 49-1, CP 46005, Valencia</p>
-                    <p><strong>Teléfono de contacto:</strong> 624164536</p>
-                    <p><strong>Email de contacto:</strong> info@dextralawfirm.com</p>
-                  </div>
-                  <h3 className="text-xl font-bold mb-3 mt-6">Registro de Datos de Carácter Personal</h3>
-                  <p>
-                    En cumplimiento de lo establecido en el RGPD y la LOPD-GDD, le informamos que los datos personales recabados por Dextra Law Firm, mediante los formularios extendidos en sus páginas quedarán incorporados y serán tratados en nuestro fichero con el fin de poder facilitar, agilizar y cumplir los compromisos establecidos entre Dextra Law Firm y el Usuario o el mantenimiento de la relación que se establezca en los formularios que este rellene, o para atender una solicitud o consulta del mismo. Asimismo, de conformidad con lo previsto en el RGPD y la LOPD-GDD, salvo que sea de aplicación la excepción prevista en el artículo 30.5 del RGPD, se mantiene un registro de actividades de tratamiento que especifica, según sus finalidades, las actividades de tratamiento llevadas a cabo y las demás circunstancias establecidas en el RGPD.
-                  </p>
-                  <h3 className="text-xl font-bold mb-3 mt-6">Principios aplicables al tratamiento de los datos personales</h3>
-                  <p>
-                    El tratamiento de los datos personales del Usuario se someterá a los siguientes principios recogidos en el artículo 5 del RGPD y en el artículo 4 y siguientes de la Ley Orgánica 3/2018, de 5 de diciembre, de Protección de Datos Personales y garantía de los derechos digitales:
-                  </p>
-                  <ul className="ml-4 mb-4 space-y-2">
-                    <li className="flex items-start gap-2">
-                      <span className="w-5 h-5 text-primary mt-0.5 flex-shrink-0">•</span>
-                      <span>Principio de licitud, lealtad y transparencia: se requerirá en todo momento el consentimiento del Usuario previa información completamente transparente de los fines para los cuales se recogen los datos personales.</span>
-                    </li>
-                    <li className="flex items-start gap-2">
-                      <span className="w-5 h-5 text-primary mt-0.5 flex-shrink-0">•</span>
-                      <span>Principio de limitación de la finalidad: los datos personales serán recogidos con fines determinados, explícitos y legítimos.</span>
-                    </li>
-                    <li className="flex items-start gap-2">
-                      <span className="w-5 h-5 text-primary mt-0.5 flex-shrink-0">•</span>
-                      <span>Principio de minimización de datos: los datos personales recogidos serán únicamente los estrictamente necesarios en relación con los fines para los que son tratados.</span>
-                    </li>
-                    <li className="flex items-start gap-2">
-                      <span className="w-5 h-5 text-primary mt-0.5 flex-shrink-0">•</span>
-                      <span>Principio de exactitud: los datos personales deben ser exactos y estar siempre actualizados.</span>
-                    </li>
-                    <li className="flex items-start gap-2">
-                      <span className="w-5 h-5 text-primary mt-0.5 flex-shrink-0">•</span>
-                      <span>Principio de limitación del plazo de conservación: los datos personales solo serán mantenidos de forma que se permita la identificación del Usuario durante el tiempo necesario para los fines de su tratamiento.</span>
-                    </li>
-                    <li className="flex items-start gap-2">
-                      <span className="w-5 h-5 text-primary mt-0.5 flex-shrink-0">•</span>
-                      <span>Principio de integridad y confidencialidad: los datos personales serán tratados de manera que se garantice su seguridad y confidencialidad.</span>
-                    </li>
-                    <li className="flex items-start gap-2">
-                      <span className="w-5 h-5 text-primary mt-0.5 flex-shrink-0">•</span>
-                      <span>Principio de responsabilidad proactiva: el Responsable del tratamiento será responsable de asegurar que los principios anteriores se cumplen.</span>
-                    </li>
-                  </ul>
-                  <h3 className="text-xl font-bold mb-3 mt-6">Categorías de datos personales</h3>
-                  <p>
-                    Las categorías de datos que se tratan en Dextra Law Firm son únicamente datos identificativos. En ningún caso, se tratan categorías especiales de datos personales en el sentido del artículo 9 del RGPD.
-                  </p>
-                  <h3 className="text-xl font-bold mb-3 mt-6">Base legal para el tratamiento de los datos personales</h3>
-                  <p>
-                    La base legal para el tratamiento de los datos personales es el consentimiento. Dextra Law Firm se compromete a recabar el consentimiento expreso y verificable del Usuario para el tratamiento de sus datos personales para uno o varios fines específicos.
-                  </p>
-                  <p>
-                    El Usuario tendrá derecho a retirar su consentimiento en cualquier momento. Será tan fácil retirar el consentimiento como darlo. Como regla general, la retirada del consentimiento no condicionará el uso del Sitio Web.
-                  </p>
-                  <p>
-                    En las ocasiones en las que el Usuario deba o pueda facilitar sus datos a través de formularios para realizar consultas, solicitar información o por motivos relacionados con el contenido del Sitio Web, se le informará en caso de que la cumplimentación de alguno de ellos sea obligatoria debido a que los mismos sean imprescindibles para el correcto desarrollo de la operación realizada.
-                  </p>
-                  <h3 className="text-xl font-bold mb-3 mt-6">Fines del tratamiento a que se destinan los datos personales</h3>
-                  <p>
-                    Los datos personales son recabados y gestionados por Dextra Law Firm con la finalidad de poder facilitar, agilizar y cumplir los compromisos establecidos entre el Sitio Web y el Usuario o el mantenimiento de la relación que se establezca en los formularios que este último rellene o para atender una solicitud o consulta.
-                  </p>
-                  <p>
-                    Igualmente, los datos podrán ser utilizados con una finalidad comercial de personalización, operativa y estadística, y actividades propias del objeto social de Dextra Law Firm, así como para la extracción, almacenamiento de datos y estudios de marketing para adecuar el Contenido ofertado al Usuario, así como mejorar la calidad, funcionamiento y navegación por el Sitio Web.
-                  </p>
-                  <p>
-                    En el momento en que se obtengan los datos personales, se informará al Usuario acerca del fin o fines específicos del tratamiento a que se destinarán los datos personales; es decir, del uso o usos que se dará a la información recopilada.
-                  </p>
-                  <h3 className="text-xl font-bold mb-3 mt-6">Períodos de retención de los datos personales</h3>
-                  <p>
-                    Los datos personales solo serán retenidos durante el tiempo mínimo necesario para los fines de su tratamiento y, en todo caso, únicamente durante el siguiente plazo: Durante el tiempo estrictamente necesario para atender su solicitud, o hasta que el Usuario solicite su supresión.
-                  </p>
-                  <p>
-                    En el momento en que se obtengan los datos personales, se informará al Usuario acerca del plazo durante el cual se conservarán los datos personales o, cuando eso no sea posible, los criterios utilizados para determinar este plazo.
-                  </p>
-                  <h3 className="text-xl font-bold mb-3 mt-6">Destinatarios de los datos personales</h3>
-                  <p>
-                    Los datos personales del Usuario serán compartidos con los siguientes destinatarios o categorías de destinatarios:
-                  </p>
-                  <p>
-                    Los datos personales recogidos no serán compartidos con empresas externas salvo con aquellas entidades que actúen como encargadas del tratamiento para la gestión técnica de la web (por ejemplo, empresa de hosting y servicios de análisis), que únicamente tratarán los datos conforme a las instrucciones del responsable y en el marco del Reglamento (UE) 2016/679 (RGPD) y de la Ley Orgánica 3/2018, de 5 de diciembre, de Protección de Datos y de Garantía de Derechos Digitales (LOPDGDD).
-                  </p>
-                  <p>
-                    En caso de que el Responsable del tratamiento tenga la intención de transferir datos personales a un tercer país u organización internacional, en el momento en que se obtengan los datos personales, se informará al Usuario acerca del tercer país u organización internacional al cual se tiene la intención de transferir los datos, así como de la existencia o ausencia de una decisión de adecuación de la Comisión.
-                  </p>
-                  <h3 className="text-xl font-bold mb-3 mt-6">Datos personales de menores de edad</h3>
-                  <p>
-                    Respetando lo establecido en los artículos 8 del RGPD y 7 de la Ley Orgánica 3/2018, de 5 de diciembre, de Protección de Datos Personales y garantía de los derechos digitales, solo los mayores de 14 años podrán otorgar su consentimiento para el tratamiento de sus datos personales de forma lícita por Dextra Law Firm. Si se trata de un menor de 14 años, será necesario el consentimiento de los padres o tutores para el tratamiento, y este solo se considerará lícito en la medida en la que los mismos lo hayan autorizado.
-                  </p>
-                  <h3 className="text-xl font-bold mb-3 mt-6">Secreto y seguridad de los datos personales</h3>
-                  <p>
-                    Dextra Law Firm se compromete a adoptar las medidas técnicas y organizativas necesarias, según el nivel de seguridad adecuado al riesgo de los datos recogidos, de forma que se garantice la seguridad de los datos de carácter personal y se evite la destrucción, pérdida o alteración accidental o ilícita de datos personales transmitidos, conservados o tratados de otra forma, o la comunicación o acceso no autorizados a dichos datos.
-                  </p>
-                  <p>
-                    El Sitio Web cuenta con un certificado SSL (Secure Socket Layer), que asegura que los datos personales se transmiten de forma segura y confidencial, al ser la transmisión de los datos entre el servidor y el Usuario, y en retroalimentación, totalmente cifrada o encriptada.
-                  </p>
-                  <p>
-                    Sin embargo, debido a que Dextra Law Firm no puede garantizar la inexpugnabilidad de internet ni la ausencia total de hackers u otros que accedan de modo fraudulento a los datos personales, el Responsable del tratamiento se compromete a comunicar al Usuario sin dilación indebida cuando ocurra una violación de la seguridad de los datos personales que sea probable que entrañe un alto riesgo para los derechos y libertades de las personas físicas. Siguiendo lo establecido en el artículo 4 del RGPD, se entiende por violación de la seguridad de los datos personales toda violación de la seguridad que ocasione la destrucción, pérdida o alteración accidental o ilícita de datos personales transmitidos, conservados o tratados de otra forma, o la comunicación o acceso no autorizados a dichos datos.
-                  </p>
-                  <p>
-                    Los datos personales serán tratados como confidenciales por el Responsable del tratamiento, quien se compromete a informar de y a garantizar por medio de una obligación legal o contractual que dicha confidencialidad sea respetada por sus empleados, asociados, y toda persona a la cual le haga accesible la información.
-                  </p>
-                  <h3 className="text-xl font-bold mb-3 mt-6">Derechos derivados del tratamiento de los datos personales</h3>
-                  <p>
-                    El Usuario tiene sobre Dextra Law Firm y podrá, por tanto, ejercer frente al Responsable del tratamiento los siguientes derechos reconocidos en el RGPD y la Ley Orgánica 3/2018, de 5 de diciembre, de Protección de Datos Personales y garantía de los derechos digitales:
-                  </p>
-                  <ul className="ml-4 mb-4 space-y-2">
-                    <li className="flex items-start gap-2">
-                      <span className="w-5 h-5 text-primary mt-0.5 flex-shrink-0">•</span>
-                      <span>Derecho de acceso: Es el derecho del Usuario a obtener confirmación de si Dextra Law Firm está tratando o no sus datos personales y, en caso afirmativo, obtener información sobre sus datos concretos de carácter personal y del tratamiento que Dextra Law Firm haya realizado o realice, así como, entre otra, de la información disponible sobre el origen de dichos datos y los destinatarios de las comunicaciones realizadas o previstas de los mismos.</span>
-                    </li>
-                    <li className="flex items-start gap-2">
-                      <span className="w-5 h-5 text-primary mt-0.5 flex-shrink-0">•</span>
-                      <span>Derecho de rectificación: Es el derecho del Usuario a que se modifiquen sus datos personales que resulten ser inexactos o, teniendo en cuenta los fines del tratamiento, incompletos.</span>
-                    </li>
-                    <li className="flex items-start gap-2">
-                      <span className="w-5 h-5 text-primary mt-0.5 flex-shrink-0">•</span>
-                      <span>Derecho de supresión ("el derecho al olvido"): Es el derecho del Usuario, siempre que la legislación vigente no establezca lo contrario, a obtener la supresión de sus datos personales cuando estos ya no sean necesarios para los fines para los cuales fueron recogidos o tratados; el Usuario haya retirado su consentimiento al tratamiento y este no cuente con otra base legal; el Usuario se oponga al tratamiento y no exista otro motivo legítimo para continuar con el mismo; los datos personales hayan sido tratados ilícitamente; los datos personales deban suprimirse en cumplimiento de una obligación legal; o los datos personales hayan sido obtenidos producto de una oferta directa de servicios de la sociedad de la información a un menor de 14 años. Además de suprimir los datos, el Responsable del tratamiento, teniendo en cuenta la tecnología disponible y el coste de su aplicación, deberá adoptar medidas razonables para informar a los responsables que estén tratando los datos personales de la solicitud del interesado de supresión de cualquier enlace a esos datos personales.</span>
-                    </li>
-                    <li className="flex items-start gap-2">
-                      <span className="w-5 h-5 text-primary mt-0.5 flex-shrink-0">•</span>
-                      <span>Derecho a la limitación del tratamiento: Es el derecho del Usuario a limitar el tratamiento de sus datos personales. El Usuario tiene derecho a obtener la limitación del tratamiento cuando impugne la exactitud de sus datos personales; el tratamiento sea ilícito; el Responsable del tratamiento ya no necesite los datos personales, pero el Usuario lo necesite para hacer reclamaciones; y cuando el Usuario se haya opuesto al tratamiento.</span>
-                    </li>
-                    <li className="flex items-start gap-2">
-                      <span className="w-5 h-5 text-primary mt-0.5 flex-shrink-0">•</span>
-                      <span>Derecho a la portabilidad de los datos: En caso de que el tratamiento se efectúe por medios automatizados, el Usuario tendrá derecho a recibir del Responsable del tratamiento sus datos personales en un formato estructurado, de uso común y lectura mecánica, y a transmitirlos a otro responsable del tratamiento. Siempre que sea técnicamente posible, el Responsable del tratamiento transmitirá directamente los datos a ese otro responsable.</span>
-                    </li>
-                    <li className="flex items-start gap-2">
-                      <span className="w-5 h-5 text-primary mt-0.5 flex-shrink-0">•</span>
-                      <span>Derecho de oposición: Es el derecho del Usuario a que no se lleve a cabo el tratamiento de sus datos de carácter personal o se cese el tratamiento de los mismos por parte de Dextra Law Firm.</span>
-                    </li>
-                    <li className="flex items-start gap-2">
-                      <span className="w-5 h-5 text-primary mt-0.5 flex-shrink-0">•</span>
-                      <span>Derecho a no ser objeto de una decisión basada únicamente en el tratamiento automatizado, incluida la elaboración de perfiles: Es el derecho del Usuario a no ser objeto de una decisión individualizada basada únicamente en el tratamiento automatizado de sus datos personales, incluida la elaboración de perfiles, existente salvo que la legislación vigente establezca lo contrario.</span>
-                    </li>
-                  </ul>
-                  <p>
-                    Así pues, el Usuario podrá ejercitar sus derechos mediante comunicación escrita dirigida al Responsable del tratamiento con la referencia "RGPD-", especificando:
-                  </p>
-                  <ul className="ml-4 mb-4 space-y-2">
-                    <li className="flex items-start gap-2">
-                      <span className="w-5 h-5 text-primary mt-0.5 flex-shrink-0">•</span>
-                      <span>Nombre, apellidos del Usuario y copia del DNI. En los casos en que se admita la representación, será también necesaria la identificación por el mismo medio de la persona que representa al Usuario, así como el documento acreditativo de la representación. La fotocopia del DNI podrá ser sustituida, por cualquier otro medio válido en derecho que acredite la identidad.</span>
-                    </li>
-                    <li className="flex items-start gap-2">
-                      <span className="w-5 h-5 text-primary mt-0.5 flex-shrink-0">•</span>
-                      <span>Petición con los motivos específicos de la solicitud o información a la que se quiere acceder.</span>
-                    </li>
-                    <li className="flex items-start gap-2">
-                      <span className="w-5 h-5 text-primary mt-0.5 flex-shrink-0">•</span>
-                      <span>Domicilio a efecto de notificaciones.</span>
-                    </li>
-                    <li className="flex items-start gap-2">
-                      <span className="w-5 h-5 text-primary mt-0.5 flex-shrink-0">•</span>
-                      <span>Fecha y firma del solicitante.</span>
-                    </li>
-                    <li className="flex items-start gap-2">
-                      <span className="w-5 h-5 text-primary mt-0.5 flex-shrink-0">•</span>
-                      <span>Todo documento que acredite la petición que formula.</span>
-                    </li>
-                  </ul>
-                  <p>
-                    Esta solicitud y todo otro documento adjunto podrá enviarse a la siguiente dirección y/o correo electrónico:
-                  </p>
-                  <div className="space-y-2">
-                    <p><strong>Dirección postal:</strong> Gran Vía Marques del Turia 49-1, CP 46005, Valencia</p>
-                    <p><strong>Correo electrónico:</strong> info@dextralawfirm.com</p>
-                  </div>
-                  <h3 className="text-xl font-bold mb-3 mt-6">Enlaces a sitios web de terceros</h3>
-                  <p>
-                    El Sitio Web puede incluir hipervínculos o enlaces que permiten acceder a páginas web de terceros distintos de Dextra Law Firm, y que por tanto no son operados por Dextra Law Firm. Los titulares de dichos sitios web dispondrán de sus propias políticas de protección de datos, siendo ellos mismos, en cada caso, responsables de sus propios ficheros y de sus propias prácticas de privacidad.
-                  </p>
-                  <h3 className="text-xl font-bold mb-3 mt-6">Reclamaciones ante la autoridad de control</h3>
-                  <p>
-                    En caso de que el Usuario considere que existe un problema o infracción de la normativa vigente en la forma en la que se están tratando sus datos personales, tendrá derecho a la tutela judicial efectiva y a presentar una reclamación ante una autoridad de control, en particular, en el Estado en que tenga su residencia habitual, lugar de trabajo o lugar de la supuesta infracción. En el caso de España, la autoridad de control es la Agencia Española de Protección de Datos (https://www.aepd.es/).
-                  </p>
-                </section>
+    <h2>2. Qué datos tratamos, para qué y con qué base jurídica</h2>
 
-                <section>
-                  <h2 className="text-2xl font-bold mb-4 flex items-center gap-2">
-                    <FileText className="w-6 h-6 text-primary" />
-                    II. ACEPTACIÓN Y CAMBIOS EN ESTA POLÍTICA DE PRIVACIDAD
-                  </h2>
-                  <p>
-                    Es necesario que el Usuario haya leído y esté conforme con las condiciones sobre la protección de datos de carácter personal contenidas en esta Política de Privacidad, así como que acepte el tratamiento de sus datos personales para que el Responsable del tratamiento pueda proceder al mismo en la forma, durante los plazos y para las finalidades indicadas. El uso del Sitio Web implicará la aceptación de la Política de Privacidad del mismo.
-                  </p>
-                  <p>
-                    Dextra Law Firm se reserva el derecho a modificar su Política de Privacidad, de acuerdo a su propio criterio, o motivado por un cambio legislativo, jurisprudencial o doctrinal de la Agencia Española de Protección de Datos. Los cambios o actualizaciones de esta Política de Privacidad no serán notificados de forma explícita al Usuario. Se recomienda al Usuario consultar esta página de forma periódica para estar al tanto de los últimos cambios o actualizaciones.
-                  </p>
-                  <p>
-                    Esta Política de Privacidad fue actualizada para adaptarse al Reglamento (UE) 2016/679 del Parlamento Europeo y del Consejo, de 27 de abril de 2016, relativo a la protección de las personas físicas en lo que respecta al tratamiento de datos personales y a la libre circulación de estos datos (RGPD) y a la Ley Orgánica 3/2018, de 5 de diciembre, de Protección de Datos Personales y garantía de los derechos digitales.
-                  </p>
-                </section>
+    <h3>2.1. Consultas por formulario, correo electrónico, teléfono o WhatsApp</h3>
+    <ul>
+      <li><strong>Datos:</strong> nombre, correo electrónico, teléfono (opcional), área de interés y el contenido de tu mensaje.</li>
+      <li><strong>Finalidad:</strong> responder a tu consulta y, si lo solicitas, valorar y presupuestar un posible encargo profesional.</li>
+      <li>
+        <strong>Base jurídica:</strong> aplicación de medidas precontractuales adoptadas a petición tuya (art. 6.1.b RGPD).
+        La casilla del formulario sirve para que confirmes que has leído esta información.
+      </li>
+      <li>
+        <strong>Datos especialmente protegidos:</strong> te pedimos que no incluyas en el formulario datos de salud u otra
+        información sensible que no sea imprescindible. Si para valorar tu caso es necesario tratar datos de categorías
+        especiales o relativos a infracciones penales, lo haremos para la formulación, el ejercicio o la defensa de
+        reclamaciones (art. 9.2.f RGPD) y en el marco del ejercicio de la abogacía (art. 10 LOPDGDD), con deber de secreto
+        profesional.
+      </li>
+      <li>
+        <strong>Conservación:</strong> si la consulta no da lugar a un encargo, conservaremos los datos durante{" "}
+        [POR_CONFIRMAR: plazo, p. ej. 12 meses] para atender posibles aclaraciones, y después se suprimirán o se bloquearán
+        durante los plazos de prescripción de posibles responsabilidades. Si se formaliza un encargo, se aplicará el apartado 2.3.
+      </li>
+    </ul>
 
-                <div className="mt-12 p-6 bg-gradient-to-br from-primary/5 to-primary/10 rounded-lg border border-primary/20">
-                  <div className="space-y-4">
-                    <p className="text-sm text-foreground font-bold text-center">Para cualquier consulta sobre la Política de Privacidad puede contactar con nosotros</p>
-                    <div className="mt-4 pt-4 border-t border-primary/20">
-                      <div className="space-y-2">
-                        <p><strong>Correo electrónico:</strong> info@dextralawfirm.com</p>
-                        <p><strong>Teléfono de contacto:</strong> 624 164 536</p>
-                        <p><strong>Dirección:</strong> Gran Vía Marqués del Turia 49, -1, 46005 Valencia</p>
-                      </div>
-                    </div>
-                  </div>
-                </div>
+    <h3>2.2. Reserva de citas en Cal.eu</h3>
+    <ul>
+      <li><strong>Datos:</strong> los que facilites en el formulario de reserva (nombre, correo, teléfono y motivo de la cita).</li>
+      <li><strong>Finalidad:</strong> gestionar la cita y, en su caso, el pago previo de la consulta según las <Link to="/condiciones">Condiciones</Link>.</li>
+      <li><strong>Base jurídica:</strong> ejecución del contrato de consulta o medidas precontractuales (art. 6.1.b RGPD).</li>
+      <li><strong>Conservación:</strong> [POR_CONFIRMAR: plazo de conservación de reservas] y, si hay facturación, los plazos fiscales legales.</li>
+    </ul>
 
-              </div>
-            </div>
-          </div>
-        </div>
-      </Section>
-    </>
-  );
-};
+    <h3>2.3. Clientes</h3>
+    <p>
+      Si contratas nuestros servicios, trataremos tus datos para prestar el servicio encargado, facturar y cumplir las
+      obligaciones legales aplicables (base: ejecución del contrato y cumplimiento de obligaciones legales, art. 6.1.b y
+      6.1.c RGPD). Te facilitaremos información específica en la hoja de encargo. Los datos se conservarán mientras dure la
+      relación profesional y, después, durante los plazos legales (por ejemplo, fiscales, de prevención del blanqueo de
+      capitales cuando resulte aplicable y de prescripción de la responsabilidad profesional) [POR_CONFIRMAR: detallar plazos].
+    </p>
+
+    <h3>2.4. Navegación y seguridad del sitio</h3>
+    <ul>
+      <li>
+        <strong>Datos:</strong> dirección IP, fecha y hora, página solicitada y datos técnicos del navegador, registrados por
+        el proveedor de alojamiento.
+      </li>
+      <li><strong>Finalidad:</strong> servir la web, garantizar su seguridad y prevenir abusos (por ejemplo, envíos masivos del formulario).</li>
+      <li><strong>Base jurídica:</strong> interés legítimo en la seguridad del sitio (art. 6.1.f RGPD).</li>
+      <li><strong>Conservación:</strong> [POR_CONFIRMAR: plazo de retención de registros según el plan de Vercel].</li>
+    </ul>
+
+    <h3>2.5. Contenido de terceros (mapa y reseñas)</h3>
+    <p>
+      Solo si lo aceptas, se cargan Google Maps y el widget de reseñas de Elfsight, que reciben tu dirección IP y datos
+      técnicos del navegador. Base jurídica: tu consentimiento (art. 6.1.a RGPD), que puedes retirar en cualquier momento.
+      Más detalles en la <Link to="/cookies">Política de cookies</Link>.
+    </p>
+
+    <p>
+      <strong>No</strong> enviamos comunicaciones comerciales ni boletines, <strong>no</strong> elaboramos perfiles y{" "}
+      <strong>no</strong> tomamos decisiones automatizadas que te afecten.
+    </p>
+
+    <h2>3. Destinatarios y encargados del tratamiento</h2>
+    <p>
+      No cedemos tus datos a terceros, salvo obligación legal o cuando sea necesario para el encargo profesional (por
+      ejemplo, juzgados, tribunales o administraciones públicas ante los que actuemos en tu nombre). Para prestar el
+      servicio contamos con proveedores que tratan datos por cuenta nuestra (encargados del tratamiento), con contrato
+      conforme al art. 28 RGPD:
+    </p>
+    <div className="overflow-x-auto">
+      <table>
+        <caption className="sr-only">Encargados del tratamiento</caption>
+        <thead>
+          <tr>
+            <th scope="col">Proveedor</th>
+            <th scope="col">Servicio</th>
+            <th scope="col">Ubicación y garantías</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Vercel Inc.</td>
+            <td>Alojamiento de la web y ejecución del envío del formulario</td>
+            <td>
+              EE. UU. La función del formulario se ejecuta en la región de París (UE). Transferencias amparadas en cláusulas
+              contractuales tipo de la Comisión Europea [POR_CONFIRMAR: revisar el DPA de Vercel y, en su caso, su adhesión al
+              Marco de Privacidad de Datos UE-EE. UU.].
+            </td>
+          </tr>
+          <tr>
+            <td>Resend [POR_CONFIRMAR: razón social según el DPA]</td>
+            <td>Envío por correo electrónico de los mensajes del formulario</td>
+            <td>
+              Envío configurado desde la región de la UE (eu-west-1, Irlanda). Resend es una empresa de EE. UU.: las
+              transferencias fuera del EEE se amparan en cláusulas contractuales tipo (SCC) de la Comisión Europea.{" "}
+              [POR_CONFIRMAR: el titular debe revisar y aceptar el DPA de Resend antes de activar el formulario.]
+            </td>
+          </tr>
+          <tr>
+            <td>[POR_CONFIRMAR: proveedor del correo {SITE.email}]</td>
+            <td>Recepción y gestión del correo electrónico</td>
+            <td>[POR_CONFIRMAR: ubicación y garantías]</td>
+          </tr>
+          <tr>
+            <td>Cal.eu [POR_CONFIRMAR: razón social según el DPA]</td>
+            <td>Gestión de reservas de citas</td>
+            <td>[POR_CONFIRMAR: ubicación de los datos y garantías]</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <p>
+      Si nos escribes por <strong>WhatsApp</strong>, WhatsApp Ireland Limited trata tus datos como responsable conforme a su
+      propia política de privacidad. Si prefieres no usarlo, puedes contactarnos por correo, teléfono o formulario.
+    </p>
+
+    <h2>4. Transferencias internacionales</h2>
+    <p>
+      Algunos proveedores (Vercel y Resend) son empresas de Estados Unidos y pueden acceder a datos desde fuera del Espacio
+      Económico Europeo. En esos casos, las transferencias se basan en las cláusulas contractuales tipo aprobadas por la
+      Comisión Europea (art. 46.2.c RGPD) y, cuando proceda, en la decisión de adecuación del Marco de Privacidad de Datos
+      UE-EE. UU. (art. 45 RGPD). Puedes solicitarnos más información sobre estas garantías.
+    </p>
+
+    <h2>5. Tus derechos</h2>
+    <p>Puedes ejercer en cualquier momento, de forma gratuita, los derechos de:</p>
+    <ul>
+      <li><strong>Acceso</strong> a tus datos.</li>
+      <li><strong>Rectificación</strong> de datos inexactos.</li>
+      <li><strong>Supresión</strong> cuando ya no sean necesarios.</li>
+      <li><strong>Oposición</strong> y <strong>limitación</strong> del tratamiento.</li>
+      <li><strong>Portabilidad</strong> de los datos que nos hayas facilitado.</li>
+      <li><strong>Retirar el consentimiento</strong> dado, sin que afecte a la licitud del tratamiento anterior.</li>
+    </ul>
+    <p>
+      Para ejercerlos, escríbenos a <a href={`mailto:${SITE.email}`}>{SITE.email}</a> o por correo postal a{" "}
+      {SITE.owner.address}, indicando el derecho que ejerces. Si tenemos dudas razonables sobre tu identidad, podremos pedirte
+      la información adicional necesaria para confirmarla. Te responderemos en el plazo de un mes. Ten en cuenta que el
+      secreto profesional y las obligaciones legales de conservación pueden limitar algunos derechos.
+    </p>
+
+    <h2>6. Reclamación ante la autoridad de control</h2>
+    <p>
+      Si consideras que no hemos tratado tus datos correctamente, puedes presentar una reclamación ante la{" "}
+      <strong>Agencia Española de Protección de Datos</strong> (C/ Jorge Juan, 6, 28001 Madrid,{" "}
+      <a href="https://www.aepd.es" target="_blank" rel="noopener noreferrer">www.aepd.es</a>). Te recomendamos que antes
+      nos contactes para intentar resolverlo.
+    </p>
+
+    <h2>7. Menores de edad</h2>
+    <p>
+      Esta web no está dirigida a menores de 14 años. Si eres menor de esa edad, la consulta debe hacerla tu padre, madre o
+      representante legal.
+    </p>
+
+    <h2>8. Seguridad</h2>
+    <p>
+      Aplicamos medidas técnicas y organizativas adecuadas al riesgo: conexión cifrada (HTTPS), cabeceras de seguridad,
+      validación de los datos en el servidor, limitación de envíos y acceso restringido a la información. Más detalles en la{" "}
+      <Link to="/seguridad">Política de seguridad</Link>.
+    </p>
+
+    <h2>9. Cambios en esta política</h2>
+    <p>
+      Podemos actualizar esta política para adaptarla a cambios normativos o en los servicios que utilizamos. La fecha de la
+      última actualización figura al principio de la página.
+    </p>
+  </LegalLayout>
+);
 
 export default Privacidad;

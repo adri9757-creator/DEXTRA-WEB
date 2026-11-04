@@ -34,16 +34,18 @@ const Blog = () => {
         <div className="container text-center">
           <h1 className="text-4xl md:text-5xl font-bold mb-4">Publicaciones</h1>
           <div className="w-16 h-1 bg-primary mx-auto mb-4" />
-          <p className="text-muted-foreground font-sans text-lg mx-auto text-center whitespace-nowrap">
+          <p className="text-muted-foreground font-sans text-lg mx-auto text-center max-w-2xl">
             Información práctica y actualizada sobre derecho penal, derecho de extranjería y derecho civil.
           </p>
           
           {/* Enhanced Search Bar */}
           <div className="mt-8 max-w-2xl mx-auto">
             <div className="relative group">
-              <Search className="absolute left-4 top-1/2 transform -translate-y-1/2 w-5 h-5 text-muted-foreground group-focus-within:text-primary transition-colors" />
+              <Search aria-hidden="true" className="absolute left-4 top-1/2 transform -translate-y-1/2 w-5 h-5 text-muted-foreground group-focus-within:text-primary transition-colors" />
+              <label htmlFor="buscar-articulos" className="sr-only">Buscar artículos</label>
               <input
-                type="text"
+                id="buscar-articulos"
+                type="search"
                 placeholder="Buscar artículos por título, contenido o etiquetas..."
                 value={searchQuery}
                 onChange={(e) => setSearchQuery(e.target.value)}
@@ -53,7 +55,7 @@ const Blog = () => {
                 <button
                   onClick={() => setSearchQuery("")}
                   className="absolute right-4 top-1/2 transform -translate-y-1/2 w-8 h-8 text-muted-foreground hover:text-primary transition-colors p-1 rounded-md hover:bg-secondary/80"
-                  title="Limpiar búsqueda"
+                  aria-label="Limpiar búsqueda"
                 >
                   ×
                 </button>
@@ -62,7 +64,7 @@ const Blog = () => {
             
             {/* Search Results Info */}
             {searchQuery && (
-              <div className="mt-4 text-center">
+              <div className="mt-4 text-center" role="status">
                 <p className="text-sm text-muted-foreground font-sans">
                   {paginatedPosts.length > 0 
                     ? `Se encontraron ${paginatedPosts.length} resultados para "${searchQuery}"`
@@ -79,6 +81,8 @@ const Blog = () => {
       <Section>
         <div className="flex flex-wrap justify-center gap-3 mb-3">
           <button
+            type="button"
+            aria-pressed={selectedCategory === null}
             onClick={() => setSelectedCategory(null)}
             className={`px-4 py-2 rounded-full text-sm font-sans transition-colors ${
               selectedCategory === null 
@@ -90,7 +94,9 @@ const Blog = () => {
           </button>
           {categories.map((category) => (
             <button
+              type="button"
               key={category}
+              aria-pressed={selectedCategory === category}
               onClick={() => setSelectedCategory(category)}
               className={`px-4 py-2 rounded-full text-sm font-sans transition-colors ${
                 selectedCategory === category 
@@ -108,47 +114,28 @@ const Blog = () => {
       <div className="container pb-20 md:pb-28">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {paginatedPosts.map((post, i) => (
-            <article key={i} className={`group border border-border rounded-lg overflow-hidden hover:shadow-xl transition-all duration-300 hover:-translate-y-1 h-full flex flex-col ${post.slug === "#" ? "opacity-60 grayscale" : ""}`}>
+            <article key={i} className={`group border border-border rounded-lg overflow-hidden hover:shadow-xl transition-all duration-300 hover:-translate-y-1 h-full flex flex-col ${post.slug === "#" ? "[&_img]:grayscale" : ""}`}>
               <div className="h-48 bg-muted flex items-center justify-center flex-shrink-0 relative">
-                <img 
-                  src={
-                    post.title === "¿Qué hacer si te detienen en Valencia?" ? "/images/DETENCION.png" :
-                    post.title === "Diferencias entre delito leve y delito grave" ? "/images/penal-illustration.png" :
-                    post.title === "Cómo reclamar una deuda: guía paso a paso" ? "/images/DEUDA.png" :
-                    post.title === "¿Puedo reclamar sin ir a juicio?" ? "/images/civil-illustration-new.png" :
-                    post.title === "Guía completa de residencia en España 2026" ? "/images/ESPANA.png" :
-                    post.title === "Arraigo social 2026: requisitos actualizados" ? "/images/temp-backup.png" :
-                    post.category === "Penal" ? "/images/DETENCION.png" :
-                    post.category === "Civil" ? "/images/civil-illustration-new.png" :
-                    post.category === "Extranjería" ? "/images/extranjeria-illustration.png" :
-                    "/images/service-illustration.png"
-                  } 
-                  onError={(e) => {
-                    e.currentTarget.src = "/images/service-illustration.png";
-                    e.currentTarget.onerror = null;
-                  }}
-                  alt={
-                    post.title === "¿Qué hacer si te detienen en Valencia?" ? "Detención policial en Valencia" :
-                    post.title === "Diferencias entre delito leve y delito grave" ? "Clasificación de delitos penales" :
-                    post.title === "Cómo reclamar una deuda: guía paso a paso" ? "Reclamación de deudas" :
-                    post.title === "¿Puedo reclamar sin ir a juicio?" ? "Resolución de conflictos civiles" :
-                    post.title === "Guía completa de residencia en España 2026" ? "Residencia en España" :
-                    post.title === "Arraigo social 2026: requisitos actualizados" ? "Arraigo social en España" :
-                    `${post.category} illustration`
-                  }
+                <img
+                  src={post.image}
+                  alt=""
+                  width={1200}
+                  height={800}
+                  loading="lazy"
+                  decoding="async"
                   className="absolute inset-0 w-full h-full object-cover"
                 />
               </div>
               <div className="p-6 flex flex-col flex-grow">
                 <div className="flex items-center gap-3 mb-3">
                   {post.slug === "#" && (
-                    <span className="inline-block bg-orange-100 text-orange-800 font-sans text-xs font-bold px-2 py-1 rounded-full">
+                    <span className="inline-block bg-orange-100 text-orange-900 font-sans text-xs font-bold px-2 py-1 rounded-full">
                       PRÓXIMAMENTE
                     </span>
                   )}
-                  <span className="inline-block bg-primary/10 text-primary font-sans text-xs font-semibold px-3 py-1 rounded-full">{post.category}</span>
+                  <span className="inline-block bg-primary/10 text-primary-strong font-sans text-xs font-semibold px-3 py-1 rounded-full">{post.category}</span>
                   <span className="flex items-center gap-1 text-muted-foreground font-sans text-xs">
-                    <Clock className="w-3 h-3" /> {post.date}
+                    <Clock className="w-3 h-3" aria-hidden="true" /> <time>{post.date}</time>
                   </span>
                 </div>
                 <h2 className="text-lg font-bold mb-2 group-hover:text-primary transition-colors">{post.title}</h2>
@@ -170,7 +157,7 @@ const Blog = () => {
                       to={post.slug}
                       className="inline-flex items-center gap-1 text-primary font-sans font-semibold text-sm group-hover:gap-2 transition-all"
                     >
-                      Leer más <ArrowRight className="w-4 h-4" />
+                      Leer más <span className="sr-only">: {post.title}</span><ArrowRight className="w-4 h-4" aria-hidden="true" />
                     </Link>
                   ) : (
                     <span className="inline-flex items-center gap-1 text-muted-foreground font-sans text-sm">

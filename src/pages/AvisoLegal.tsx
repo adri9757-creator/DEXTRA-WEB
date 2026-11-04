@@ -10,7 +10,7 @@ const AvisoLegal = () => {
         <div className="container">
           <Link 
             to="/" 
-            className="inline-flex items-center gap-2 text-primary font-sans font-semibold text-sm mb-6 hover:gap-3 transition-all"
+            className="inline-flex items-center gap-2 text-primary-strong font-sans font-semibold text-sm mb-6 hover:gap-3 transition-all"
           >
             <ArrowLeft className="w-4 h-4" />
             Volver al Inicio
@@ -18,7 +18,7 @@ const AvisoLegal = () => {
           
           <div className="max-w-4xl">
             <div className="flex items-center gap-3 mb-4">
-              <span className="inline-block bg-primary/10 text-primary font-sans text-xs font-semibold px-3 py-1 rounded-full">Legal</span>
+              <span className="inline-block bg-primary/10 text-primary-strong font-sans text-xs font-semibold px-3 py-1 rounded-full">Legal</span>
             </div>
             
             <h1 className="text-4xl md:text-5xl font-bold mb-6">Aviso Legal</h1>
@@ -29,12 +29,9 @@ const AvisoLegal = () => {
             <div className="flex flex-wrap items-center gap-6 text-sm text-muted-foreground font-sans">
               <div className="flex items-center gap-2">
                 <FileText className="w-4 h-4" />
-                <span>Última actualización: 2026</span>
+                <span>Última actualización: noviembre de 2026</span>
               </div>
-              <div className="flex items-center gap-2">
-                <Shield className="w-4 h-4" />
-                <span>Protegido por ley</span>
-              </div>
+
             </div>
           </div>
         </div>
@@ -73,7 +70,50 @@ const AvisoLegal = () => {
                     <p><strong>Colegio profesional:</strong> Ilustre Colegio de la Abogacía de Valencia (ICAV)</p>
                     <p><strong>Número de colegiado:</strong> 19.921</p>
                     <p><strong>Titulación académica:</strong> Graduado en Derecho y Máster de Acceso a la Abogacía y Procura, título expedido en España.</p>
+                    <p><strong>Profesión:</strong> Abogado. Título profesional de abogado obtenido en España.</p>
+                    <p>
+                      <strong>Forma de ejercicio:</strong> ejercicio individual bajo la denominación comercial «Dextra Law Firm».{" "}
+                      [POR_CONFIRMAR: si se constituye la sociedad profesional, sustituir por su denominación social, CIF,
+                      domicilio social, datos de inscripción en el Registro Mercantil (tomo, folio, hoja) y en el Registro de
+                      Sociedades Profesionales del ICAV.]
+                    </p>
                   </div>
+                </section>
+
+                <section>
+                  <h2 className="text-2xl font-bold mb-4 flex items-center gap-2">
+                    <Gavel className="w-6 h-6 text-primary" aria-hidden="true" />
+                    1.1. NORMAS PROFESIONALES APLICABLES
+                  </h2>
+                  <p>
+                    El ejercicio de la abogacía está sujeto, entre otras, a las siguientes normas profesionales y deontológicas,
+                    que pueden consultarse en los enlaces indicados:
+                  </p>
+                  <ul className="ml-4 mb-4 space-y-2 list-disc pl-5">
+                    <li>Ley Orgánica 5/2024, de 11 de noviembre, del Derecho de Defensa.</li>
+                    <li>Estatuto General de la Abogacía Española, aprobado por el Real Decreto 135/2021, de 2 de marzo.</li>
+                    <li>Código Deontológico de la Abogacía Española, aprobado por el Pleno del Consejo General de la Abogacía Española.</li>
+                    <li>Estatutos y normativa del Ilustre Colegio de la Abogacía de Valencia.</li>
+                    <li>Ley 2/1974, de 13 de febrero, sobre Colegios Profesionales.</li>
+                  </ul>
+                  <p>
+                    Normativa del Consejo General de la Abogacía Española:{" "}
+                    <a href="https://www.abogacia.es" target="_blank" rel="noopener noreferrer" className="font-semibold underline underline-offset-2">www.abogacia.es</a>.
+                    Normativa del ICAV y ventanilla única, incluido su servicio de atención a consumidores y usuarios:{" "}
+                    <a href="https://www.icav.es" target="_blank" rel="noopener noreferrer" className="font-semibold underline underline-offset-2">www.icav.es</a>.
+                  </p>
+                </section>
+
+                <section>
+                  <h2 className="text-2xl font-bold mb-4 flex items-center gap-2">
+                    <Shield className="w-6 h-6 text-primary" aria-hidden="true" />
+                    1.2. SEGURO DE RESPONSABILIDAD CIVIL PROFESIONAL
+                  </h2>
+                  <p>
+                    Conforme al artículo 22 de la Ley 17/2009, de 23 de noviembre, sobre el libre acceso a las actividades de
+                    servicios: aseguradora [POR_CONFIRMAR: entidad aseguradora], póliza de responsabilidad civil profesional con
+                    cobertura geográfica [POR_CONFIRMAR: ámbito territorial].
+                  </p>
                 </section>
 
                 <section>

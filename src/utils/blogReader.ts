@@ -13,7 +13,8 @@ export interface BlogPost {
 
 export function parseMarkdownFile(content: string, filename: string): BlogPost {
   const lines = content.split('\n');
-  let frontMatter = {};
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any -- utilidad heredada sin uso actual
+  let frontMatter: Record<string, any> = {};
   let markdownContent = '';
   let inFrontMatter = false;
   

@@ -1,4 +1,6 @@
 import Section from "@/components/Section";
+import { BookingLink } from "@/components/CtaLinks";
+import CaseDisclaimer from "@/components/CaseDisclaimer";
 import { Link } from "react-router-dom";
 import { ArrowLeft, Calendar, User, Scale, CheckCircle } from "lucide-react";
 
@@ -10,7 +12,7 @@ const CasoReclamacionImpago = () => {
         <div className="container">
           <Link 
             to="/casos" 
-            className="inline-flex items-center gap-2 text-primary font-sans font-semibold text-sm mb-6 hover:gap-3 transition-all"
+            className="inline-flex items-center gap-2 text-primary-strong font-sans font-semibold text-sm mb-6 hover:gap-3 transition-all"
           >
             <ArrowLeft className="w-4 h-4" />
             Volver a Casos de Éxito
@@ -18,7 +20,7 @@ const CasoReclamacionImpago = () => {
           
           <div className="max-w-4xl">
             <div className="flex items-center gap-3 mb-4">
-              <span className="inline-block bg-primary/10 text-primary font-sans text-xs font-semibold px-3 py-1 rounded-full">Civil</span>
+              <span className="inline-block bg-primary/10 text-primary-strong font-sans text-xs font-semibold px-3 py-1 rounded-full">Civil</span>
               <span className="inline-flex items-center gap-1 text-muted-foreground font-sans text-sm">
                 <Calendar className="w-4 h-4" /> 2024
               </span>
@@ -87,15 +89,15 @@ const CasoReclamacionImpago = () => {
                 
                 <ul className="ml-4 mb-4 space-y-2">
                   <li className="flex items-start gap-2">
-                    <CheckCircle className="w-5 h-5 text-orange-600 mt-0.5 flex-shrink-0" />
+                    <CheckCircle className="w-5 h-5 text-primary-strong mt-0.5 flex-shrink-0" />
                     <span><strong>Aportamos el contrato de prestación de servicios y, en su defecto, la cadena de correos electrónicos y documentos comerciales que acreditaban la relación continuada entre las partes.</strong></span>
                   </li>
                   <li className="flex items-start gap-2">
-                    <CheckCircle className="w-5 h-5 text-orange-600 mt-0.5 flex-shrink-0" />
+                    <CheckCircle className="w-5 h-5 text-primary-strong mt-0.5 flex-shrink-0" />
                     <span><strong>Incorporamos todas las facturas emitidas, con detalle de trabajos realizados, fechas de vencimiento y medios de pago pactados.</strong></span>
                   </li>
                   <li className="flex items-start gap-2">
-                    <CheckCircle className="w-5 h-5 text-orange-600 mt-0.5 flex-shrink-0" />
+                    <CheckCircle className="w-5 h-5 text-primary-strong mt-0.5 flex-shrink-0" />
                     <span><strong>Adjuntamos comunicaciones de la propia empresa deudora (emails de agradecimiento, aceptación de trabajos, ausencia de reclamaciones técnicas) que corroboraban la conformidad con los servicios prestados.</strong></span>
                   </li>
                 </ul>
@@ -122,7 +124,7 @@ const CasoReclamacionImpago = () => {
                 </p>
                 
                 <div className="mt-8 p-6 bg-gradient-to-br from-orange-50 to-orange-100 border border-orange-300 rounded-lg">
-                  <h4 className="text-lg font-bold mb-2 text-orange-600 text-center">Resultado del Caso</h4>
+                  <h4 className="text-lg font-bold mb-2 text-primary-strong text-center">Resultado del Caso</h4>
                   <p className="text-black text-justify">
                     En consecuencia, dictó sentencia estimando íntegramente la demanda de reclamación de cantidad, condenando a la empresa al pago de todas las facturas adeudadas, más intereses legales desde la reclamación judicial y con expresa condena en costas.
                   </p>
@@ -133,21 +135,17 @@ const CasoReclamacionImpago = () => {
               </div>
             </div>
             
+            <CaseDisclaimer className="mt-8" />
+
             {/* CTA */}
             <div className="mt-12 p-8 bg-gradient-to-br from-primary/10 to-primary/5 rounded-2xl border border-primary/20 text-center">
               <h3 className="text-2xl font-bold mb-4">¿Necesitas ayuda con una reclamación de cantidad?</h3>
               <p className="text-black font-sans mb-6 text-justify">
                 Si tienes problemas con el cobro de facturas impagadas o necesitas interponer una demanda civil de reclamación de cantidad, contacta con nuestros abogados especialistas en derecho civil.
               </p>
-              <a
-                href="https://wa.me/34624164536"
-                target="_blank"
-                rel="noopener noreferrer"
-                onClick={() => window.open('https://www.cal.eu/adrian-garcia-lledo-babrwp', '_blank')}
-                className="inline-flex items-center gap-2 bg-primary text-primary-foreground px-6 py-3 rounded-lg font-sans font-semibold hover:bg-primary/90 transition-colors"
-              >
+              <BookingLink className="inline-flex items-center gap-2 bg-primary text-primary-foreground px-6 py-3 rounded-lg font-sans font-semibold hover:bg-primary/90 transition-colors">
                 Consultar con un Abogado
-              </a>
+              </BookingLink>
             </div>
           </div>
         </div>

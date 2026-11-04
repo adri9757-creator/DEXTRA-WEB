@@ -1,7 +1,7 @@
 import Section from "@/components/Section";
+import { WhatsAppLink } from "@/components/CtaLinks";
 import { Link } from "react-router-dom";
 import { Eye, Heart, Target, Users, ArrowRight } from "lucide-react";
-import despachoBg from "@/assets/JUSTICIA.jpeg";
 
 const Despacho = () => (
   <>
@@ -13,7 +13,7 @@ const Despacho = () => (
     </section>
 
     <div className="relative py-20 md:py-28">
-      <div className="absolute inset-0 bg-cover bg-center bg-no-repeat" style={{ backgroundImage: `url(/images/despachogr-bg.png)` }}>
+      <div className="absolute inset-0 bg-cover bg-center bg-no-repeat" style={{ backgroundImage: `url(/images/despacho-bg.webp)` }} aria-hidden="true">
         <div className="absolute inset-0 bg-black/40"></div>
       </div>
       <div className="relative container">
@@ -70,14 +70,9 @@ const Despacho = () => (
     <section className="bg-foreground text-background py-20">
       <div className="container text-center">
         <h2 className="text-3xl md:text-4xl font-bold mb-6">¿Quieres conocernos?</h2>
-        <a
-          href="https://wa.me/34624164536"
-          target="_blank"
-          rel="noopener noreferrer"
-          className="inline-flex items-center gap-2 bg-primary text-primary-foreground px-8 py-4 rounded-md font-semibold font-sans hover:opacity-90 transition-all hover:scale-105"
-        >
+        <WhatsAppLink className="inline-flex items-center gap-2 bg-primary text-primary-foreground px-8 py-4 rounded-md font-semibold font-sans hover:bg-primary/90 transition-all">
           Contactar <ArrowRight className="w-4 h-4" />
-        </a>
+        </WhatsAppLink>
       </div>
     </section>
   </>

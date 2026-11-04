@@ -1,4 +1,6 @@
 import Section from "@/components/Section";
+import { BookingLink } from "@/components/CtaLinks";
+import CaseDisclaimer from "@/components/CaseDisclaimer";
 import { Link } from "react-router-dom";
 import { ArrowLeft, Calendar, User, Scale, CheckCircle } from "lucide-react";
 
@@ -10,7 +12,7 @@ const CasoLesiones = () => {
         <div className="container">
           <Link 
             to="/casos" 
-            className="inline-flex items-center gap-2 text-primary font-sans font-semibold text-sm mb-6 hover:gap-3 transition-all"
+            className="inline-flex items-center gap-2 text-primary-strong font-sans font-semibold text-sm mb-6 hover:gap-3 transition-all"
           >
             <ArrowLeft className="w-4 h-4" />
             Volver a Casos de Éxito
@@ -18,7 +20,7 @@ const CasoLesiones = () => {
           
           <div className="max-w-4xl">
             <div className="flex items-center gap-3 mb-4">
-              <span className="inline-block bg-primary/10 text-primary font-sans text-xs font-semibold px-3 py-1 rounded-full">Penal</span>
+              <span className="inline-block bg-primary/10 text-primary-strong font-sans text-xs font-semibold px-3 py-1 rounded-full">Penal</span>
               <span className="inline-flex items-center gap-1 text-muted-foreground font-sans text-sm">
                 <Calendar className="w-4 h-4" /> 2024
               </span>
@@ -87,15 +89,15 @@ const CasoLesiones = () => {
                 
                 <ul className="ml-4 mb-4 space-y-2">
                   <li className="flex items-start gap-2">
-                    <CheckCircle className="w-5 h-5 text-orange-600 mt-0.5 flex-shrink-0" />
+                    <CheckCircle className="w-5 h-5 text-primary-strong mt-0.5 flex-shrink-0" />
                     <span><strong>Agresión ilegítima previa:</strong> Mediante la declaración coherente de nuestro cliente y la de varios testigos imparciales, acreditamos que fue el denunciante quien inició la agresión física, empujándole y propinándole el primer puñetazo sin que existiera agresión previa por parte de nuestro representado.</span>
                   </li>
                   <li className="flex items-start gap-2">
-                    <CheckCircle className="w-5 h-5 text-orange-600 mt-0.5 flex-shrink-0" />
+                    <CheckCircle className="w-5 h-5 text-primary-strong mt-0.5 flex-shrink-0" />
                     <span><strong>Necesidad y proporcionalidad de la respuesta:</strong> Explicamos que nuestro cliente se limitó a repeler la agresión inmediata para defender su integridad, sin utilizar objetos, sin perseguir al contrario una vez cesado el ataque y sin continuar golpeándolo cuando este ya estaba reducido.</span>
                   </li>
                   <li className="flex items-start gap-2">
-                    <CheckCircle className="w-5 h-5 text-orange-600 mt-0.5 flex-shrink-0" />
+                    <CheckCircle className="w-5 h-5 text-primary-strong mt-0.5 flex-shrink-0" />
                     <span><strong>Ausencia de provocación:</strong> Aportamos mensajes y testimonios que demostraban que nuestro cliente intentó evitar el conflicto, abandonando el local y tratando de marcharse, siendo seguido por el denunciante hasta la calle donde se produjo el incidente.</span>
                   </li>
                 </ul>
@@ -118,7 +120,7 @@ const CasoLesiones = () => {
                 </p>
                 
                 <div className="mt-8 p-6 bg-gradient-to-br from-orange-50 to-orange-100 border border-orange-300 rounded-lg">
-                  <h4 className="text-lg font-bold mb-2 text-orange-600 text-center">Resultado del Caso</h4>
+                  <h4 className="text-lg font-bold mb-2 text-primary-strong text-center">Resultado del Caso</h4>
                   <p className="text-black text-justify">
                     En consecuencia, dictó sentencia absolutoria, declarando que nuestro cliente actuó en legítima defensa y que su conducta no constituía delito penal.
                   </p>
@@ -129,21 +131,17 @@ const CasoLesiones = () => {
               </div>
             </div>
             
+            <CaseDisclaimer className="mt-8" />
+
             {/* CTA */}
             <div className="mt-12 p-8 bg-gradient-to-br from-primary/10 to-primary/5 rounded-2xl border border-primary/20 text-center">
               <h3 className="text-2xl font-bold mb-4 text-black">¿Necesitas defensa en un caso de lesiones?</h3>
               <p className="text-black font-sans mb-6 text-justify">
                 Si te han denunciado por un delito de lesiones o necesitas defensa en un juicio penal, contacta con nuestros abogados especialistas en derecho penal.
               </p>
-              <a
-                href="https://wa.me/34624164536"
-                target="_blank"
-                rel="noopener noreferrer"
-                onClick={() => window.open('https://www.cal.eu/adrian-garcia-lledo-babrwp', '_blank')}
-                className="inline-flex items-center gap-2 bg-primary text-primary-foreground px-6 py-3 rounded-lg font-sans font-semibold hover:bg-primary/90 transition-colors"
-              >
+              <BookingLink className="inline-flex items-center gap-2 bg-primary text-primary-foreground px-6 py-3 rounded-lg font-sans font-semibold hover:bg-primary/90 transition-colors">
                 Consultar con un Abogado
-              </a>
+              </BookingLink>
             </div>
           </div>
         </div>

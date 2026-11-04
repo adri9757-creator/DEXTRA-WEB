@@ -10,7 +10,7 @@ const Condiciones = () => {
         <div className="container">
           <Link 
             to="/" 
-            className="inline-flex items-center gap-2 text-primary font-sans font-semibold text-sm mb-6 hover:gap-3 transition-all"
+            className="inline-flex items-center gap-2 text-primary-strong font-sans font-semibold text-sm mb-6 hover:gap-3 transition-all"
           >
             <ArrowLeft className="w-4 h-4" />
             Volver al Inicio
@@ -18,7 +18,7 @@ const Condiciones = () => {
           
           <div className="max-w-4xl">
             <div className="flex items-center gap-3 mb-4">
-              <span className="inline-block bg-primary/10 text-primary font-sans text-xs font-semibold px-3 py-1 rounded-full">Legal</span>
+              <span className="inline-block bg-primary/10 text-primary-strong font-sans text-xs font-semibold px-3 py-1 rounded-full">Legal</span>
             </div>
             
             <h1 className="text-4xl md:text-5xl font-bold mb-6">Condiciones generales de contratación</h1>
@@ -29,7 +29,7 @@ const Condiciones = () => {
             <div className="flex flex-wrap items-center gap-6 text-sm text-muted-foreground font-sans">
               <div className="flex items-center gap-2">
                 <FileText className="w-4 h-4" />
-                <span>Última actualización: 2026</span>
+                <span>Última actualización: noviembre de 2026</span>
               </div>
               <div className="flex items-center gap-2">
                 <Shield className="w-4 h-4" />
@@ -157,10 +157,16 @@ const Condiciones = () => {
                     4. Precio y forma de pago
                   </h2>
                   <p>
-                    Los honorarios de las consultas (precio por sesión, impuestos aplicables, etc.) se indicarán de forma clara al Cliente antes de la contratación y podrán figurar también en la propia web de Dextra Law Firm.
+                    <strong>Precio de la consulta:</strong> [POR_CONFIRMAR: importe por modalidad y duración] €, <strong>IVA (21 %) incluido</strong>. Todos los precios que se comunican al Cliente consumidor incluyen los impuestos aplicables.
                   </p>
                   <p>
-                    El pago se realizará con carácter previo a la consulta, mediante cualquiera de los medios aceptados por el despacho en cada momento (por ejemplo, transferencia bancaria, TPV virtual, tarjeta, Bizum, etc.).
+                    El precio final, con impuestos, se muestra al Cliente en la página de reserva (cal.eu) o se le comunica por escrito <strong>antes</strong> de que realice el pago. No se cobran gastos adicionales por el medio de pago [POR_CONFIRMAR].
+                  </p>
+                  <p>
+                    Los honorarios de actuaciones posteriores (demandas, recursos, asistencia en procedimientos) no están incluidos en la consulta y se presupuestan por escrito en la correspondiente hoja de encargo.
+                  </p>
+                  <p>
+                    El pago se realizará con carácter previo a la consulta (prepago), mediante los medios aceptados por el despacho: [POR_CONFIRMAR: transferencia bancaria, tarjeta a través de la pasarela de cal.eu, Bizum…]. Tras el pago se emitirá la correspondiente factura.
                   </p>
                   <p>
                     La consulta se entenderá correctamente contratada y confirmada una vez Dextra Law Firm haya verificado la recepción del pago y lo haya confirmado al Cliente.
@@ -189,6 +195,9 @@ const Condiciones = () => {
                   <p>
                     En las consultas por videoconferencia, si existen problemas técnicos imputables al despacho que impidan realizar la sesión, se ofrecerá una nueva cita sin coste adicional para el Cliente.
                   </p>
+                  <p>
+                    Lo dispuesto en este apartado se entiende sin perjuicio del derecho de desistimiento del Cliente consumidor regulado en el apartado 6. [POR_CONFIRMAR: revisar que la retención por inasistencia sea proporcionada al coste real de la reserva.]
+                  </p>
                 </section>
 
                 <section>
@@ -197,21 +206,36 @@ const Condiciones = () => {
                     6. Derecho de desistimiento
                   </h2>
                   <p>
-                    Cuando el Cliente tenga la condición de consumidor, podrá existir derecho de desistimiento en los términos previstos en la normativa de consumidores y usuarios, teniendo en cuenta que:
+                    Cuando la consulta se contrate a distancia (web, correo electrónico, teléfono o sistema de reserva) y el Cliente sea consumidor, este dispone de un plazo de <strong>14 días naturales</strong> desde la celebración del contrato para desistir sin indicar el motivo y sin penalización (artículos 102 y siguientes del Real Decreto Legislativo 1/2007, texto refundido de la Ley General para la Defensa de los Consumidores y Usuarios).
                   </p>
                   <ul className="ml-4 mb-4 space-y-2">
                     <li className="flex items-start gap-2">
-                      <span className="w-5 h-5 text-primary mt-0.5 flex-shrink-0">•</span>
-                      <span>Si la consulta se ha prestado íntegramente antes de que transcurra el plazo de 14 días naturales desde la contratación, con el consentimiento previo expreso del Cliente y el reconocimiento de que, una vez prestado el servicio, pierde su derecho de desistimiento, no procederá el reembolso.</span>
+                      <span className="w-5 h-5 text-primary mt-0.5 flex-shrink-0" aria-hidden="true">•</span>
+                      <span><strong>Cómo desistir:</strong> comunicándolo de forma inequívoca a <a href="mailto:info@dextralawfirm.com" className="font-semibold underline underline-offset-2">info@dextralawfirm.com</a> o por correo postal a Gran Vía Marqués del Turia 49, -1, 46005 Valencia. Puede utilizarse el modelo de formulario que figura al final de este apartado, aunque no es obligatorio.</span>
                     </li>
                     <li className="flex items-start gap-2">
-                      <span className="w-5 h-5 text-primary mt-0.5 flex-shrink-0">•</span>
-                      <span>Si el Cliente desiste antes de la prestación del servicio, dentro del plazo legal, Dextra Law Firm podrá devolver los honorarios, pudiendo deducir, en su caso, los gastos de gestión justificados ya realizados.</span>
+                      <span className="w-5 h-5 text-primary mt-0.5 flex-shrink-0" aria-hidden="true">•</span>
+                      <span><strong>Reembolso:</strong> se devolverán todos los pagos recibidos sin demora y, como máximo, en 14 días naturales desde que se reciba la comunicación, por el mismo medio de pago utilizado, salvo que el Cliente acepte otro, sin coste para él.</span>
+                    </li>
+                    <li className="flex items-start gap-2">
+                      <span className="w-5 h-5 text-primary mt-0.5 flex-shrink-0" aria-hidden="true">•</span>
+                      <span><strong>Consulta dentro del plazo:</strong> si el Cliente solicita expresamente que la consulta se preste antes de que finalice el plazo de desistimiento y después desiste, abonará un importe proporcional a la parte del servicio ya prestada.</span>
+                    </li>
+                    <li className="flex items-start gap-2">
+                      <span className="w-5 h-5 text-primary mt-0.5 flex-shrink-0" aria-hidden="true">•</span>
+                      <span><strong>Pérdida del derecho:</strong> el derecho de desistimiento no podrá ejercerse cuando la consulta se haya prestado por completo, siempre que su ejecución haya comenzado con el consentimiento previo y expreso del Cliente y con su reconocimiento de que, una vez prestada, pierde ese derecho. [POR_CONFIRMAR: recabar este consentimiento en el proceso de reserva (casilla en cal.eu) y confirmarlo por escrito.]</span>
                     </li>
                   </ul>
-                  <p>
-                    En cada caso concreto, se informará al Cliente sobre la aplicación o no del derecho de desistimiento, atendiendo a la normativa vigente.
-                  </p>
+                  <div className="rounded-md border border-border bg-secondary p-4 text-sm">
+                    <p className="font-semibold">Modelo de formulario de desistimiento</p>
+                    <p className="mt-2">(Solo debe cumplimentar y enviar este formulario si desea desistir del contrato.)</p>
+                    <p className="mt-2">
+                      A la atención de Adrián García Lledó (Dextra Law Firm), Gran Vía Marqués del Turia 49, -1, 46005 Valencia, info@dextralawfirm.com:
+                    </p>
+                    <p className="mt-2">
+                      Por la presente le comunico que desisto de mi contrato de prestación del siguiente servicio: ______. Contratado el: ______. Nombre del consumidor: ______. Domicilio del consumidor: ______. Firma (solo si se envía en papel): ______. Fecha: ______.
+                    </p>
+                  </div>
                 </section>
 
                 <section>
@@ -273,6 +297,9 @@ const Condiciones = () => {
                     El asesoramiento ofrecido en la consulta se basa en la información facilitada por el Cliente y en la normativa y jurisprudencia vigentes en el momento de la misma.
                   </p>
                   <p>
+                    La obligación del abogado es de medios y no de resultado: el despacho se compromete a actuar con la diligencia y conforme a las normas deontológicas de la profesión.
+                  </p>
+                  <p>
                     Dextra Law Firm no garantiza un resultado concreto en caso de que el Cliente decida iniciar acciones legales posteriores, que dependerán de múltiples factores ajenos al control del despacho (decisiones judiciales, pruebas disponibles, actuación de terceros, etc.).
                   </p>
                 </section>
@@ -286,7 +313,20 @@ const Condiciones = () => {
                     Las presentes Condiciones se rigen por la legislación española.
                   </p>
                   <p>
-                    Salvo que la normativa de consumidores disponga otra cosa, cualquier controversia que pueda surgir en relación con la interpretación o cumplimiento de estas Condiciones se someterá a los Juzgados y Tribunales de Valencia, con renuncia expresa a cualquier otro fuero que pudiera corresponder.
+                    Si el Cliente es consumidor, serán competentes los Juzgados y Tribunales de su domicilio, conforme a la normativa de consumidores y usuarios. Si el Cliente no es consumidor, las partes se someten a los Juzgados y Tribunales de Valencia.
+                  </p>
+                </section>
+
+                <section>
+                  <h2 className="text-2xl font-bold mb-4 flex items-center gap-2">
+                    <Users className="w-6 h-6 text-primary" aria-hidden="true" />
+                    12. Quejas y reclamaciones
+                  </h2>
+                  <p>
+                    El Cliente puede dirigir sus quejas o reclamaciones a <a href="mailto:info@dextralawfirm.com" className="font-semibold underline underline-offset-2">info@dextralawfirm.com</a> o a la dirección postal del despacho. Se responderá en el menor plazo posible y, en todo caso, en el plazo máximo de un mes.
+                  </p>
+                  <p>
+                    También puede acudir al servicio de atención a consumidores y usuarios del Ilustre Colegio de la Abogacía de Valencia (<a href="https://www.icav.es" target="_blank" rel="noopener noreferrer" className="font-semibold underline underline-offset-2">www.icav.es</a>) y a los organismos de consumo competentes. [POR_CONFIRMAR: indicar si el despacho dispone de hojas de reclamaciones oficiales de la Comunitat Valenciana y si está adherido a algún sistema de resolución alternativa de litigios.]
                   </p>
                 </section>
 

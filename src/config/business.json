@@ -1,0 +1,18 @@
+{
+  "$comment": "Datos públicos del despacho. Los usan la web (src/config/site.ts) y el JSON-LD generado en scripts/build-seo.mjs. Solo datos ya publicados en el sitio; añade aquí los que falten (p. ej. sameAs con redes sociales reales).",
+  "name": "Dextra Law Firm",
+  "legalName": "Adrián García Lledó",
+  "email": "info@dextralawfirm.com",
+  "telephone": "+34624164536",
+  "address": {
+    "streetAddress": "Gran Vía Marqués del Turia 49",
+    "postalCode": "46005",
+    "addressLocality": "Valencia",
+    "addressRegion": "Valencia",
+    "addressCountry": "ES"
+  },
+  "openingHours": ["Mo-Th 09:00-18:00", "Fr 09:00-15:00"],
+  "areaServed": "Valencia",
+  "knowsAbout": ["Derecho penal", "Derecho de extranjería", "Derecho civil"],
+  "sameAs": []
+}

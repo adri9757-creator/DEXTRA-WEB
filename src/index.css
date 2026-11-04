@@ -1,4 +1,5 @@
-@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,400;1,500&family=Inter:wght@300;400;500;600;700&display=swap');
+/* Fuentes autoalojadas (se importan en src/main.tsx desde @fontsource-variable).
+   No se carga nada desde fonts.googleapis.com. */
 
 @tailwind base;
 @tailwind components;
@@ -12,44 +13,43 @@
     --card: 0 0% 100%;
     --card-foreground: 0 0% 0%;
 
-    --popover: 0 0% 100%;
-    --popover-foreground: 0 0% 0%;
-
-    --primary: 25 100% 50%;
+    /* Naranja de marca oscurecido lo justo para cumplir WCAG AA (4,5:1) con
+       texto blanco y como color de texto sobre blanco. El tono original
+       (25 100% 50%) solo daba 2,9:1. Se conserva como --brand para elementos
+       decorativos. */
+    --primary: 25 100% 38%;
     --primary-foreground: 0 0% 100%;
+    --primary-strong: 25 100% 32%;
+    --brand: 25 100% 50%;
 
     --secondary: 30 20% 96%;
     --secondary-foreground: 0 0% 10%;
 
     --muted: 30 10% 96%;
-    --muted-foreground: 0 0% 45%;
+    /* 40 % (antes 45 %) para superar 4,5:1 también sobre el fondo crema. */
+    --muted-foreground: 0 0% 40%;
 
-    --accent: 25 100% 50%;
+    --accent: 25 100% 38%;
     --accent-foreground: 0 0% 100%;
 
-    --destructive: 0 84.2% 60.2%;
+    --destructive: 0 72% 42%;
     --destructive-foreground: 0 0% 100%;
 
-    --border: 0 0% 90%;
-    --input: 0 0% 90%;
-    --ring: 25 100% 50%;
+    --border: 0 0% 88%;
+    --input: 0 0% 60%;
+    --ring: 25 100% 38%;
 
     --radius: 0.5rem;
-
-    --sidebar-background: 0 0% 98%;
-    --sidebar-foreground: 0 0% 20%;
-    --sidebar-primary: 25 100% 50%;
-    --sidebar-primary-foreground: 0 0% 100%;
-    --sidebar-accent: 30 20% 96%;
-    --sidebar-accent-foreground: 0 0% 10%;
-    --sidebar-border: 0 0% 90%;
-    --sidebar-ring: 25 100% 50%;
   }
 }
 
 @layer base {
   * {
     @apply border-border;
+  }
+
+  html {
+    scroll-padding-top: 6rem; /* anclas no tapadas por la cabecera fija */
   }
 
   body {
@@ -59,10 +59,101 @@
   h1, h2, h3, h4, h5, h6 {
     @apply font-serif;
   }
+
+  /* Foco visible y consistente para teclado (WCAG 2.4.7 / 2.4.11). */
+  :focus-visible {
+    outline: 3px solid hsl(var(--ring));
+    outline-offset: 2px;
+    border-radius: 2px;
+  }
+  .bg-foreground :focus-visible,
+  footer :focus-visible {
+    outline-color: hsl(var(--brand));
+  }
+  input:focus-visible,
+  select:focus-visible,
+  textarea:focus-visible {
+    outline-offset: 0;
+  }
+
+  [hidden] {
+    display: none !important;
+  }
 }
 
 @layer utilities {
   .text-balance {
     text-wrap: balance;
   }
+}
+
+/* Aparición suave de secciones (ver src/components/Section.tsx). */
+.reveal {
+  opacity: 0;
+  transform: translateY(24px);
+  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+.reveal.is-visible {
+  opacity: 1;
+  transform: none;
+}
+
+/* Entrada del hero, solo CSS. */
+@keyframes hero-in {
+  from { opacity: 0; transform: translateY(24px); }
+  to { opacity: 1; transform: none; }
+}
+.hero-in {
+  animation: hero-in 0.7s ease-out both;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .reveal,
+  .reveal.is-visible {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+  .hero-in {
+    animation: none;
+  }
+  *,
+  *::before,
+  *::after {
+    scroll-behavior: auto !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+/* Contenido de las páginas legales (src/components/LegalLayout.tsx). */
+.legal-content {
+  @apply font-sans leading-relaxed text-foreground;
+}
+.legal-content h2 {
+  @apply mt-10 mb-4 font-serif text-2xl font-bold first:mt-0;
+}
+.legal-content h3 {
+  @apply mt-8 mb-3 font-serif text-xl font-bold;
+}
+.legal-content p {
+  @apply my-4;
+}
+.legal-content ul {
+  @apply my-4 list-disc space-y-2 pl-6;
+}
+.legal-content a:not([class]) {
+  @apply font-semibold underline underline-offset-2 hover:text-primary;
+}
+.legal-content code {
+  @apply rounded bg-secondary px-1.5 py-0.5 text-sm;
+}
+.legal-content table {
+  @apply my-6 w-full border-collapse text-sm;
+}
+.legal-content th,
+.legal-content td {
+  @apply border border-border p-3 text-left align-top;
+}
+.legal-content th {
+  @apply bg-secondary font-semibold;
 }

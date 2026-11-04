@@ -1,22 +1,39 @@
 <!doctype html>
 <html lang="es">
   <head>
-    <script type="text/javascript" charset="UTF-8" src="//cdn.cookie-script.com/s/d6cf83137771aa1dc3690eac2c7e94cd.js"></script>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!--
+      Bloque SEO: scripts/build-seo.mjs lo sustituye en cada página estática
+      (dist/<ruta>.html) con el título, descripción, canonical y Open Graph de
+      src/config/routes.json. Los valores de aquí son los de la portada.
+    -->
+    <!--seo:start-->
     <title>Dextra Law Firm – Abogados en Valencia | Penal, Extranjería y Civil</title>
-    <meta name="description" content="Despacho de abogados en Valencia especializado en derecho penal, extranjería y civil. Estrategia, claridad y resultados." />
-    <meta name="author" content="Dextra Law Firm" />
-    <meta property="og:title" content="Dextra Law Firm – Abogados en Valencia" />
-    <meta property="og:description" content="Derecho penal, extranjería y civil en Valencia con estrategia y claridad." />
+    <meta name="description" content="Despacho de abogados en Valencia: derecho penal, extranjería y civil. Te explicamos tus opciones con claridad y diseñamos la estrategia de tu caso." />
+    <link rel="canonical" href="https://dextralawfirm.com/" />
     <meta property="og:type" content="website" />
-
+    <meta property="og:site_name" content="Dextra Law Firm" />
+    <meta property="og:locale" content="es_ES" />
+    <meta property="og:title" content="Dextra Law Firm – Abogados en Valencia | Penal, Extranjería y Civil" />
+    <meta property="og:description" content="Despacho de abogados en Valencia: derecho penal, extranjería y civil." />
+    <meta property="og:url" content="https://dextralawfirm.com/" />
+    <meta property="og:image" content="https://dextralawfirm.com/og-image.jpg" />
     <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:site" content="@DextraLawFirm" />
-    <meta name="twitter:image" content="/og-image.png" />
+    <meta name="twitter:title" content="Dextra Law Firm – Abogados en Valencia | Penal, Extranjería y Civil" />
+    <meta name="twitter:description" content="Despacho de abogados en Valencia: derecho penal, extranjería y civil." />
+    <!--seo:end-->
+    <meta name="author" content="Dextra Law Firm" />
+    <meta name="theme-color" content="#ffffff" />
+    <link rel="icon" href="/favicon.ico" sizes="any" />
   </head>
 
   <body>
+    <noscript>
+      <p style="font-family: system-ui, sans-serif; padding: 1rem">
+        Esta web necesita JavaScript. Puedes contactar con Dextra Law Firm en el +34 624 164 536 o en info@dextralawfirm.com.
+      </p>
+    </noscript>
     <div id="root"></div>
     <script type="module" src="/src/main.tsx"></script>
   </body>

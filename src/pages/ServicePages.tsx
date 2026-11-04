@@ -1,14 +1,7 @@
 import Section from "@/components/Section";
+import { BookingLink } from "@/components/CtaLinks";
 import { Link } from "react-router-dom";
-import { ArrowRight, Scale, Globe, FileText, CheckCircle, HelpCircle, Phone } from "lucide-react";
-
-const faqs = [
-  { q: "¿Qué hago si me detienen?", a: "Tienes derecho a no declarar y a contar con un abogado. Llámanos inmediatamente y un penalista estará contigo en la comisaría." },
-  { q: "¿Cuánto tarda un juicio penal?", a: "Depende del tipo de procedimiento. Los juicios rápidos se resuelven en días; los procedimientos ordinarios pueden tardar meses." },
-  { q: "¿Puedo recurrir una sentencia?", a: "Sí, en la mayoría de casos. Analizamos las opciones de recurso y te aconsejamos sobre la viabilidad." },
-  { q: "¿Cuánto cuesta la defensa penal?", a: "Depende de la complejidad. En la primera consulta te damos un presupuesto claro y cerrado." },
-  { q: "¿Trabajan con juicios con jurado?", a: "Sí. Tenemos experiencia en juicios con jurado popular en la Audiencia Provincial de Valencia." },
-];
+import { ArrowRight, Scale, Globe, FileText, CheckCircle, HelpCircle, type LucideIcon } from "lucide-react";
 
 const ServicePage = ({
   icon: Icon,
@@ -23,7 +16,7 @@ const ServicePage = ({
   introImage = "service-illustration",
   backgroundColor = "secondary",
 }: {
-  icon: any;
+  icon: LucideIcon;
   title: string;
   h1: string;
   intro: string;
@@ -40,8 +33,8 @@ const ServicePage = ({
       <div className="container">
         <div className="text-center mb-12">
           <div className="flex items-center gap-4 mb-6 justify-center">
-            <Icon className="w-10 h-10 text-primary" />
-            <span className="text-primary font-serif font-bold text-3xl md:text-4xl uppercase tracking-wider">{title}</span>
+            <Icon className="w-10 h-10 text-primary" aria-hidden="true" />
+            <h1 className="text-primary-strong font-serif font-bold text-3xl md:text-4xl uppercase tracking-wider">{title}</h1>
           </div>
           <div className="w-20 h-1 bg-primary mt-8 mx-auto"></div>
         </div>
@@ -52,9 +45,12 @@ const ServicePage = ({
           <div className="lg:w-80 lg:flex-shrink-0">
             {showImage && (
               <div className="aspect-square bg-gradient-to-br from-primary/10 to-primary/5 rounded-2xl border border-primary/20 flex items-center justify-center overflow-hidden">
-                <img 
-                  src={`/images/${introImage}.png`} 
-                  alt={`${title} illustration`} 
+                <img
+                  src={`/images/${introImage}.webp`}
+                  alt=""
+                  width={800}
+                  height={800}
+                  decoding="async"
                   className="w-full h-full object-contain"
                 />
               </div>
@@ -69,7 +65,7 @@ const ServicePage = ({
       <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
         {services.map((s) => (
           <div key={s.title} className="flex gap-4 p-6 bg-background rounded-lg border border-border">
-            <CheckCircle className="w-6 h-6 text-primary flex-shrink-0 mt-0.5" />
+            <CheckCircle className="w-6 h-6 text-primary flex-shrink-0 mt-0.5" aria-hidden="true" />
             <div>
               <h3 className="font-bold font-sans mb-1">{s.title}</h3>
               <p className="text-muted-foreground font-sans text-sm leading-relaxed text-justify">{s.desc}</p>
@@ -84,21 +80,21 @@ const ServicePage = ({
       <div className="flex flex-col lg:flex-row gap-6 items-center">
         <div className="flex-1 border-l-4 border-primary pl-6">
           <h3 className="font-bold font-sans text-lg mb-2">{caseStudy.title}</h3>
-          <p className="text-muted-foreground font-sans leading-relaxed text-justify max-w-md" 
-             dangerouslySetInnerHTML={{ 
-               __html: caseStudy.text.replace(
-                 "Logramos la absolución de un cliente acusado de un delito de lesiones tras demostrar la falta de intencionalidad y la legítima defensa. El tribunal reconoció nuestra argumentación y dictó la libre absolución.",
-                 "Logramos la absolución de un cliente acusado de un delito de lesiones tras demostrar la falta de intencionalidad y la legítima defensa."
-               )
-             }}>
+          <p className="text-muted-foreground font-sans leading-relaxed max-w-md">{caseStudy.text}</p>
+          <p className="text-xs text-muted-foreground font-sans mt-4 italic">
+            *Caso anonimizado para preservar el secreto profesional. Cada asunto es distinto y los resultados anteriores no
+            garantizan resultados futuros.
           </p>
-          <p className="text-xs text-muted-foreground font-sans mt-4 italic">*Los datos han sido modificados para proteger la identidad del cliente.</p>
         </div>
         <div className="lg:w-[600px] lg:flex-shrink-0 lg:mr-16 lg:mt-0 lg:mb-2">
           <div className="aspect-video bg-gradient-to-br from-primary/10 to-primary/5 rounded-2xl border border-primary/20 flex items-center justify-center overflow-hidden w-full">
-            <img 
-              src={`/images/${imageName}.png`} 
-              alt="Caso real - Absolución en delito de lesiones" 
+            <img
+              src={`/images/${imageName}.webp`}
+              alt=""
+              width={1200}
+              height={800}
+              loading="lazy"
+              decoding="async"
               className="w-full h-full object-cover"
             />
           </div>
@@ -112,7 +108,7 @@ const ServicePage = ({
         {faqItems.map((faq, index) => (
           <details key={faq.q} className="group bg-background rounded-lg border border-border p-6 cursor-pointer">
             <summary className="font-sans font-semibold flex items-center gap-3 list-none">
-              <HelpCircle className="w-5 h-5 text-primary flex-shrink-0" />
+              <HelpCircle className="w-5 h-5 text-primary flex-shrink-0" aria-hidden="true" />
               {faq.q}
             </summary>
             <p className="mt-4 text-muted-foreground font-sans leading-relaxed pl-8 text-justify">{faq.a}</p>
@@ -125,14 +121,9 @@ const ServicePage = ({
       <div className="container text-center">
         <h2 className="text-3xl md:text-4xl font-bold mb-4">¿Necesitas ayuda con tu caso?</h2>
         <p className="text-background/70 font-sans mb-8">Cuéntanos tu situación y te orientamos sin compromiso.</p>
-        <a
-          href="https://cal.eu/adrian-garcia-lledo-babrwp"
-          target="_blank"
-          rel="noopener noreferrer"
-          className="inline-flex items-center gap-2 bg-primary text-primary-foreground px-8 py-4 rounded-md font-semibold font-sans hover:opacity-90 transition-all hover:scale-105"
-        >
+        <BookingLink className="inline-flex items-center gap-2 bg-primary text-primary-foreground px-8 py-4 rounded-md font-semibold font-sans hover:bg-primary/90 transition-all">
           Solicitar consulta <ArrowRight className="w-4 h-4" />
-        </a>
+        </BookingLink>
       </div>
     </section>
   </>
@@ -147,7 +138,7 @@ export const Penal = () => {
     { q: "¿Cuánto tarda un procedimiento penal?", a: "Depende del tipo: procedimientos de juicio rápido se resuelven en días; los ordinarios pueden durar meses. Te informamos de los plazos en cada fase de tu caso específico." },
     { q: "¿Me asisten si soy investigado pero no estoy detenido?", a: "Por supuesto. La defensa técnica es igual de importante en la fase de investigación; te representamos ante el Juzgado de Instrucción en todas las diligencias." },
     { q: "¿Qué estrategia siguen en mi primera consulta?", a: "Estudiamos tu caso concreto, identificamos puntos débiles de la acusación y te explicamos las opciones reales de defensa, con total transparencia sobre expectativas y costes." },
-    { q: "¿Cuánto cuesta la defensa penal?", a: "Depende de la complejidad y duración del procedimiento. En la primera consulta gratuita te facilitamos un presupuesto cerrado y detallado antes de cualquier compromiso." }
+    { q: "¿Cuánto cuesta la defensa penal?", a: "Depende de la complejidad y duración del procedimiento. En la primera consulta [POR_CONFIRMAR: ¿gratuita o de pago? Las Condiciones prevén consultas con prepago] te facilitamos un presupuesto cerrado y detallado antes de cualquier compromiso." }
   ];
 
   return (
@@ -165,11 +156,11 @@ export const Penal = () => {
       faqItems={penalFaqs}
       caseStudy={{
         title: "Absolución en delito de lesiones",
-        text: "Logramos la absolución de un cliente acusado de un delito de lesiones tras demostrar la falta de intencionalidad y la legítima defensa. El tribunal reconoció nuestra argumentación y dictó la libre absolución."
+        text: "Logramos la absolución de un cliente acusado de un delito de lesiones tras demostrar la falta de intencionalidad y la legítima defensa."
       }}
       showImage={true}
-      imageName="ChatGPT Image 30 mar 2026, 01_02_16"
-      introImage="ChatGPT Image 26 mar 2026, 23_33_40"
+      imageName="caso-penal"
+      introImage="illustration-penal"
     />
   );
 };
@@ -206,7 +197,7 @@ export const Extranjeria = () => {
       }}
       showImage={true}
       imageName="caso-extranjeria"
-      introImage="civil-illustration"
+      introImage="illustration-extranjeria"
     />
   );
 };
@@ -229,7 +220,7 @@ export const Civil = () => {
       icon={FileText}
       title="Derecho Civil"
       h1="Derecho Civil"
-      intro="Si te deben dinero, si tienes un problema con un contrato o si necesitas reclamar una indemnización, necesitas un abogado civilista que actúe con rapidez y precisión. En Dextra recuperamos lo que es tuyo."
+      intro="Si te deben dinero, si tienes un problema con un contrato o si necesitas reclamar una indemnización, necesitas un abogado civilista que actúe con rapidez y precisión. En Dextra te ayudamos a reclamar lo que es tuyo."
       services={[
         { title: "Reclamaciones de cantidad", desc: "Recuperación de deudas y reclamaciones de cantidades económicas." },
         { title: "Contratos y condiciones generales", desc: "Análisis de cláusulas abusivas y nulidad de contratos." },
@@ -243,7 +234,7 @@ export const Civil = () => {
       }}
       showImage={true}
       imageName="caso-civil"
-      introImage="civil-illustration-new"
+      introImage="illustration-civil"
       backgroundColor="secondary"
     />
   );
