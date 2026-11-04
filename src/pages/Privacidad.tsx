@@ -94,8 +94,8 @@ const Privacidad = () => (
     <p>
       No cedemos tus datos a terceros, salvo obligación legal o cuando sea necesario para el encargo profesional (por
       ejemplo, juzgados, tribunales o administraciones públicas ante los que actuemos en tu nombre). Para prestar el
-      servicio contamos con proveedores que tratan datos por cuenta nuestra (encargados del tratamiento), con los que debe
-      formalizarse el contrato de encargo del art. 28 RGPD:
+      servicio contamos con proveedores que tratan datos por cuenta nuestra (encargados del tratamiento), con los que se ha
+      formalizado el contrato de encargo del art. 28 RGPD:
     </p>
     <div className="overflow-x-auto">
       <table>
