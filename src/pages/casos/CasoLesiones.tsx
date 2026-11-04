@@ -139,7 +139,7 @@ const CasoLesiones = () => {
               <p className="text-black font-sans mb-6 text-justify">
                 Si te han denunciado por un delito de lesiones o necesitas defensa en un juicio penal, contacta con nuestros abogados especialistas en derecho penal.
               </p>
-              <BookingLink className="inline-flex items-center gap-2 bg-primary text-primary-foreground px-6 py-3 rounded-lg font-sans font-semibold hover:bg-primary/90 transition-colors">
+              <BookingLink className="inline-flex items-center gap-2 bg-brand-interactive text-brand-interactive-foreground px-6 py-3 rounded-lg font-sans font-semibold hover:bg-brand-interactive-hover transition-colors">
                 Consultar con un Abogado
               </BookingLink>
             </div>

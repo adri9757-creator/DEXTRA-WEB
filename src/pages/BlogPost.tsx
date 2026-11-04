@@ -33,13 +33,6 @@ En España, el plazo general de prescripción de las acciones personales (deudas
 
 Si tienes dudas sobre si tu deuda está prescrita o no, es recomendable que un abogado revise fechas y documentos antes de iniciar cualquier reclamación formal.
 
-<div class="my-8 p-6 bg-gradient-to-br from-primary/5 to-primary/10 rounded-xl border border-primary/20">
-  <div class="aspect-video bg-muted rounded-lg flex items-center justify-center">
-    <span class="text-muted-foreground/50 text-lg font-medium">📋 Verificación de deudas</span>
-  </div>
-  <p class="text-center text-sm text-muted-foreground mt-4">Análisis inicial: Documentación y plazos de prescripción</p>
-</div>
-
 ## Paso 2: **Contacto amistoso**
 
 Siempre es aconsejable empezar por la vía amistosa.
@@ -63,13 +56,6 @@ Siempre es aconsejable empezar por la vía amistosa.
 • Indica un plazo concreto para el pago (por ejemplo, 7–10 días).
 
 • Conserva siempre copia de todo lo enviado y recibido.
-
-<div class="my-8 p-6 bg-gradient-to-br from-primary/5 to-primary/10 rounded-xl border border-primary/20">
-  <div class="aspect-video bg-muted rounded-lg flex items-center justify-center">
-    <span class="text-muted-foreground/50 text-lg font-medium">📧 Comunicación formal</span>
-  </div>
-  <p class="text-center text-sm text-muted-foreground mt-4">Contacto estructurado: Burofax y requerimientos de pago</p>
-</div>
 
 ## Paso 3: **Reclamación extrajudicial formal (burofax o requerimiento)**
 
@@ -143,13 +129,6 @@ Las opciones principales, de forma simplificada, son:
 • **Juicio ordinario**: para cantidades superiores a 6.000 euros o asuntos más complejos.
 
 Elegir uno u otro procedimiento dependerá de la cuantía, de la documentación de la que dispongas y de las circunstancias concretas del caso, por lo que es aconsejable contar con asesoramiento profesional.
-
-<div class="my-8 p-6 bg-gradient-to-br from-primary/5 to-primary/10 rounded-xl border border-primary/20">
-  <div class="aspect-video bg-muted rounded-lg flex items-center justify-center">
-    <span class="text-muted-foreground/50 text-lg font-medium">⚖️ Procedimientos judiciales</span>
-  </div>
-  <p class="text-center text-sm text-muted-foreground mt-4">Vía judicial: Monitorio, verbal y ordinario</p>
-</div>
 
 ## 6. **Por qué contar con un abogado**
 
@@ -259,7 +238,7 @@ En Dextra Law Firm, te ofrecemos un abogado civil especializado en reclamaciones
               <p className="text-muted-foreground font-sans mb-6">
                 Si tienes una deuda impagada y necesitas ayuda profesional, contacta con nuestros abogados especialistas en derecho civil.
               </p>
-              <BookingLink className="inline-flex items-center gap-2 bg-primary text-primary-foreground px-6 py-3 rounded-lg font-sans font-semibold hover:bg-primary/90 transition-colors">
+              <BookingLink className="inline-flex items-center gap-2 bg-brand-interactive text-brand-interactive-foreground px-6 py-3 rounded-lg font-sans font-semibold hover:bg-brand-interactive-hover transition-colors">
                 Consultar Abogado
               </BookingLink>
             </div>

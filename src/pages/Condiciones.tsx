@@ -212,35 +212,35 @@ const Condiciones = () => {
                     6. Derecho de desistimiento
                   </h2>
                   <p>
-                    Cuando la consulta se contrate a distancia (web, correo electrónico, teléfono o sistema de reserva) y el Cliente sea consumidor, este dispone de un plazo de <strong>14 días naturales</strong> desde la celebración del contrato para desistir sin indicar el motivo y sin penalización (artículos 102 y siguientes del Real Decreto Legislativo 1/2007, texto refundido de la Ley General para la Defensa de los Consumidores y Usuarios).
+                    Si contratas una consulta telemática como consumidor, tienes derecho a desistir del contrato en un plazo de <strong>14 días naturales</strong> desde su celebración, sin necesidad de justificación.
                   </p>
-                  <ul className="ml-4 mb-4 space-y-2">
-                    <li className="flex items-start gap-2">
-                      <span className="w-5 h-5 text-primary mt-0.5 flex-shrink-0" aria-hidden="true">•</span>
-                      <span><strong>Cómo desistir:</strong> comunicándolo de forma inequívoca a <a href="mailto:info@dextralawfirm.com" className="font-semibold underline underline-offset-2">info@dextralawfirm.com</a> o por correo postal a Passeig de Russafa, 11, Planta 5ª, Puerta 10, 46002 València, Valencia, España. Puede utilizarse el modelo de formulario que figura al final de este apartado, aunque no es obligatorio.</span>
-                    </li>
-                    <li className="flex items-start gap-2">
-                      <span className="w-5 h-5 text-primary mt-0.5 flex-shrink-0" aria-hidden="true">•</span>
-                      <span><strong>Reembolso:</strong> se devolverán todos los pagos recibidos sin demora y, como máximo, en 14 días naturales desde que se reciba la comunicación, por el mismo medio de pago utilizado, salvo que el Cliente acepte otro, sin coste para él.</span>
-                    </li>
-                    <li className="flex items-start gap-2">
-                      <span className="w-5 h-5 text-primary mt-0.5 flex-shrink-0" aria-hidden="true">•</span>
-                      <span><strong>Consulta dentro del plazo:</strong> si el Cliente solicita expresamente que la consulta se preste antes de que finalice el plazo de desistimiento y después desiste, abonará un importe proporcional a la parte del servicio ya prestada.</span>
-                    </li>
-                    <li className="flex items-start gap-2">
-                      <span className="w-5 h-5 text-primary mt-0.5 flex-shrink-0" aria-hidden="true">•</span>
-                      <span><strong>Pérdida del derecho:</strong> el derecho de desistimiento no podrá ejercerse cuando la consulta se haya prestado por completo, siempre que su ejecución haya comenzado con el consentimiento previo y expreso del Cliente y con su reconocimiento de que, una vez prestada, pierde ese derecho. [POR_CONFIRMAR: recabar este consentimiento en el proceso de reserva (casilla en cal.eu) y confirmarlo por escrito.]</span>
-                    </li>
-                  </ul>
+                  <p>
+                    No obstante, si la consulta se presta antes de que finalice dicho plazo, y tú lo solicitas expresamente y reconoces que, una vez prestada por completo, pierdes el derecho de desistimiento, no podrás ejercerlo respecto de dicha consulta.
+                  </p>
+                  <p>
+                    Puedes ejercer el desistimiento mediante cualquier declaración inequívoca dirigida a <a href="mailto:info@dextralawfirm.com" className="font-semibold underline underline-offset-2">info@dextralawfirm.com</a>. También puedes utilizar el siguiente modelo; su uso no es obligatorio y sirve igualmente cualquier otra declaración inequívoca.
+                  </p>
+                  <p>
+                    Si ejercitas el derecho de desistimiento, te reembolsaremos todos los pagos recibidos, incluidos los gastos de entrega cuando proceda, sin demoras indebidas y, en todo caso, en un plazo máximo de 14 días naturales desde que nos informes de tu decisión de desistir.
+                  </p>
+                  <p>
+                    Podremos retener el reembolso hasta haber recibido el servicio prestado o hasta que aporten pruebas de haberlo devuelto, según corresponda.
+                  </p>
+                  <p>
+                    Si la consulta ya se ha prestado parcialmente antes del desistimiento, deberás abonar un importe proporcional al servicio efectivamente prestado, conforme a lo comunicado antes de la contratación.
+                  </p>
                   <div className="rounded-md border border-border bg-secondary p-4 text-sm">
                     <p className="font-semibold">Modelo de formulario de desistimiento</p>
-                    <p className="mt-2">(Solo debe cumplimentar y enviar este formulario si desea desistir del contrato.)</p>
+                    <p className="mt-2">(Solo debe cumplimentarse y enviarse si se desea desistir del contrato.)</p>
                     <p className="mt-2">
                       A la atención de Adrián García Lledó (Dextra Law Firm), Passeig de Russafa, 11, Planta 5ª, Puerta 10, 46002 València, Valencia, España, info@dextralawfirm.com:
                     </p>
-                    <p className="mt-2">
-                      Por la presente le comunico que desisto de mi contrato de prestación del siguiente servicio: ______. Contratado el: ______. Nombre del consumidor: ______. Domicilio del consumidor: ______. Firma (solo si se envía en papel): ______. Fecha: ______.
-                    </p>
+                    <p className="mt-2">Por la presente le comunico que desisto de mi contrato de prestación del siguiente servicio: ______.</p>
+                    <p>Contratado el: ______.</p>
+                    <p>Nombre del consumidor: ______.</p>
+                    <p>Domicilio del consumidor: ______.</p>
+                    <p>Firma (solo si se presenta en papel): ______.</p>
+                    <p>Fecha: ______.</p>
                   </div>
                 </section>
 

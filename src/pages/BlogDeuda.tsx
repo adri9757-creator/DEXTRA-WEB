@@ -30,13 +30,6 @@ De forma simplificada, en España se puede detener a una persona cuando concurre
 
 Una pelea en la vía pública en zonas de ocio de Valencia (como Ruzafa) puede dar lugar a una detención en delito flagrante si la policía presencia directamente la agresión o llega instantes después identificando claramente a los implicados. Otro ejemplo frecuente es la detención tras un control de tráfico por un presunto delito contra la seguridad vial, cuando el conductor duplica la tasa de alcoholemia permitida o conduce bajo la influencia de drogas.
 
-<div class="my-8 p-6 bg-gradient-to-br from-primary/5 to-primary/10 rounded-xl border border-primary/20">
-  <div class="aspect-video bg-muted rounded-lg flex items-center justify-center">
-    <span class="text-muted-foreground/50 text-lg font-medium">📍 Zonas de ocio en Valencia - Ruzafa</span>
-  </div>
-  <p class="text-center text-sm text-muted-foreground mt-4">Contexto local: Ejemplos prácticos de detenciones en zonas de ocio de Valencia</p>
-</div>
-
 ## 2. **Plazos máximos** de la detención
 
 La regla general es clara: la detención policial no puede exceder de 72 horas, plazo dentro del cual el detenido debe ser puesto en libertad o a disposición judicial. Este límite deriva del artículo 17.2 de la Constitución y del artículo 520 LECrim.
@@ -67,13 +60,6 @@ Desde el mismo momento de la detención, la persona cuenta con una serie de dere
 • **Derecho a ser reconocido por un médico**, propio o forense, especialmente relevante en supuestos de lesiones o vulnerabilidad.
 • **Derecho a ser puesto a disposición judicial** en el plazo legal y a solicitar el procedimiento de habeas corpus en caso de detención ilegal.
 
-<div class="my-8 p-6 bg-gradient-to-br from-primary/5 to-primary/10 rounded-xl border border-primary/20">
-  <div class="aspect-video bg-muted rounded-lg flex items-center justify-center">
-    <span class="text-muted-foreground/50 text-lg font-medium">⚖️ Defensa legal de derechos</span>
-  </div>
-  <p class="text-center text-sm text-muted-foreground mt-4">Asesoramiento legal: Protección de tus derechos fundamentales durante la detención</p>
-</div>
-
 Si una persona es detenida en un control de alcoholemia en la salida de una zona de ocio de costa y presenta síntomas de intoxicación, tiene derecho a solicitar un reconocimiento médico para que conste su estado físico y cualquier posible lesión derivada del procedimiento policial. Igualmente, si se produce una detención tras un altercado nocturno, el detenido puede exigir que se le informe por escrito de los hechos concretos que se le atribuyen y designar desde ese momento a su abogado de confianza.
 
 En la práctica, una recomendación fundamental que recogen numerosos profesionales y manuales es ejercer con firmeza el derecho a guardar silencio hasta que el abogado esté presente. Esto incluye limitar las respuestas a los datos de identificación (nombre, apellidos, domicilio, DNI) y responder al resto de preguntas con fórmulas como: «No deseo declarar hasta contar con la asistencia de mi abogado».
@@ -90,13 +76,6 @@ Aunque la regulación es estatal, es útil aterrizar estas pautas a la realidad 
 • **Designar cuanto antes un abogado de confianza** o solicitar abogado de oficio en Valencia si no se dispone de uno.
 • **Comunicar la detención a un familiar** o persona de confianza y, si se es extranjero, al consulado correspondiente.
 • **Solicitar reconocimiento médico** si existen golpes, lesiones o problemas de salud, y procurar que todo conste en el parte y en las diligencias.
-
-<div class="my-8 p-6 bg-gradient-to-br from-primary/5 to-primary/10 rounded-xl border border-primary/20">
-  <div class="aspect-video bg-muted rounded-lg flex items-center justify-center">
-    <span class="text-muted-foreground/50 text-lg font-medium">🏢 Comisaría y procedimientos</span>
-  </div>
-  <p class="text-center text-sm text-muted-foreground mt-4">Aplicación práctica: Procedimientos en comisaría y pasos a seguir</p>
-</div>
 
 Tras una intervención policial en Ruzafa por un altercado en un local de ocio, es frecuente que varias personas sean trasladadas a comisaría para ser identificadas y, en su caso, detenidas; en ese contexto, resulta esencial no discutir los hechos sin abogado, pedir copia de la información de derechos y comunicar la situación a un familiar.
 
@@ -199,7 +178,7 @@ En Dextra Law Firm, ponemos a tu disposición un abogado penalista para asistirt
               <p className="text-muted-foreground font-sans mb-6">
                 Si has sido detenido o necesitas asesoramiento legal inmediato en Valencia, contacta con nuestros abogados especialistas en derecho penal.
               </p>
-              <BookingLink className="inline-flex items-center gap-2 bg-primary text-primary-foreground px-6 py-3 rounded-lg font-sans font-semibold hover:bg-primary/90 transition-colors">
+              <BookingLink className="inline-flex items-center gap-2 bg-brand-interactive text-brand-interactive-foreground px-6 py-3 rounded-lg font-sans font-semibold hover:bg-brand-interactive-hover transition-colors">
                 Consultar Abogado Penalista
               </BookingLink>
             </div>

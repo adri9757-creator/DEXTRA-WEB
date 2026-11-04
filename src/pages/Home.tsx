@@ -25,7 +25,7 @@ const Home = () => {
             </p>
 
             <div className="hero-in [animation-delay:300ms] mt-10 flex flex-col sm:flex-row gap-4">
-              <BookingLink className="inline-flex items-center justify-center gap-2 bg-primary text-primary-foreground px-8 py-4 rounded-md text-base font-semibold font-sans transition-all hover:bg-primary/90">
+              <BookingLink className="inline-flex items-center justify-center gap-2 bg-brand-interactive text-brand-interactive-foreground px-8 py-4 rounded-md text-base font-semibold font-sans transition-all hover:bg-brand-interactive-hover">
                 Solicitar una consulta
                 <ArrowRight className="w-4 h-4" aria-hidden="true" />
               </BookingLink>
@@ -111,7 +111,7 @@ const Home = () => {
         </div>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-10">
           {[
-            { step: "01", title: "Primera toma de contacto", desc: "Escuchamos tu caso y te damos una primera valoración honesta y sin compromiso." },
+            { step: "01", title: "Primera toma de contacto", desc: "Una primera valoración de tu caso y un presupuesto personalizado antes de cualquier contratación." },
             { step: "02", title: "Análisis y estrategia", desc: "Estudiamos tu situación en profundidad y diseñamos la estrategia más efectiva." },
             { step: "03", title: "Defensa y acompañamiento", desc: "Ejecutamos el plan, te mantenemos informado y luchamos por el mejor resultado." },
           ].map((item) => (
@@ -134,7 +134,7 @@ const Home = () => {
             <span className="text-primary">Cuéntanos tu caso.</span>
           </h2>
           <div className="mt-10">
-            <WhatsAppLink className="inline-flex items-center gap-2 bg-primary text-primary-foreground px-10 py-4 rounded-md text-lg font-semibold font-sans transition-all hover:bg-primary/90">
+            <WhatsAppLink className="inline-flex items-center gap-2 bg-brand-interactive text-brand-interactive-foreground px-10 py-4 rounded-md text-lg font-semibold font-sans transition-all hover:bg-brand-interactive-hover">
               <MessageCircle className="w-5 h-5" aria-hidden="true" />
               Escríbenos ahora
             </WhatsAppLink>

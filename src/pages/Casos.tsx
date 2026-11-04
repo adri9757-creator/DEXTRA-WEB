@@ -56,7 +56,7 @@ const Casos = () => (
     <section className="bg-foreground text-background py-20">
       <div className="container text-center">
         <h2 className="text-3xl font-bold mb-6">¿Quieres que estudiemos tu caso?</h2>
-        <WhatsAppLink className="inline-flex items-center gap-2 bg-primary text-primary-foreground px-8 py-4 rounded-md font-semibold font-sans hover:bg-primary/90 transition-all">
+        <WhatsAppLink className="inline-flex items-center gap-2 bg-brand-interactive text-brand-interactive-foreground px-8 py-4 rounded-md font-semibold font-sans hover:bg-brand-interactive-hover transition-all">
           Contactar <ArrowRight className="w-4 h-4" />
         </WhatsAppLink>
       </div>

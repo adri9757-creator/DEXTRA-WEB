@@ -21,6 +21,11 @@
     --primary-foreground: 0 0% 100%;
     --primary-strong: 25 100% 32%;
     --brand: 25 100% 50%;
+    /* Botones principales: el naranja del logo (#F77A1F). Con texto blanco solo
+       alcanza 2,7:1, así que se usa texto casi negro (#121212, 7,0:1, WCAG AA). */
+    --brand-interactive: 25 93% 55%;
+    --brand-interactive-hover: 25 91% 50%;
+    --brand-interactive-foreground: 0 0% 7%;
 
     --secondary: 30 20% 96%;
     --secondary-foreground: 0 0% 10%;

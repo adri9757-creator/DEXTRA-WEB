@@ -69,7 +69,7 @@ export const contactSchema = z.object({
         .min(10, "Cuéntanos brevemente tu consulta (mínimo 10 caracteres).")
         .max(LIMITS.mensaje, `Máximo ${LIMITS.mensaje} caracteres.`),
     ),
-  privacidad: z.literal(true, { error: "Debes confirmar que has leído la información sobre protección de datos." }),
+  privacidad: z.literal(true, { error: "Debes confirmar que has leído la información básica sobre protección de datos y aceptar la Política de privacidad." }),
   /** Honeypot: campo invisible que una persona deja vacío. */
   website: z.string().max(0).optional().default(""),
   /** Momento (ms) en que se mostró el formulario; para descartar envíos instantáneos de bots. */

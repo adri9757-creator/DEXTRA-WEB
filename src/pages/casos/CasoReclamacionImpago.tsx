@@ -143,7 +143,7 @@ const CasoReclamacionImpago = () => {
               <p className="text-black font-sans mb-6 text-justify">
                 Si tienes problemas con el cobro de facturas impagadas o necesitas interponer una demanda civil de reclamación de cantidad, contacta con nuestros abogados especialistas en derecho civil.
               </p>
-              <BookingLink className="inline-flex items-center gap-2 bg-primary text-primary-foreground px-6 py-3 rounded-lg font-sans font-semibold hover:bg-primary/90 transition-colors">
+              <BookingLink className="inline-flex items-center gap-2 bg-brand-interactive text-brand-interactive-foreground px-6 py-3 rounded-lg font-sans font-semibold hover:bg-brand-interactive-hover transition-colors">
                 Consultar con un Abogado
               </BookingLink>
             </div>

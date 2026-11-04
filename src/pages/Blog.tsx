@@ -86,7 +86,7 @@ const Blog = () => {
             onClick={() => setSelectedCategory(null)}
             className={`px-4 py-2 rounded-full text-sm font-sans transition-colors ${
               selectedCategory === null 
-                ? "bg-primary text-primary-foreground" 
+                ? "bg-brand-interactive text-brand-interactive-foreground" 
                 : "bg-secondary text-secondary-foreground hover:bg-secondary/80"
             }`}
           >
@@ -100,7 +100,7 @@ const Blog = () => {
               onClick={() => setSelectedCategory(category)}
               className={`px-4 py-2 rounded-full text-sm font-sans transition-colors ${
                 selectedCategory === category 
-                  ? "bg-primary text-primary-foreground" 
+                  ? "bg-brand-interactive text-brand-interactive-foreground" 
                   : "bg-secondary text-secondary-foreground hover:bg-secondary/80"
               }`}
             >

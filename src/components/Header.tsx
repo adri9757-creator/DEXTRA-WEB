@@ -113,7 +113,7 @@ const Header = () => {
             )}
           </ul>
           <div className="flex items-center gap-3">
-            <WhatsAppLink className="inline-flex items-center gap-2 bg-primary text-primary-foreground px-5 py-2.5 rounded-md text-sm font-semibold font-sans transition-all hover:bg-primary/90">
+            <WhatsAppLink className="inline-flex items-center gap-2 bg-brand-interactive text-brand-interactive-foreground px-5 py-2.5 rounded-md text-sm font-semibold font-sans transition-all hover:bg-brand-interactive-hover">
               <MessageCircle className="w-4 h-4" aria-hidden="true" />
               Contáctanos
             </WhatsAppLink>
@@ -161,7 +161,7 @@ const Header = () => {
             ))}
           </ul>
           <div className="flex flex-col gap-3 mt-6">
-            <WhatsAppLink className="inline-flex items-center justify-center gap-2 bg-primary text-primary-foreground px-5 py-3 rounded-md text-sm font-semibold font-sans">
+            <WhatsAppLink className="inline-flex items-center justify-center gap-2 bg-brand-interactive text-brand-interactive-foreground px-5 py-3 rounded-md text-sm font-semibold font-sans">
               <MessageCircle className="w-4 h-4" aria-hidden="true" />
               Contáctanos
             </WhatsAppLink>

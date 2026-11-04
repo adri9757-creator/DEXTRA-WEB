@@ -120,8 +120,8 @@ const ServicePage = ({
     <section className="bg-foreground text-background py-20">
       <div className="container text-center">
         <h2 className="text-3xl md:text-4xl font-bold mb-4">¿Necesitas ayuda con tu caso?</h2>
-        <p className="text-background/70 font-sans mb-8">Cuéntanos tu situación y te orientamos sin compromiso.</p>
-        <BookingLink className="inline-flex items-center gap-2 bg-primary text-primary-foreground px-8 py-4 rounded-md font-semibold font-sans hover:bg-primary/90 transition-all">
+        <p className="text-background/70 font-sans mb-8">Cuéntanos tu situación. Te informamos sobre cómo podemos ayudarte y te facilitaremos un presupuesto antes de cualquier contratación.</p>
+        <BookingLink className="inline-flex items-center gap-2 bg-brand-interactive text-brand-interactive-foreground px-8 py-4 rounded-md font-semibold font-sans hover:bg-brand-interactive-hover transition-all">
           Solicitar consulta <ArrowRight className="w-4 h-4" />
         </BookingLink>
       </div>

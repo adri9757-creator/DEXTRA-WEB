@@ -21,8 +21,8 @@ const Privacidad = () => (
       <li><strong>Correo electrónico:</strong> <a href={`mailto:${SITE.email}`}>{SITE.email}</a></li>
       <li><strong>Teléfono:</strong> {SITE.phone.display}</li>
       <li>
-        <strong>Delegado de protección de datos:</strong> [POR_CONFIRMAR: indicar si se ha designado DPD y su contacto; si
-        no es obligatorio, puede indicarse «No se ha designado»].
+        <strong>Delegado de protección de datos:</strong> No se ha designado Delegado de Protección de Datos, al no
+        resultar obligatorio conforme a la normativa aplicable.
       </li>
     </ul>
 
@@ -62,8 +62,9 @@ const Privacidad = () => (
       Si contratas nuestros servicios, trataremos tus datos para prestar el servicio encargado, facturar y cumplir las
       obligaciones legales aplicables (base: ejecución del contrato y cumplimiento de obligaciones legales, art. 6.1.b y
       6.1.c RGPD). Te facilitaremos información específica en la hoja de encargo. Los datos se conservarán mientras dure la
-      relación profesional y, después, durante los plazos legales (por ejemplo, fiscales, de prevención del blanqueo de
-      capitales cuando resulte aplicable y de prescripción de la responsabilidad profesional) [POR_CONFIRMAR: detallar plazos].
+      relación profesional y, posteriormente, durante los plazos legales aplicables, incluidos los de prescripción de
+      acciones, obligaciones fiscales y, cuando resulte aplicable, las obligaciones de prevención del blanqueo de capitales y
+      financiación del terrorismo. Transcurridos dichos plazos, los datos serán suprimidos o bloqueados.
     </p>
 
     <h3>2.4. Navegación y seguridad del sitio</h3>
@@ -94,7 +95,7 @@ const Privacidad = () => (
       No cedemos tus datos a terceros, salvo obligación legal o cuando sea necesario para el encargo profesional (por
       ejemplo, juzgados, tribunales o administraciones públicas ante los que actuemos en tu nombre). Para prestar el
       servicio contamos con proveedores que tratan datos por cuenta nuestra (encargados del tratamiento), con los que debe
-      formalizarse el contrato de encargo del art. 28 RGPD [POR_CONFIRMAR: firma o aceptación de cada contrato]:
+      formalizarse el contrato de encargo del art. 28 RGPD:
     </p>
     <div className="overflow-x-auto">
       <table>
@@ -111,9 +112,9 @@ const Privacidad = () => (
             <td>Vercel Inc.</td>
             <td>Alojamiento de la web y ejecución del envío del formulario</td>
             <td>
-              EE. UU. La función del formulario se ejecuta en la región de París (UE). Transferencias amparadas en cláusulas
-              contractuales tipo de la Comisión Europea [POR_CONFIRMAR: revisar el DPA de Vercel y, en su caso, su adhesión al
-              Marco de Privacidad de Datos UE-EE. UU.].
+              EE. UU. La función del formulario se ejecuta en la región de París (UE). Las transferencias fuera del EEE
+              deben ampararse en cláusulas contractuales tipo de la Comisión Europea.{" "}
+              [POR_CONFIRMAR: revisión y aceptación del DPA de Vercel.]
             </td>
           </tr>
           <tr>
@@ -121,19 +122,19 @@ const Privacidad = () => (
             <td>Envío por correo electrónico de los mensajes del formulario</td>
             <td>
               Envío previsto desde la región de la UE (eu-west-1, Irlanda). Resend es una empresa de EE. UU.: las
-              transferencias fuera del EEE se amparan en cláusulas contractuales tipo (SCC) de la Comisión Europea.{" "}
-              [POR_CONFIRMAR: el titular debe revisar y aceptar el DPA de Resend antes de activar el formulario.]
+              transferencias fuera del EEE deben ampararse en cláusulas contractuales tipo (SCC) de la Comisión Europea.{" "}
+              [POR_CONFIRMAR: revisión y aceptación del DPA de Resend.]
             </td>
           </tr>
           <tr>
-            <td>[POR_CONFIRMAR: proveedor del correo {SITE.email}]</td>
+            <td>[POR_CONFIRMAR: identificación del proveedor real del correo {SITE.email}]</td>
             <td>Recepción y gestión del correo electrónico</td>
-            <td>[POR_CONFIRMAR: ubicación y garantías]</td>
+            <td>Se indicarán al identificar el proveedor.</td>
           </tr>
           <tr>
             <td>Cal.eu (proveedor de reservas)</td>
             <td>Gestión de reservas de citas</td>
-            <td>[POR_CONFIRMAR: ubicación de los datos y garantías]</td>
+            <td>[POR_CONFIRMAR: ubicación de los datos y garantías de Cal.eu.]</td>
           </tr>
         </tbody>
       </table>
@@ -146,7 +147,7 @@ const Privacidad = () => (
     <h2>4. Transferencias internacionales</h2>
     <p>
       Algunos proveedores (Vercel y Resend) son empresas de Estados Unidos y pueden acceder a datos desde fuera del Espacio
-      Económico Europeo. En esos casos, las transferencias se basan en las cláusulas contractuales tipo aprobadas por la
+      Económico Europeo. En esos casos, las transferencias se basarán en las cláusulas contractuales tipo aprobadas por la
       Comisión Europea (art. 46.2.c RGPD) y, cuando proceda, en la decisión de adecuación del Marco de Privacidad de Datos
       UE-EE. UU. (art. 45 RGPD). Puedes solicitarnos más información sobre estas garantías.
     </p>

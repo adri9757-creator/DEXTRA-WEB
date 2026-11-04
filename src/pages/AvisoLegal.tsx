@@ -110,10 +110,11 @@ const AvisoLegal = () => {
                     1.2. SEGURO DE RESPONSABILIDAD CIVIL PROFESIONAL
                   </h2>
                   <p>
-                    Conforme al artículo 22 de la Ley 17/2009, de 23 de noviembre, sobre el libre acceso a las actividades de
-                    servicios: aseguradora [POR_CONFIRMAR: entidad aseguradora], póliza de responsabilidad civil profesional con
-                    cobertura geográfica [POR_CONFIRMAR: ámbito territorial].
+                    El despacho dispone de seguro de responsabilidad civil profesional a través de la cobertura vinculada a su
+                    colegiación en el Ilustre Colegio de la Abogacía de València (ICAV), con ámbito de cobertura conforme a las
+                    condiciones de dicha póliza.
                   </p>
+                  {/* [OPCIONAL] Si se desea identificar la póliza: aseguradora, número de póliza y ámbito territorial. */}
                 </section>
 
                 <section>

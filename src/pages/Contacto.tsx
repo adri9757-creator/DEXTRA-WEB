@@ -2,6 +2,7 @@ import { useEffect, useRef, useState } from "react";
 import { Link } from "react-router-dom";
 import { Phone, Mail, MapPin, Clock, Send, Loader2 } from "lucide-react";
 import GoogleMap from "@/components/embeds/GoogleMap";
+import DataProtectionInfo, { DATA_INFO_BUTTON_ID, DATA_INFO_PANEL_ID } from "@/components/DataProtectionInfo";
 import { SITE } from "@/config/site";
 import { AREAS, AREA_LABELS, LIMITS, contactSchema } from "@/lib/contact-schema";
 
@@ -31,6 +32,7 @@ const Contacto = () => {
   const [form, setForm] = useState(EMPTY);
   const [errors, setErrors] = useState<Partial<Record<Fields, string>>>({});
   const [status, setStatus] = useState<Status>({ kind: "idle" });
+  const [infoOpen, setInfoOpen] = useState(false);
   const startedAt = useRef(0);
   const formRef = useRef<HTMLFormElement>(null);
 
@@ -42,6 +44,15 @@ const Contacto = () => {
   const set = (field: keyof typeof EMPTY, value: string | boolean) => {
     setForm((f) => ({ ...f, [field]: value }));
     if (errors[field as Fields]) setErrors((e) => ({ ...e, [field]: undefined }));
+  };
+
+  /** El enlace de la casilla abre el acordeón y lleva el foco a su botón. */
+  const showDataInfo = (e: React.MouseEvent) => {
+    e.preventDefault();
+    setInfoOpen(true);
+    const button = document.getElementById(DATA_INFO_BUTTON_ID);
+    button?.focus();
+    button?.scrollIntoView({ block: "center", behavior: "smooth" });
   };
 
   const focusFirstError = (errs: Partial<Record<Fields, string>>) => {
@@ -106,7 +117,7 @@ const Contacto = () => {
           <h1 className="text-4xl md:text-5xl font-bold">Contacto</h1>
           <div className="w-16 h-1 bg-primary mt-6" aria-hidden="true" />
           <p className="mt-6 text-muted-foreground font-sans text-lg max-w-2xl">
-            Cuéntanos tu caso y te orientamos sin compromiso.
+            Cuéntanos tu caso. Te informamos sobre cómo podemos ayudarte y te facilitaremos un presupuesto antes de cualquier contratación.
           </p>
         </div>
       </section>
@@ -176,24 +187,8 @@ const Contacto = () => {
                 onChange={(e) => set("website", e.target.value)} />
             </div>
 
-            {/* Información básica sobre protección de datos (primera capa, art. 11 LOPDGDD) */}
-            <section aria-labelledby="info-datos" className="rounded-md border border-border bg-secondary p-4 font-sans text-xs leading-relaxed text-foreground">
-              <h2 id="info-datos" className="mb-2 font-sans text-sm font-semibold">Información básica sobre protección de datos</h2>
-              <dl className="grid grid-cols-[auto,1fr] gap-x-3 gap-y-1">
-                <dt className="font-semibold">Responsable:</dt>
-                <dd>{SITE.owner.name} ({SITE.name}).</dd>
-                <dt className="font-semibold">Finalidad:</dt>
-                <dd>Responder a tu consulta y, si lo pides, valorar un posible encargo profesional.</dd>
-                <dt className="font-semibold">Legitimación:</dt>
-                <dd>Aplicación de medidas precontractuales a petición tuya (art. 6.1.b RGPD).</dd>
-                <dt className="font-semibold">Destinatarios:</dt>
-                <dd>No se ceden datos a terceros salvo obligación legal. Proveedores de alojamiento y correo como encargados del tratamiento, algunos con transferencias internacionales amparadas en cláusulas contractuales tipo.</dd>
-                <dt className="font-semibold">Derechos:</dt>
-                <dd>Acceso, rectificación, supresión, oposición, limitación y portabilidad, y reclamación ante la AEPD.</dd>
-                <dt className="font-semibold">Más información:</dt>
-                <dd><Link to="/privacidad" className="font-semibold underline underline-offset-2">Política de privacidad</Link>.</dd>
-              </dl>
-            </section>
+            {/* Información básica sobre protección de datos (primera capa, art. 11 LOPDGDD), en acordeón */}
+            <DataProtectionInfo open={infoOpen} onToggle={() => setInfoOpen((v) => !v)} />
 
             <div>
               <div className="flex items-start gap-3">
@@ -201,8 +196,12 @@ const Contacto = () => {
                   onChange={(e) => set("privacidad", e.target.checked)}
                   className="mt-1 h-5 w-5 flex-shrink-0 accent-[hsl(var(--primary))]" {...errorProps("privacidad")} />
                 <label htmlFor="privacidad" className="font-sans text-sm">
-                  He leído la información básica sobre protección de datos y la{" "}
-                  <Link to="/privacidad" className="font-semibold underline underline-offset-2">Política de privacidad</Link>.{" "}
+                  He leído la{" "}
+                  <a href={`#${DATA_INFO_PANEL_ID}`} onClick={showDataInfo} className="font-semibold underline underline-offset-2">
+                    información básica sobre protección de datos
+                  </a>{" "}
+                  y acepto la{" "}
+                  <Link to="/privacidad" className="font-semibold underline underline-offset-2">Política de privacidad</Link>{" "}
                   <span aria-hidden="true">*</span>
                 </label>
               </div>
@@ -212,7 +211,7 @@ const Contacto = () => {
             <button
               type="submit"
               disabled={status.kind === "sending"}
-              className="inline-flex items-center gap-2 bg-primary text-primary-foreground px-8 py-4 rounded-md font-semibold font-sans transition-all hover:bg-primary/90 disabled:opacity-60 w-full sm:w-auto justify-center"
+              className="inline-flex items-center gap-2 bg-brand-interactive text-brand-interactive-foreground px-8 py-4 rounded-md font-semibold font-sans transition-all hover:bg-brand-interactive-hover disabled:opacity-60 w-full sm:w-auto justify-center"
             >
               {status.kind === "sending" ? (
                 <Loader2 className="w-4 h-4 animate-spin" aria-hidden="true" />

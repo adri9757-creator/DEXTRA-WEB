@@ -122,8 +122,8 @@ const Equipo = () => (
     <section className="bg-foreground text-background py-20">
       <div className="container text-center">
         <h2 className="text-3xl md:text-4xl font-bold mb-6">¿Quieres que te ayudemos?</h2>
-        <p className="text-background/70 font-sans mb-8 max-w-lg mx-auto">Cuéntanos tu situación y un abogado especialista te orientará sin compromiso.</p>
-        <WhatsAppLink className="inline-flex items-center gap-2 bg-primary text-primary-foreground px-8 py-4 rounded-md font-semibold font-sans hover:bg-primary/90 transition-all">
+        <p className="text-background/70 font-sans mb-8 max-w-lg mx-auto">Cuéntanos tu situación. Te informamos sobre cómo podemos ayudarte y te facilitaremos un presupuesto antes de cualquier contratación.</p>
+        <WhatsAppLink className="inline-flex items-center gap-2 bg-brand-interactive text-brand-interactive-foreground px-8 py-4 rounded-md font-semibold font-sans hover:bg-brand-interactive-hover transition-all">
           Contactar <ArrowRight className="w-4 h-4" />
         </WhatsAppLink>
       </div>

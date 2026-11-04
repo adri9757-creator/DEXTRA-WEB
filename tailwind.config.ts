@@ -22,6 +22,11 @@ export default {
         background: "hsl(var(--background))",
         foreground: "hsl(var(--foreground))",
         brand: "hsl(var(--brand))",
+        "brand-interactive": {
+          DEFAULT: "hsl(var(--brand-interactive))",
+          hover: "hsl(var(--brand-interactive-hover))",
+          foreground: "hsl(var(--brand-interactive-foreground))",
+        },
         "primary-strong": "hsl(var(--primary-strong))",
         primary: {
           DEFAULT: "hsl(var(--primary))",
