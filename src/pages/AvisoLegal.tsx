@@ -72,10 +72,7 @@ const AvisoLegal = () => {
                     <p><strong>Titulación académica:</strong> Graduado en Derecho y Máster de Acceso a la Abogacía y Procura, título expedido en España.</p>
                     <p><strong>Profesión:</strong> Abogado. Título profesional de abogado obtenido en España.</p>
                     <p>
-                      <strong>Forma de ejercicio:</strong> ejercicio individual bajo la denominación comercial «Dextra Law Firm».{" "}
-                      [POR_CONFIRMAR: si se constituye la sociedad profesional, sustituir por su denominación social, CIF,
-                      domicilio social, datos de inscripción en el Registro Mercantil (tomo, folio, hoja) y en el Registro de
-                      Sociedades Profesionales del ICAV.]
+                      <strong>Forma de ejercicio:</strong> ejercicio individual bajo la denominación comercial «Dextra Law Firm».
                     </p>
                   </div>
                 </section>
