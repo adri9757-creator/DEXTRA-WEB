@@ -7,6 +7,12 @@
   "trailingSlash": false,
   "regions": ["cdg1"],
   "redirects": [
+    {
+      "source": "/:path*",
+      "has": [{ "type": "host", "value": "dextra-web-one.vercel.app" }],
+      "destination": "https://dextralawfirm.com/:path*",
+      "permanent": true
+    },
     { "source": "/politica-cookies", "destination": "/cookies", "permanent": true }
   ],
   "headers": [
