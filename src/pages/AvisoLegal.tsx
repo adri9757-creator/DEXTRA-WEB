@@ -42,7 +42,7 @@ const AvisoLegal = () => {
         <div className="max-w-4xl mx-auto">
           <div className="prose prose-lg max-w-none">
             <div className="bg-background rounded-lg border border-border p-8 md:p-12">
-              <div className="space-y-8 text-foreground font-sans leading-relaxed text-justify">
+              <div className="legal-justify space-y-8 text-foreground font-sans leading-relaxed">
                 
                 <section>
                   <p>

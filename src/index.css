@@ -153,12 +153,26 @@
   @apply rounded bg-secondary px-1.5 py-0.5 text-sm;
 }
 .legal-content table {
-  @apply my-6 w-full border-collapse text-sm;
+  /* Ancho mínimo para que en móvil las columnas no queden demasiado estrechas:
+     la tabla se desplaza dentro de su contenedor (overflow-x-auto). */
+  @apply my-6 w-full min-w-[40rem] border-collapse text-sm;
 }
 .legal-content th,
 .legal-content td {
-  @apply border border-border p-3 text-left align-top;
+  @apply border border-border p-3 align-top;
 }
 .legal-content th {
-  @apply bg-secondary font-semibold;
+  @apply bg-secondary text-left font-semibold;
+}
+
+/* Texto justificado en las páginas legales: solo párrafos, listas y celdas.
+   Títulos, botones y demás elementos de interfaz mantienen su alineación.
+   hyphens: auto (con lang="es") parte palabras largas para evitar huecos.
+   :where() deja la especificidad en 0, así una clase como text-center en un
+   elemento concreto sigue teniendo prioridad. */
+:where(.legal-content, .legal-justify) :where(p, li, td, dd) {
+  text-align: justify;
+  -webkit-hyphens: auto;
+  hyphens: auto;
+  overflow-wrap: break-word;
 }
