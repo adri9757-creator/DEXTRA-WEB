@@ -14,7 +14,7 @@
  *  - La API key solo existe en variables de entorno del servidor (sin prefijo
  *    VITE_, por lo que nunca llega al navegador).
  */
-import { AREA_LABELS, contactSchema, escapeHtml, type ContactData } from "../src/lib/contact-schema";
+import { AREA_LABELS, contactSchema, escapeHtml, type ContactData } from "../src/lib/contact-schema.js";
 
 const MAX_BODY_BYTES = 10_000;
 const MIN_FILL_MS = 3_000;

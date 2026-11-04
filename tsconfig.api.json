@@ -9,6 +9,5 @@
     "skipLibCheck": true,
     "types": ["node"]
   },
-  "include": ["api/**/*.ts", "src/lib/contact-schema.ts"],
-  "exclude": ["api/**/*.test.ts"]
+  "include": ["api/**/*.ts", "src/lib/contact-schema.ts"]
 }

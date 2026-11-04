@@ -1,5 +1,5 @@
 import { beforeEach, describe, expect, it, vi } from "vitest";
-import { __resetRateLimit, allowedOrigins, handleContact, type ContactEnv } from "./contact";
+import { __resetRateLimit, allowedOrigins, handleContact, type ContactEnv } from "../../api/contact";
 
 const ORIGIN = "https://dextralawfirm.com";
 const NOW = 1_800_000_000_000;
