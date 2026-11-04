@@ -30,7 +30,7 @@ Ninguna variable secreta lleva el prefijo `VITE_`: las que lo llevan se incrusta
 
 1. Sube la rama `fix/fase-legal-seguridad` a GitHub.
 2. Vercel crea automáticamente un **Preview Deployment** con su propia URL. Producción (`main`) no cambia.
-3. Revisa el preview. En previews, la función acepta el origen `https://$VERCEL_URL` automáticamente.
+3. Revisa el preview. En previews, la función acepta automáticamente la URL única del despliegue (`VERCEL_URL`) y la URL fija de la rama (`VERCEL_BRANCH_URL`); no hace falta `ALLOWED_ORIGINS` para probar el formulario en la vista previa.
 4. Cuando lo apruebes: merge a `main` → Vercel despliega a producción.
 
 ## 4. Activar el formulario (cuando lo autorices)

@@ -29,6 +29,7 @@ export interface ContactEnv {
   VITE_SITE_URL?: string;
   ALLOWED_ORIGINS?: string;
   VERCEL_URL?: string;
+  VERCEL_BRANCH_URL?: string;
   VERCEL_ENV?: string;
 }
 
@@ -58,8 +59,11 @@ export function allowedOrigins(env: ContactEnv): string[] {
   const list = [env.VITE_SITE_URL, ...(env.ALLOWED_ORIGINS ?? "").split(",")]
     .map((o) => o?.trim().replace(/\/$/, ""))
     .filter(Boolean) as string[];
-  // Despliegues de vista previa de Vercel (no producción).
-  if (env.VERCEL_URL && env.VERCEL_ENV !== "production") list.push(`https://${env.VERCEL_URL}`);
+  // Despliegues de vista previa de Vercel (no producción): la URL única de cada
+  // despliegue (VERCEL_URL) y la URL fija de la rama (VERCEL_BRANCH_URL).
+  if (env.VERCEL_ENV !== "production") {
+    for (const host of [env.VERCEL_URL, env.VERCEL_BRANCH_URL]) if (host) list.push(`https://${host}`);
+  }
   return list;
 }
 

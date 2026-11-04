@@ -1,5 +1,5 @@
 import { beforeEach, describe, expect, it, vi } from "vitest";
-import { __resetRateLimit, handleContact, type ContactEnv } from "./contact";
+import { __resetRateLimit, allowedOrigins, handleContact, type ContactEnv } from "./contact";
 
 const ORIGIN = "https://dextralawfirm.com";
 const NOW = 1_800_000_000_000;
@@ -53,6 +53,19 @@ describe("POST /api/contact", () => {
     expect((await handleContact(req(valid, { origin: "https://evil.example" }), ENABLED, okFetch(), NOW)).status).toBe(403);
     const noOrigin = new Request("https://x/api/contact", { method: "POST", headers: { "content-type": "application/json" }, body: "{}" });
     expect((await handleContact(noOrigin, ENABLED, okFetch(), NOW)).status).toBe(403);
+  });
+
+  it("en vista previa acepta la URL del despliegue y la URL fija de la rama, pero no en producción", async () => {
+    const branch = "dextra-web-git-fix-fase-legal-seguridad-equipo.vercel.app";
+    const deploy = "dextra-web-abc123-equipo.vercel.app";
+    const preview: ContactEnv = { ...ENABLED, VERCEL_ENV: "preview", VERCEL_URL: deploy, VERCEL_BRANCH_URL: branch };
+    expect(allowedOrigins(preview)).toEqual(expect.arrayContaining([ORIGIN, `https://${deploy}`, `https://${branch}`]));
+    expect((await handleContact(req(valid, { origin: `https://${branch}` }), preview, okFetch(), NOW)).status).toBe(200);
+    expect((await handleContact(req(valid, { origin: `https://${deploy}` }, "5.6.7.8"), preview, okFetch(), NOW)).status).toBe(200);
+
+    const production: ContactEnv = { ...preview, VERCEL_ENV: "production" };
+    expect(allowedOrigins(production)).toEqual([ORIGIN]);
+    expect((await handleContact(req(valid, { origin: `https://${branch}` }, "9.9.9.9"), production, okFetch(), NOW)).status).toBe(403);
   });
 
   it("exige JSON", async () => {
