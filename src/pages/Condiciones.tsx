@@ -191,18 +191,15 @@ const Condiciones = () => {
                     </li>
                     <li className="flex items-start gap-2">
                       <span className="w-5 h-5 text-primary mt-0.5 flex-shrink-0">•</span>
-                      <span>En caso de aviso dentro de dicho plazo, Dextra Law Firm ofrecerá una nueva fecha y hora para la consulta o, en su caso, podrá acordarse la devolución de los honorarios abonados, descontando, si procediera, los gastos de gestión.</span>
+                      <span>Si el Cliente avisa con una antelación igual o superior a 48 horas, Dextra Law Firm ofrecerá una nueva fecha y hora para la consulta o, en su caso, podrá acordarse la devolución de los honorarios abonados, descontando, si procediera, los gastos de gestión.</span>
                     </li>
                     <li className="flex items-start gap-2">
                       <span className="w-5 h-5 text-primary mt-0.5 flex-shrink-0">•</span>
-                      <span>Si el Cliente no se presenta a la consulta en la fecha y hora acordadas, o cancela con una antelación inferior a la indicada, Dextra Law Firm podrá retener el importe abonado en concepto de gastos de reserva y disponibilidad, salvo que se aprecien causas justificadas.</span>
+                      <span>Si el Cliente cancela o modifica la cita con una antelación inferior a 48 horas, o no asiste y no justifica la inasistencia en un plazo de 48 horas, no se devolverá el importe abonado. Las cancelaciones o cambios de cita con una antelación igual o superior a 48 horas se rigen por la política de cancelaciones de este apartado. Las causas justificadas se valorarán caso por caso. La inasistencia puede justificarse escribiendo a info@dextralawfirm.com en las 48 horas siguientes a la fecha y hora fijadas para la cita.</span>
                     </li>
                   </ul>
                   <p>
                     En las consultas por videoconferencia, si existen problemas técnicos imputables al despacho que impidan realizar la sesión, se ofrecerá una nueva cita sin coste adicional para el Cliente.
-                  </p>
-                  <p>
-                    <strong>Inasistencia:</strong> si el Cliente no asiste a la cita y no justifica la inasistencia, no se devolverá el importe abonado. La inasistencia podrá justificarse comunicándolo a info@dextralawfirm.com en un plazo de 48 horas desde la fecha y hora fijadas para la cita. Las cancelaciones o cambios comunicados con aviso previo no se consideran inasistencia y se rigen por la política de cancelaciones de este apartado.
                   </p>
                   <p>
                     Lo dispuesto en este apartado se entiende sin perjuicio del derecho de desistimiento del Cliente consumidor regulado en el apartado 6.
