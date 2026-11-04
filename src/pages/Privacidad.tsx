@@ -127,9 +127,18 @@ const Privacidad = () => (
             </td>
           </tr>
           <tr>
-            <td>[POR_CONFIRMAR: identificación del proveedor real del correo {SITE.email}]</td>
-            <td>Recepción y gestión del correo electrónico</td>
-            <td>Se indicarán al identificar el proveedor.</td>
+            <td>Google Workspace (Google Ireland Limited / Google LLC, según la configuración de la cuenta)</td>
+            <td>
+              Recepción, almacenamiento y gestión del correo electrónico enviado a {SITE.email}, incluidas las consultas
+              enviadas desde el formulario de contacto
+            </td>
+            <td>
+              Los datos pueden tratarse en la UE o fuera de ella según la configuración de la cuenta. Las transferencias
+              internacionales se amparan en las garantías contractuales aplicables de Google, incluidas, en su caso, las
+              cláusulas contractuales tipo y el Marco de Privacidad de Datos UE-EE. UU.{" "}
+              [POR_CONFIRMAR: región de almacenamiento configurada en Google Workspace.]{" "}
+              [POR_CONFIRMAR: revisión y aceptación del DPA de Google Workspace.]
+            </td>
           </tr>
           <tr>
             <td>Cal.eu (proveedor de reservas)</td>
@@ -146,7 +155,7 @@ const Privacidad = () => (
 
     <h2>4. Transferencias internacionales</h2>
     <p>
-      Algunos proveedores (Vercel y Resend) son empresas de Estados Unidos y pueden acceder a datos desde fuera del Espacio
+      Algunos proveedores (Vercel, Resend y, según la configuración de la cuenta, Google) son empresas de Estados Unidos y pueden acceder a datos desde fuera del Espacio
       Económico Europeo. En esos casos, las transferencias se basarán en las cláusulas contractuales tipo aprobadas por la
       Comisión Europea (art. 46.2.c RGPD) y, cuando proceda, en la decisión de adecuación del Marco de Privacidad de Datos
       UE-EE. UU. (art. 45 RGPD). Puedes solicitarnos más información sobre estas garantías.
