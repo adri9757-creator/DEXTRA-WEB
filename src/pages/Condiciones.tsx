@@ -221,10 +221,7 @@ const Condiciones = () => {
                     Puedes ejercer el desistimiento mediante cualquier declaración inequívoca dirigida a <a href="mailto:info@dextralawfirm.com" className="font-semibold underline underline-offset-2">info@dextralawfirm.com</a>. También puedes utilizar el siguiente modelo; su uso no es obligatorio y sirve igualmente cualquier otra declaración inequívoca.
                   </p>
                   <p>
-                    Si ejercitas el derecho de desistimiento, te reembolsaremos todos los pagos recibidos, incluidos los gastos de entrega cuando proceda, sin demoras indebidas y, en todo caso, en un plazo máximo de 14 días naturales desde que nos informes de tu decisión de desistir.
-                  </p>
-                  <p>
-                    Podremos retener el reembolso hasta haber recibido el servicio prestado o hasta que aporten pruebas de haberlo devuelto, según corresponda.
+                    Si ejercitas el derecho de desistimiento, te reembolsaremos todos los pagos recibidos, sin demoras indebidas y, en todo caso, en un plazo máximo de 14 días naturales desde que nos informes de tu decisión de desistir.
                   </p>
                   <p>
                     Si la consulta ya se ha prestado parcialmente antes del desistimiento, deberás abonar un importe proporcional al servicio efectivamente prestado, conforme a lo comunicado antes de la contratación.
