@@ -112,9 +112,9 @@ const Privacidad = () => (
             <td>Vercel Inc.</td>
             <td>Alojamiento de la web y ejecución del envío del formulario</td>
             <td>
-              EE. UU. La función del formulario se ejecuta en la región de París (UE). Las transferencias fuera del EEE
-              deben ampararse en cláusulas contractuales tipo de la Comisión Europea.{" "}
-              [POR_CONFIRMAR: revisión y aceptación del DPA de Vercel.]
+              El alojamiento y la ejecución de la web se realizan mediante Vercel, que trata los datos como encargado
+              conforme a su DPA. Las transferencias fuera del EEE se amparan en las cláusulas contractuales tipo incluidas
+              en dicho acuerdo. La función del formulario se ejecuta en la región de París (UE).
             </td>
           </tr>
           <tr>
@@ -133,11 +133,11 @@ const Privacidad = () => (
               enviadas desde el formulario de contacto
             </td>
             <td>
-              Los datos pueden tratarse en la UE o fuera de ella según la configuración de la cuenta. Las transferencias
-              internacionales se amparan en las garantías contractuales aplicables de Google, incluidas, en su caso, las
-              cláusulas contractuales tipo y el Marco de Privacidad de Datos UE-EE. UU.{" "}
-              [POR_CONFIRMAR: región de almacenamiento configurada en Google Workspace.]{" "}
-              [POR_CONFIRMAR: revisión y aceptación del DPA de Google Workspace.]
+              Los servicios de correo electrónico y almacenamiento de Google Workspace son prestados por Google. La cuenta
+              utiliza Google Workspace Business Starter, que no permite configurar una región de almacenamiento de datos
+              específica. Google trata los datos conforme a su Data Processing Amendment y a las garantías contractuales
+              aplicables, incluidas, cuando resulten aplicables, las cláusulas contractuales tipo para transferencias
+              internacionales.
             </td>
           </tr>
           <tr>
